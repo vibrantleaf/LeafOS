@@ -41,13 +41,10 @@ modules:
   # flatpaks
   - type: default-flatpaks
     notify: true
+    user: {}
     system:
       install:
-        - org.mozilla.firefox
-        - 
-      remove:
-        - org.gnome.eog
-    user: {}
+        - "org.mozilla.firefox"
 
   - type: signing
 
