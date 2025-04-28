@@ -18,7 +18,7 @@ modules:
       - virt-install
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
-      - qemu-kvmn
+      - qemu-kvm
       - virt-manager
       - virt-viewer
       - libguestfs-tools
