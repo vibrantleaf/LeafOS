@@ -9,7 +9,6 @@ modules:
       - source: system
         destination: /
 
-
   # virtualisation stack
   - type: rpm-ostree
     repos:
@@ -25,8 +24,8 @@ modules:
       - python3-libguestfs
       - virt-top
       - swtpm
+      - bridge-utils
       - gnome-boxes
-
   
   # blue-build cli
   - type: copy
@@ -35,8 +34,26 @@ modules:
     dest: /opt/bluebuild
   - type: script
     snippets:
-      - "mv -v /opt/bluebuild /usr/lbin/"
+      - "mv -v /opt/bluebuild /usr/bin/"
       - "chmod +x /usr/bin/bluebuild"
+
+  # codecs
+  - type: rpm-ostree
+    install:
+      - gstreamer1-plugin-libav
+      - gstreamer1-plugins-bad-free-extras
+      - gstreamer1-plugins-bad-freeworld
+      - gstreamer1-plugins-ugly
+      - gstreamer1-vaapi
+      - libaacs
+      - libbdplus
+      - libbluray
+      - libdvdcss
+
+  # cleanup
+  - type: rpm-ostree
+    remove:
+      - gnome-classic-xsession
 
   # flatpaks
   - type: default-flatpaks
@@ -44,7 +61,29 @@ modules:
     user: {}
     system:
       install:
-        - "org.mozilla.firefox"
+        - org.mozilla.firefox
+        - org.libreoffice.libreoffice
+        - org.localsend.localsend_app
+        - org.gnome.Geary
+        - dev.geopjr.Collision
+        - org.gnome.World.Secrets
+        - com.belmoussaoui.Authenticator
+        - com.github.tchx84.Flatseal
 
+  # GNOME
+  - type: gnome-extensions
+    install:
+      - 4655
+      - 6784
+      - 3733
+      - 5547
+      - 7867
+      - 4691
+  - type: gschema-overrides
+    include:
+      - gnome_settings.gschema.override
+
+
+  # signing    
   - type: signing
 
