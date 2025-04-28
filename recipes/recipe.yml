@@ -40,6 +40,12 @@ modules:
   # codecs
   - type: rpm-ostree
     install:
+      - rpmfusion-free-release-tainted
+  - type: rpm-ostree
+    install:
+      - rpmfusion-nonfree-release-tainted
+  - type: rpm-ostree
+    install:
       - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-bad-freeworld
