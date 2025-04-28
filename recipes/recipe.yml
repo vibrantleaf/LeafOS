@@ -11,23 +11,11 @@ modules:
 
 
   # virtualisation stack
-  - type: copy
-    from: ghcr.io/ublue-os/akmods:${KERNEL_FLAVOR}-${FEDORA_MAJOR_VERSION}
-    src: rpms
-    dest /opt/akmods-rpms
-  - type: copy
-    from: ghcr.io/ublue-os/akmods-extra:${KERNEL_FLAVOR}-${FEDORA_MAJOR_VERSION}
-    src: /rpms
-    dest /opt/akmods-rpms
-  - type: script
-    snippets:
-      - "sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo"
   - type: rpm-ostree
     repos:
-      - 'https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-"${FEDORA_MAJOR_VERSION}"/hikariknight-looking-glass-kvmfr-fedora-"${FEDORA_MAJOR_VERSION}".repo'
+      - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
     install:
-      - /opt/akmods-rpms/kmods/*kvmfr*.rpm
-       - virt-install
+      - virt-install
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
       - qemu-kvmn
@@ -38,12 +26,7 @@ modules:
       - virt-top
       - swtpm
       - gnome-boxes
-  - type: script
-    snippets:
-      - 'rm -rfv /opt/akmods-rpms'
-  
-  
-  
+
   
   # blue-build cli
   - type: copy
