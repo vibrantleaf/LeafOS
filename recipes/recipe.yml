@@ -56,11 +56,6 @@ modules:
       - libbluray
       - libdvdcss
 
-  # cleanup
-  - type: rpm-ostree
-    remove:
-      - gnome-session-xsession
-
   # flatpaks
   - type: default-flatpaks
     notify: true
@@ -89,6 +84,10 @@ modules:
     include:
       - gnome_settings.gschema.override
 
+# cleanning
+  #- type: rpm-ostree
+  #  remove:
+  #    
 
   # signing    
   - type: signing
