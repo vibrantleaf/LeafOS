@@ -77,7 +77,6 @@ modules:
       - 4655
       - 6784
       - 3733
-      - 5547
       - 7867
       - 4691
   - type: gschema-overrides
