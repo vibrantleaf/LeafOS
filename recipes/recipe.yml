@@ -63,7 +63,7 @@ modules:
     system:
       install:
         - org.mozilla.firefox
-        - org.libreoffice.libreoffice
+        - org.libreoffice.LibreOffice
         - org.localsend.localsend_app
         - org.gnome.Geary
         - dev.geopjr.Collision
