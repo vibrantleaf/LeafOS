@@ -59,7 +59,7 @@ modules:
   # cleanup
   - type: rpm-ostree
     remove:
-      - gnome-classic-xsession
+      - gnome-xsession
 
   # flatpaks
   - type: default-flatpaks
