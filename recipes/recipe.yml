@@ -22,7 +22,7 @@ modules:
       - virt-manager
       - virt-viewer
       - libguestfs-tools
-      - python3-libgeustfs
+      - ython3-libguestfs
       - virt-top
       - swtpm
       - gnome-boxes
