@@ -16,8 +16,7 @@ modules:
 
   # just files
   - type: justfiles
-    #validate: true
-    validate: false
+    validate: true
     include:
       - morgi-gwyrdd-generic-hostname.just
   
