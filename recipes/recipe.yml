@@ -107,7 +107,7 @@ modules:
       - gnome-shell-extension-compiz-windows-effect
       - rom-properties-gtk3
       - steamdeck-backgrounds
-      - mediawriter
+      #- mediawriter
   - type: script
     snippets:
       - "rm -rfv /var/cache/*"
