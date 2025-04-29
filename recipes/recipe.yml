@@ -106,9 +106,6 @@ modules:
       - rom-properties-gtk3
       - steamdeck-backgrounds
       #- mediawriter
-  - type: script
-    snippets:
-      - "rm -rfv /tmp/*"
       
   # signing    
   - type: signing
