@@ -38,22 +38,21 @@ modules:
       - bridge-utils
       - gnome-boxes
   
-  # blue-build cli
+  # bluebuild cli
   - type: copy
-    from: ghcr.io/blue-build/cli:latest-installer
+    from: ghcr.io/blue-build/cli:latest
     src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
-    
   - type: script
     snippets:
       - "chmod +x /usr/bin/bluebuild"
+      - "bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild"
+      - "bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish"
 
   # codecs
   - type: rpm-ostree
     install:
       - rpmfusion-free-release-tainted
-  - type: rpm-ostree
-    install:
       - rpmfusion-nonfree-release-tainted
   - type: rpm-ostree
     install:
@@ -76,7 +75,6 @@ modules:
         - org.mozilla.firefox
         - org.libreoffice.LibreOffice
         - org.localsend.localsend_app
-        - org.gnome.Geary
         - dev.geopjr.Collision
         - org.gnome.World.Secrets
         - com.belmoussaoui.Authenticator
@@ -110,4 +108,3 @@ modules:
       
   # signing    
   - type: signing
-
