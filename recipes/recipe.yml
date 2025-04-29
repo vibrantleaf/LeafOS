@@ -1,6 +1,6 @@
 ---
 name: morgi-gwyrdd
-description: This is my personal OS image.
+description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
