@@ -9,6 +9,10 @@ modules:
       - source: system
         destination: /
 
+  #- type: containerfile
+  #  snippets:
+  #    -
+
   # virtualisation stack
   - type: rpm-ostree
     repos:
@@ -84,10 +88,24 @@ modules:
       - gnome_settings.gschema.override
 
 # cleanning
-  #- type: rpm-ostree
-  #  remove:
-  #    
-
+  - type: rpm-ostree
+    remove:
+      - lutris
+      - wine
+      - uwu-launcher
+      - gnome-shell-extension-hotedge
+      - gnome-shell-extension-bazzite-menu
+      - gnome-shell-extension-just-perfection
+      - gnome-shell-extension-compiz-alike-magic-lamp-effect
+      - gnome-shell-extension-compiz-windows-effect
+      - gnome-shell-extension-caribou-blocker
+      - rom-properties-gtk3
+      - steamdeck-backgrounds
+  - type: script
+    snippets:
+      - "rm -rfv /var/cache/*"
+      - "rm -rfv /tmp/*"    
+      
   # signing    
   - type: signing
 
