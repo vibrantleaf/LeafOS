@@ -108,7 +108,8 @@ modules:
       #- mediawriter
   - type: script
     snippets:
-      - "rm -rfv /var/cache/*"
+      - rpm-ostree cleanup
+      #- "rm -rfv /var/cache/*"
       - "rm -rfv /tmp/*"
       
   # signing    
