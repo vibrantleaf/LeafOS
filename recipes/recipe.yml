@@ -41,8 +41,9 @@ modules:
   # blue-build cli
   - type: copy
     from: ghcr.io/blue-build/cli:latest-installer
-    src: /bin/bluebuild
+    src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
+    
   - type: script
     snippets:
       - "chmod +x /usr/bin/bluebuild"
