@@ -99,7 +99,6 @@ modules:
     remove:
       - lutris
       - wine
-      - umu-launcher
       - gnome-shell-extension-hotedge
       - gnome-shell-extension-bazzite-menu
       - gnome-shell-extension-just-perfection
