@@ -93,6 +93,18 @@ modules:
     include:
       - gnome_settings.gschema.override
 
+# bluefin Wallpapers
+- type: copy
+    from: ghcr.io/ublue-os/bluefin:stable
+    src: /usr/share/backgrounds/bluefin
+    dest: /usr/share/backgrounds/bluefin
+
+# Aruroa Wallpapers
+- type: copy
+    from: ghcr.io/ublue-os/aurora:stable
+    src: /usr/share/backgrounds/aurora
+    dest: /usr/share/backgrounds/auroa
+
 # cleanning
   - type: rpm-ostree
     remove:
