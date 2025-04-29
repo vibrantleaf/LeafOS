@@ -105,7 +105,6 @@ modules:
       - gnome-shell-extension-just-perfection
       - gnome-shell-extension-compiz-alike-magic-lamp-effect
       - gnome-shell-extension-compiz-windows-effect
-      - gnome-shell-extension-caribou-blocker
       - rom-properties-gtk3
       - steamdeck-backgrounds
       - mediawriter
