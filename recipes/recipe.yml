@@ -9,10 +9,17 @@ modules:
       - source: system
         destination: /
 
+  # 
   #- type: containerfile
   #  snippets:
   #    -
 
+  # just files
+  - type: justfiles
+    validate: true
+    include:
+      - morgi-gwyrdd-generic-hostname.just
+  
   # virtualisation stack
   - type: rpm-ostree
     repos:
@@ -35,10 +42,9 @@ modules:
   - type: copy
     from: ghcr.io/blue-build/cli:latest-installer
     src: /out/bluebuild
-    dest: /opt/bluebuild
+    dest: /usr/bin/bluebuild
   - type: script
     snippets:
-      - "mv -v /opt/bluebuild /usr/bin/"
       - "chmod +x /usr/bin/bluebuild"
 
   # codecs
@@ -74,6 +80,7 @@ modules:
         - org.gnome.World.Secrets
         - com.belmoussaoui.Authenticator
         - com.github.tchx84.Flatseal
+        - io.gitlab.adhami3310.Impression
 
   # GNOME
   - type: gnome-extensions
@@ -101,10 +108,11 @@ modules:
       - gnome-shell-extension-caribou-blocker
       - rom-properties-gtk3
       - steamdeck-backgrounds
+      - mediawriter
   - type: script
     snippets:
       - "rm -rfv /var/cache/*"
-      - "rm -rfv /tmp/*"    
+      - "rm -rfv /tmp/*"
       
   # signing    
   - type: signing
