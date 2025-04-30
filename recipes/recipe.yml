@@ -9,18 +9,13 @@ modules:
       - source: system
         destination: /
 
-  # 
-  #- type: containerfile
-  #  snippets:
-  #    -
-
-  # just files
+  # Just Files
   - type: justfiles
     validate: true
     include:
       - morgi-gwyrdd-generic-hostname.just
   
-  # virtualisation stack
+  # Virtualisation Stack
   - type: rpm-ostree
     repos:
       - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
@@ -38,7 +33,7 @@ modules:
       - bridge-utils
       - gnome-boxes
   
-  # bluebuild cli
+  # Bluebuild CLI
   - type: copy
     from: ghcr.io/blue-build/cli:latest
     src: /usr/bin/bluebuild
@@ -47,7 +42,7 @@ modules:
     snippets:
       - "chmod +x /usr/bin/bluebuild"
 
-  # codecs
+  # Codecs
   - type: rpm-ostree
     install:
       - rpmfusion-free-release-tainted
@@ -64,7 +59,7 @@ modules:
       - libbluray
       - libdvdcss
 
-  # flatpaks
+  # Flatpaks
   - type: default-flatpaks
     notify: true
     user: {}
@@ -79,7 +74,7 @@ modules:
         - com.github.tchx84.Flatseal
         - io.gitlab.adhami3310.Impression
 
-  # GNOME
+  # GNOME tweaks
   - type: gnome-extensions
     install:
       - 4655 # Date Menu Formatter
@@ -92,7 +87,7 @@ modules:
     include:
       - gnome_settings.gschema.override
       
-  # bluefin Wallpapers
+  # Bluefin Wallpapers
   - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/backgrounds/bluefin
@@ -104,7 +99,7 @@ modules:
     src: /usr/share/backgrounds/aurora
     dest: /usr/share/backgrounds/auroa
 
-# cleanning
+# Cleanning
   - type: rpm-ostree
     remove:
       - lutris
@@ -117,5 +112,5 @@ modules:
       - steamdeck-backgrounds
       #- mediawriter
       
-  # signing    
+  # Signing    
   - type: signing
