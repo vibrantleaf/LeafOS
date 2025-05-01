@@ -36,7 +36,7 @@ modules:
   # Vibrant Updater
   - type: rpm-ostree
     install:
-      - go
+      #- go
       - git
   - type: script
     snippets:
@@ -126,7 +126,7 @@ modules:
       - gnome-shell-extension-compiz-windows-effect
       - rom-properties-gtk3
       - steamdeck-backgrounds
-      - go
+      #- go
       #- mediawriter
       
   # Signing    
