@@ -1,9 +1,9 @@
 # Morgi Gwyrdd
  &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml)
 
-Just my personal fork of Bazzite.
+Just my personal fork of [Bazzite](https://bazzite.gg/).
 
-Built using [BlueBuild](https://blue-build.org/) and [Universal Blue](https://universal-blue.org/)'s [bazzite](https://bazzite.gg/).
+Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://universal-blue.org/).
 
 ## Installation
 
