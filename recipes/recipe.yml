@@ -24,6 +24,7 @@ modules:
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
       - qemu-kvm
+      - edk2-ovmf
       - virt-manager
       - virt-viewer
       - libguestfs-tools
