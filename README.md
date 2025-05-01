@@ -16,7 +16,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/vibrantleaf/morgi-gwyrdd:latest
   ```
-- Reboot to complete the rebase: (if needed)
+- Reboot to complete the rebase: *(if needed)*
   ```
   systemctl reboot
   ```
