@@ -41,7 +41,7 @@ modules:
   - type: script
     snippets:
       - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/vibrant-updater"
-      - "go build -o /usr/bin/vibrant-updater /opt/vibrant-updater/src/vibrant_updater.go"
+      - "curl -Lo /usr/bin/vibrant-updater https://codeberg.org/vibrantleaf/vibrant-updater/releases/download/1.0.12-2025-01-26/vibrant-updater.linux.x86_64.1.0.12-2025-01-26"
       - "chmod +x /usr/bin/vibrant-updater"
       - "mkdir -p /usr/share/vibrant-updater/"
       - "install -Dm 644 /opt/vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
