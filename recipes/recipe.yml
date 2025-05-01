@@ -4,10 +4,10 @@ description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: /
+  #- type: files
+  #   files:
+  #    - source: system
+  #      destination: /
 
   # Just Files
   - type: justfiles
