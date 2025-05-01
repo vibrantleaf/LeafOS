@@ -1,8 +1,9 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# morgi-gwyrdd
+ &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+Just my personal fork of Bazzite.
 
-After setup, it is recommended you update this README to describe your custom image.
+Built using [BlueBuild](https://blue-build.org/) and [Universal Blue](https://universal-blue.org/)'s [bazzite](https://bazzite.gg/).
 
 ## Installation
 
