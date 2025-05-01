@@ -48,9 +48,6 @@ modules:
       - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       - "rm -rfv /opt/vibrant-updater"
-  - type: rpm-ostree
-    remove:
-      - go
   
   # Bluebuild CLI
   - type: copy
@@ -129,6 +126,7 @@ modules:
       - gnome-shell-extension-compiz-windows-effect
       - rom-properties-gtk3
       - steamdeck-backgrounds
+      - go
       #- mediawriter
       
   # Signing    
