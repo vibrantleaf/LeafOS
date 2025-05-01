@@ -32,6 +32,25 @@ modules:
       - swtpm
       - bridge-utils
       - gnome-boxes
+
+  # Vibrant Updater
+  - type: rpm-ostree
+    install:
+      - go
+      - git
+  - type: script
+    snippets:
+      - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/vibrant-updater"
+      - "go build -o /usr/bin/vibrant-updater /opt/vibrant-updater/src/vibrant_updater.go"
+      - "chmod +x /usr/bin/vibrant-updater"
+      - "mkdir -p /usr/share/vibrant-updater/"
+      - "install -Dm 644 /opt/vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
+      - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
+      - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
+      - "rm -rfv /opt/vibrant-updater"
+  - type: rpm-ostree
+    remove:
+      - go
   
   # Bluebuild CLI
   - type: copy
