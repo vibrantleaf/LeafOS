@@ -12,7 +12,7 @@ Built using [BlueBuild](https://blue-build.org/) and [Universal Blue](https://un
 
 To rebase an existing atomic Fedora installation to the latest build:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any Universal Blue's images.)*
+- First rebase to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/vibrantleaf/morgi-gwyrdd:latest
   ```
