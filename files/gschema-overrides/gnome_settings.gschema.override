@@ -59,7 +59,7 @@ font-hinting='slight'
 font-rgba-order='rgb'
 
 [org.gnome.Ptyxis]
-font-name='Adwaita Mono 16
+font-name='Adwaita Mono 16'
 interface-style='light'
 new-tab-position='last'
 cursor-shape='block'
