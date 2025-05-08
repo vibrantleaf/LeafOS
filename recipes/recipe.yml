@@ -159,7 +159,7 @@ modules:
     src: /usr/share/backgrounds/aurora
     dest: /usr/share/backgrounds/aurora
 
-# Cleanning.
+  # Cleanning.
   - type: rpm-ostree
     remove:
       - "cmake"
@@ -205,7 +205,7 @@ modules:
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
   
-  # great gnome app recommendations.
+  # great gnome app recommendations
   - type: yafti
     custom-flatpaks:
       - GNOME Web (Web Browser): org.gnome.Epiphany
