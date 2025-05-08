@@ -99,7 +99,7 @@ modules:
       - 4655 # Date Menu Formatter
       - 6784 # Wiggle
       - 3733 # Tiling Assistant
-      - 4269 # Alphabetical App Grid
+      - 7867 # App Grid Wizard
       - 4691 # PiP on top
       - 5940 # Quick Settings Audio Panel
   - type: gschema-overrides
