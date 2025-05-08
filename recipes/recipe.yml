@@ -195,8 +195,8 @@ modules:
       - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-compiz-windows-effect"
       - "rom-properties-gtk3"
-      - "firefox"
-      - "firefox-langpacks"
+      #- "firefox"
+      #- "firefox-langpacks"
       #- "steamdeck-backgrounds"
       #- mediawriter
       
