@@ -4,7 +4,7 @@ description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
-  #- type: files
+  #- type: filesf
   #   files:
   #    - source: system
   #      destination: /
@@ -16,9 +16,11 @@ modules:
       - morgi-gwyrdd-generic-hostname.just
   
   # Virtualisation Stack
-  - type: rpm-ostree
+  - type: dnf
     repos:
       - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
+    group-install:
+      - virtualization
     install:
       - virt-install
       - libvirt-daemon-config-network
@@ -35,7 +37,7 @@ modules:
       - gnome-boxes
 
   # Vibrant Updater
-  - type: rpm-ostree
+  - type: dnf
     install:
       #- go
       - git
@@ -60,11 +62,11 @@ modules:
       - "chmod +x /usr/bin/bluebuild"
 
   # Codecs
-  - type: rpm-ostree
+  - type: dnf
     install:
       - rpmfusion-free-release-tainted
       - rpmfusion-nonfree-release-tainted
-  - type: rpm-ostree
+  - type: dnf
     install:
       - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free-extras
@@ -117,7 +119,7 @@ modules:
     dest: /usr/share/backgrounds/auroa
 
 # Cleanning
-  - type: rpm-ostree
+  - type: dnf
     remove:
       - lutris
       - gnome-shell-extension-hotedge
