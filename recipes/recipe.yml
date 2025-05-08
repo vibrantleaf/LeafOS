@@ -18,8 +18,6 @@ modules:
   
   # Virtualisation Stack.
   - type: rpm-ostree
-  #  repos:
-  #    - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
     install:
       - "virt-install"
       - "libvirt-daemon-config-network"
@@ -58,12 +56,10 @@ modules:
       - "pulseaudio-libs-devel"
       - "libsamplerate-devel"
       - "go"
-  #- type: akmods
-  #  install:
-  #    - "kvmfr"
   
   - type: script
     snippets:
+      # looking-glass
       - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
       - "(cd /opt/io.looking-glass.client/;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
       - "mkdir -p /opt/io.looking-glass.client/client/build"
@@ -76,20 +72,14 @@ modules:
       - "install -Dm 644 /opt/io.looking-glass.client/AUTHORS /usr/share/doc/looking-glass-client/AUTHORS"
       - "install -Dm 644 /opt/io.looking-glass.client/CONTRIBUTORS /usr/share/doc/looking-glass-client/CONTRIBUTORS"
       - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
-      #- "(cd /opt/io.looking-glass.clinet/client/build;make install)"
-  
-  # Vibrant Updater.
-  - type: script
-    snippets:
+      # vibrant-updater.
       - "git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "(cd /opt/org.codeberg.vibrantleaf.vibrant-updater;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
-      #- "curl -Lo /usr/bin/vibrant-updater https://codeberg.org/vibrantleaf/vibrant-updater/releases/download/1.0.12-2025-01-26/vibrant-updater.linux.x86_64.1.0.12-2025-01-26"
       - "go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go"
       - "mkdir -p /usr/share/vibrant-updater/"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
-      #- "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.desktop /usr/share/applications/VibrantUpdater.desktop"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
   
   # Bluebuild CLI.
@@ -103,6 +93,7 @@ modules:
     install:
       - "rpmfusion-free-release-tainted"
       - "rpmfusion-nonfree-release-tainted"
+
   - type: rpm-ostree
     install:
       - "gstreamer1-plugin-libav"
@@ -143,6 +134,7 @@ modules:
       - 7867 # App Grid Wizard
       - 4691 # PiP on top
       - 5940 # Quick Settings Audio Panel
+
   - type: gschema-overrides
     include:
       - gnome_settings.gschema.override
@@ -159,52 +151,6 @@ modules:
     src: /usr/share/backgrounds/aurora
     dest: /usr/share/backgrounds/aurora
 
-  # Cleanning.
-  - type: rpm-ostree
-    remove:
-      - "cmake"
-      - "gcc-c++"
-      - "libglvnd-devel"
-      - "cmake-data"
-      - "spice-protocol"
-      - "nettle-devel"
-      - "binutils-devel"
-      - "libXi-devel"
-      - "libXinerama-devel"
-      - "libXcursor-devel"
-      - "libXpresent-devel"
-      - "libxkbcommon-x11-devel"
-      - "wayland-devel"
-      - "wayland-protocols-devel"
-      - "libXScrnSaver-devel"
-      - "libXrandr-devel"
-      - "libdecor-devel"
-      #- "pipewire-devel"
-      - "pulseaudio-libs-devel"
-      - "libsamplerate-devel"
-      #- "go"
-      - "lutris"
-      - "gnome-shell-extension-hotedge"
-      - "gnome-shell-extension-bazzite-menu"
-      - "gnome-shell-extension-just-perfection"
-      - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
-      - "gnome-shell-extension-compiz-windows-effect"
-      - "rom-properties-gtk3"
-      #- "gnome-tweaks"
-      #- "firefox"
-      #- "firefox-langpacks"
-      #- "steamdeck-backgrounds"
-      #- mediawriter
-  - type: script
-    snippets:
-      - "chmod 644 /usr/share/applications/looking-glass.desktop"
-      - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
-      - "chmod +x /usr/bin/bluebuild"
-      - "chmod +x /usr/bin/looking-glass-client"
-      - "chmod +x /usr/bin/vibrant-updater"
-      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
-      - "rm -rfv /opt/io.looking-glass.client"
-  
   # great gnome app recommendations
   - type: yafti
     custom-flatpaks:
@@ -297,5 +243,52 @@ modules:
       - Cozy (Audio Book Reader): com.github.geigi.cozy
       - Foliate (eBook Reader): com.github.johnfactotum.Foliate
   
+  # Cleanning.
+  - type: rpm-ostree
+    remove:
+      - "cmake"
+      - "gcc-c++"
+      - "libglvnd-devel"
+      - "cmake-data"
+      - "spice-protocol"
+      - "nettle-devel"
+      - "binutils-devel"
+      - "libXi-devel"
+      - "libXinerama-devel"
+      - "libXcursor-devel"
+      - "libXpresent-devel"
+      - "libxkbcommon-x11-devel"
+      - "wayland-devel"
+      - "wayland-protocols-devel"
+      - "libXScrnSaver-devel"
+      - "libXrandr-devel"
+      - "libdecor-devel"
+      #- "pipewire-devel"
+      - "pulseaudio-libs-devel"
+      - "libsamplerate-devel"
+      #- "go"
+      - "lutris"
+      - "gnome-shell-extension-hotedge"
+      - "gnome-shell-extension-bazzite-menu"
+      - "gnome-shell-extension-just-perfection"
+      - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
+      - "gnome-shell-extension-compiz-windows-effect"
+      - "rom-properties-gtk3"
+      #- "gnome-tweaks"
+      #- "firefox"
+      #- "firefox-langpacks"
+      #- "steamdeck-backgrounds"
+      #- mediawriter
+
+  - type: script
+    snippets:
+      - "chmod 644 /usr/share/applications/looking-glass.desktop"
+      - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
+      - "chmod +x /usr/bin/bluebuild"
+      - "chmod +x /usr/bin/looking-glass-client"
+      - "chmod +x /usr/bin/vibrant-updater"
+      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
+      - "rm -rfv /opt/io.looking-glass.client"
+
   # Signing.
   - type: signing
