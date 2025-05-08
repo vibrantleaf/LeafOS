@@ -20,27 +20,27 @@ modules:
     repos:
       - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
     group-install:
-      - virtualization
+      - "virtualization"
     install:
-      - virt-install
-      - libvirt-daemon-config-network
-      - libvirt-daemon-kvm
-      - qemu-kvm
-      - edk2-ovmf
-      - virt-manager
-      - virt-viewer
-      - libguestfs-tools
-      - python3-libguestfs
-      - virt-top
-      - swtpm
-      - bridge-utils
-      - gnome-boxes
-
+      - "virt-install"
+      - "libvirt-daemon-config-network"
+      - "libvirt-daemon-kvm"
+      - "edk2-ovmf"
+      - "virt-manager"
+      - "virt-viewer"
+      - "libguestfs-tools"
+      - "python3-libguestfs"
+      - "virt-top"
+      - "swtpm"
+      - "bridge-utils"
+      - "gnome-boxes"
+  - type: akmods
+    install:
+      - "kvmfr"
   # Vibrant Updater
   - type: dnf
     install:
-      #- go
-      - git
+      - "git"
   - type: script
     snippets:
       - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/vibrant-updater"
@@ -64,19 +64,19 @@ modules:
   # Codecs
   - type: dnf
     install:
-      - rpmfusion-free-release-tainted
-      - rpmfusion-nonfree-release-tainted
+      - "rpmfusion-free-release-tainted"
+      - "rpmfusion-nonfree-release-tainted"
   - type: dnf
     install:
-      - gstreamer1-plugin-libav
-      - gstreamer1-plugins-bad-free-extras
-      - gstreamer1-plugins-bad-freeworld
-      - gstreamer1-plugins-ugly
-      - gstreamer1-vaapi
-      - libaacs
-      - libbdplus
-      - libbluray
-      - libdvdcss
+      - "gstreamer1-plugin-libav"
+      - "gstreamer1-plugins-bad-free-extras"
+      - "gstreamer1-plugins-bad-freeworld"
+      - "gstreamer1-plugins-ugly"
+      - "gstreamer1-vaapi"
+      - "libaacs"
+      - "libbdplus"
+      - "libbluray"
+      - "libdvdcss"
 
   # Flatpaks
   - type: default-flatpaks
@@ -121,15 +121,14 @@ modules:
 # Cleanning
   - type: dnf
     remove:
-      - lutris
-      - gnome-shell-extension-hotedge
-      - gnome-shell-extension-bazzite-menu
-      - gnome-shell-extension-just-perfection
-      - gnome-shell-extension-compiz-alike-magic-lamp-effect
-      - gnome-shell-extension-compiz-windows-effect
-      - rom-properties-gtk3
-      - steamdeck-backgrounds
-      #- go
+      - "lutris"
+      - "gnome-shell-extension-hotedge"
+      - "gnome-shell-extension-bazzite-menu"
+      - "gnome-shell-extension-just-perfection"
+      - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
+      - "gnome-shell-extension-compiz-windows-effect"
+      - "rom-properties-gtk3"
+      - "steamdeck-backgrounds"
       #- mediawriter
       
   # Signing    
