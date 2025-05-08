@@ -4,18 +4,19 @@ description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
+  # Copy files to the image.
   - type: files
-     files:
+    files:
       - source: system
         destination: /
 
-  # Just Files
+  # Just Files.
   - type: justfiles
     validate: true
     include:
       - morgi-gwyrdd-generic-hostname.just
   
-  # Virtualisation Stack
+  # Virtualisation Stack.
   - type: rpm-ostree
   #  repos:
   #    - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
@@ -76,7 +77,7 @@ modules:
       - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
       #- "(cd /opt/io.looking-glass.clinet/client/build;make install)"
   
-  # Vibrant Updater
+  # Vibrant Updater.
   - type: script
     snippets:
       - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
@@ -87,13 +88,13 @@ modules:
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       
   
-  # Bluebuild CLI
+  # Bluebuild CLI.
   - type: copy
     from: ghcr.io/blue-build/cli:latest
     src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
 
-  # Codecs
+  # Codecs.
   - type: rpm-ostree
     install:
       - "rpmfusion-free-release-tainted"
@@ -111,7 +112,7 @@ modules:
       - "libbluray"
       - "libdvdcss"
 
-  # Default Flatpaks
+  # Default Flatpaks.
   - type: default-flatpaks
     notify: true
     user: {}
@@ -130,7 +131,7 @@ modules:
         - com.github.marhkb.Pods
         - io.github.dvlv.boxbuddyrs
 
-  # Set GNOME tweaks
+  # Set GNOME tweaks.
   - type: gnome-extensions
     install:
       - 4655 # Date Menu Formatter
@@ -143,19 +144,19 @@ modules:
     include:
       - gnome_settings.gschema.override
       
-  # Get Bluefin Wallpapers
+  # Get Bluefin Wallpapers.
   - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/backgrounds/bluefin
     dest: /usr/share/backgrounds/bluefin
 
-  # Get Aruroa Wallpapers
+  # Get Aruroa Wallpapers.
   - type: copy
     from: ghcr.io/ublue-os/aurora:stable
     src: /usr/share/backgrounds/aurora
     dest: /usr/share/backgrounds/aurora
 
-# Cleanning
+# Cleanning.
   - type: rpm-ostree
     remove:
       - "cmake"
@@ -198,7 +199,7 @@ modules:
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
       
-  # great gnome app recommendations 
+  # great gnome app recommendations.
   - type: yafti
     custom-flatpaks:
       - GNOME Web (Web Browser): org.gnome.Epiphany
@@ -290,5 +291,5 @@ modules:
       - Cozy (Audio Book Reader): com.github.geigi.cozy
       - Foliate (eBook Reader): com.github.johnfactotum.Foliate
   
-  # Signing    
+  # Signing.
   - type: signing
