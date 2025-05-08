@@ -84,13 +84,13 @@ modules:
       - "git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "(cd /opt/org.codeberg.vibrantleaf.vibrant-updater;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
       #- "curl -Lo /usr/bin/vibrant-updater https://codeberg.org/vibrantleaf/vibrant-updater/releases/download/1.0.12-2025-01-26/vibrant-updater.linux.x86_64.1.0.12-2025-01-26"
-      - "go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go
+      - "go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go"
       - "mkdir -p /usr/share/vibrant-updater/"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       #- "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.desktop /usr/share/applications/VibrantUpdater.desktop"
-      
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
   
   # Bluebuild CLI.
   - type: copy
@@ -182,6 +182,7 @@ modules:
       #- "pipewire-devel"
       - "pulseaudio-libs-devel"
       - "libsamplerate-devel"
+      - "go"
       - "lutris"
       - "gnome-shell-extension-hotedge"
       - "gnome-shell-extension-bazzite-menu"
@@ -196,12 +197,14 @@ modules:
       #- mediawriter
   - type: script
     snippets:
+      - "chmod 644 /usr/share/applications/looking-glass.desktop"
+      - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
       - "chmod +x /usr/bin/bluebuild"
       - "chmod +x /usr/bin/looking-glass-client"
       - "chmod +x /usr/bin/vibrant-updater"
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
-      
+  
   # great gnome app recommendations.
   - type: yafti
     custom-flatpaks:
