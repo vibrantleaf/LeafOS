@@ -59,13 +59,14 @@ modules:
      - "dejavu-sans-mono-fonts"
      - "libdecor-devel"
      #- "pipewire-devel"
+     - "pulseaudio-libs-devel"
      - "libsamplerate-devel"
   - type: script
     snippets:
       - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
       - "(cd /opt/io.looking-glass.client/;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
       - "mkdir -p /opt/io.looking-glass.client/client/build"
-      - "(cd /opt/io.looking-glass.client/client/build;cmake ../)"
+      - "(cd /opt/io.looking-glass.client/client/build;cmake -DENABLE_PIPEWIRE=no ../)"
       - "(cd /opt/io.looking-glass.client/client/build;make)"
       - "(cd /opt/io.looking-glass.clinet/client/build;make install)"
       - "rm -rfv /opt/io.looking-glass.client"
@@ -92,6 +93,7 @@ modules:
      - "libXrandr-devel"
      - "libdecor-devel"
      #- "pipewire-devel"
+     - "pulseaudio-libs-devel"
      - "libsamplerate-devel"
   
   # Vibrant Updater
