@@ -182,7 +182,7 @@ modules:
       #- "pipewire-devel"
       - "pulseaudio-libs-devel"
       - "libsamplerate-devel"
-      - "go"
+      #- "go"
       - "lutris"
       - "gnome-shell-extension-hotedge"
       - "gnome-shell-extension-bazzite-menu"
