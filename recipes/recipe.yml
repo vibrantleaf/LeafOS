@@ -4,10 +4,10 @@ description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
-  #- type: filesf
-  #   files:
-  #    - source: system
-  #      destination: /
+  - type: files
+     files:
+      - source: system
+        destination: /
 
   # Just Files
   - type: justfiles
@@ -32,35 +32,34 @@ modules:
       - "swtpm"
       - "bridge-utils"
       - "gnome-boxes"
+      - "cmake"
+      - "gcc"
+      - "gcc-c++"
+      - "libglvnd-devel"
+      - "fontconfig-devel"
+      - "spice-protocol"
+      - "make"
+      - "nettle-devel"
+      - "pkgconf-pkg-config"
+      - "binutils-devel"
+      - "libXi-devel"
+      - "libXinerama-devel"
+      - "libXcursor-devel"
+      - "libXpresent-devel"
+      - "libxkbcommon-x11-devel"
+      - "wayland-devel"
+      - "wayland-protocols-devel"
+      - "libXScrnSaver-devel"
+      - "libXrandr-devel"
+      - "dejavu-sans-mono-fonts"
+      - "libdecor-devel"
+      #- "pipewire-devel"
+      - "pulseaudio-libs-devel"
+      - "libsamplerate-devel"
   #- type: akmods
   #  install:
   #    - "kvmfr"
-  - type: rpm-ostree
-    install:
-     - "cmake"
-     - "gcc"
-     - "gcc-c++"
-     - "libglvnd-devel"
-     - "fontconfig-devel"
-     - "spice-protocol"
-     - "make"
-     - "nettle-devel"
-     - "pkgconf-pkg-config"
-     - "binutils-devel"
-     - "libXi-devel"
-     - "libXinerama-devel"
-     - "libXcursor-devel"
-     - "libXpresent-devel"
-     - "libxkbcommon-x11-devel"
-     - "wayland-devel"
-     - "wayland-protocols-devel"
-     - "libXScrnSaver-devel"
-     - "libXrandr-devel"
-     - "dejavu-sans-mono-fonts"
-     - "libdecor-devel"
-     #- "pipewire-devel"
-     - "pulseaudio-libs-devel"
-     - "libsamplerate-devel"
+  
   - type: script
     snippets:
       - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
@@ -68,10 +67,7 @@ modules:
       - "mkdir -p /opt/io.looking-glass.client/client/build"
       - "(cd /opt/io.looking-glass.client/client/build;cmake -DENABLE_PIPEWIRE=no -DENABLE_LIBDECOR=ON -DCMAKE_INSTALL_PREFIX=/usr ../)"
       - "(cd /opt/io.looking-glass.client/client/build;make)"
-      - "tree /opt/io.looking-glass.client/client/build"
-      - "cat /opt/io.looking-glass.client/client/build/Makefile"
       - "mkdir -p /usr/share/doc/looking-glass-client/"
-      #- "mkdir -p /usr/share/looking-glass-client/"
       - "install -Dm 644 /opt/io.looking-glass.client/client/build/looking-glass-client /usr/bin/looking-glass-client"
       - "install -Dm 644 /opt/io.looking-glass.client/README.md /usr/share/doc/looking-glass-client/README.md"
       - "install -Dm 644 /opt/io.looking-glass.client/LICENSE /usr/share/doc/looking-glass-client/LICENSE"
@@ -79,51 +75,23 @@ modules:
       - "install -Dm 644 /opt/io.looking-glass.client/CONTRIBUTORS /usr/share/doc/looking-glass-client/CONTRIBUTORS"
       - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
       #- "(cd /opt/io.looking-glass.clinet/client/build;make install)"
-      - "chmod +x /usr/bin/looking-glass-client"
-      - "rm -rfv /opt/io.looking-glass.client"
-  - type: rpm-ostree
-    remove:
-     - "cmake"
-     - "gcc-c++"
-     - "libglvnd-devel"
-     - "cmake-data"
-     - "spice-protocol"
-     - "nettle-devel"
-     - "binutils-devel"
-     - "libXi-devel"
-     - "libXinerama-devel"
-     - "libXcursor-devel"
-     - "libXpresent-devel"
-     - "libxkbcommon-x11-devel"
-     - "wayland-devel"
-     - "wayland-protocols-devel"
-     - "libXScrnSaver-devel"
-     - "libXrandr-devel"
-     - "libdecor-devel"
-     #- "pipewire-devel"
-     - "pulseaudio-libs-devel"
-     - "libsamplerate-devel"
   
   # Vibrant Updater
   - type: script
     snippets:
       - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "curl -Lo /usr/bin/vibrant-updater https://codeberg.org/vibrantleaf/vibrant-updater/releases/download/1.0.12-2025-01-26/vibrant-updater.linux.x86_64.1.0.12-2025-01-26"
-      - "chmod +x /usr/bin/vibrant-updater"
       - "mkdir -p /usr/share/vibrant-updater/"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
-      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
+      
   
   # Bluebuild CLI
   - type: copy
     from: ghcr.io/blue-build/cli:latest
     src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
-  - type: script
-    snippets:
-      - "chmod +x /usr/bin/bluebuild"
 
   # Codecs
   - type: rpm-ostree
@@ -136,6 +104,7 @@ modules:
       - "gstreamer1-plugins-bad-free-extras"
       - "gstreamer1-plugins-bad-freeworld"
       - "gstreamer1-plugins-ugly"
+      - "gstreamer1-plugins-bad-nonfree"
       - "gstreamer1-vaapi"
       - "libaacs"
       - "libbdplus"
@@ -160,7 +129,6 @@ modules:
         - page.tesk.Refine
         - com.github.marhkb.Pods
         - io.github.dvlv.boxbuddyrs
-  
 
   # Set GNOME tweaks
   - type: gnome-extensions
@@ -190,6 +158,26 @@ modules:
 # Cleanning
   - type: rpm-ostree
     remove:
+      - "cmake"
+      - "gcc-c++"
+      - "libglvnd-devel"
+      - "cmake-data"
+      - "spice-protocol"
+      - "nettle-devel"
+      - "binutils-devel"
+      - "libXi-devel"
+      - "libXinerama-devel"
+      - "libXcursor-devel"
+      - "libXpresent-devel"
+      - "libxkbcommon-x11-devel"
+      - "wayland-devel"
+      - "wayland-protocols-devel"
+      - "libXScrnSaver-devel"
+      - "libXrandr-devel"
+      - "libdecor-devel"
+      #- "pipewire-devel"
+      - "pulseaudio-libs-devel"
+      - "libsamplerate-devel"
       - "lutris"
       - "gnome-shell-extension-hotedge"
       - "gnome-shell-extension-bazzite-menu"
@@ -197,13 +185,20 @@ modules:
       - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-compiz-windows-effect"
       - "rom-properties-gtk3"
-      - "gnome-tweaks"
+      #- "gnome-tweaks"
       #- "firefox"
       #- "firefox-langpacks"
       #- "steamdeck-backgrounds"
       #- mediawriter
-
-  # great gnome apps
+  - type: script
+    snippets:
+      - "chmod +x /usr/bin/bluebuild"
+      - "chmod +x /usr/bin/looking-glass-client"
+      - "chmod +x /usr/bin/vibrant-updater"
+      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
+      - "rm -rfv /opt/io.looking-glass.client"
+      
+  # great gnome app recommendations 
   - type: yafti
     custom-flatpaks:
       - GNOME Web (Web Browser): org.gnome.Epiphany
@@ -224,13 +219,9 @@ modules:
       - GNOME Logs (System Log Viewer): org.gnome.Logs
       - GNOME Builder (Code Editor): org.gnome.Builder
       - GNOME Emblem (Project Logo Creater): org.gnome.design.Emblem
-
-
       - Alpaca (Local Offline AI App): com.jeffser.Alpaca
       - Alpaca Ollama Plugin: com.jeffser.Alpaca.Plugins.Ollama
       - Alpaca AMD plugin: com.jeffser.Alpaca.Plugins.AMD
-
-      
       - Carburetor (TOR Browser): io.frama.tractor.carburetor
       - NewsFlash (RSS Reader): io.gitlab.news_flash.NewsFlash
       - Varia (Download Manager): io.github.giantpinkrobots.varia
@@ -298,7 +289,6 @@ modules:
       - ASCII Draw (ASCII Art Tool): io.github.nokse22.asciidraw
       - Cozy (Audio Book Reader): com.github.geigi.cozy
       - Foliate (eBook Reader): com.github.johnfactotum.Foliate
-      
   
   # Signing    
   - type: signing
