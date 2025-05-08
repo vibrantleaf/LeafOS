@@ -4,5 +4,5 @@ Type=Application
 Name=Looking Glass
 Comment=Looking Glass is an open source application that allows the use of a KVM (Kernel-based Virtual Machine) configured for VGA PCI Pass-through without an attached physical monitor, keyboard or mouse.
 Exec=/usr/bin/looking-glass-client
-Icon=looking-glass
+Icon=io.looking-glass.client
 Categories=Utility;
