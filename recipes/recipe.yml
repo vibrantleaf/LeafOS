@@ -89,7 +89,6 @@ modules:
      - "libglvnd-devel"
      - "fontconfig-devel"
      - "spice-protocol"
-     - "make"
      - "nettle-devel"
      - "pkgconf-pkg-config"
      - "binutils-devel"
