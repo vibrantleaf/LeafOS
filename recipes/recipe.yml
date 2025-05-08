@@ -68,7 +68,6 @@ modules:
       - "mkdir -p /opt/io.looking-glass.client/client/build"
       - "(cd /opt/io.looking-glass.client/client/build;cmake -DENABLE_PIPEWIRE=no -DENABLE_LIBDECOR=ON -DCMAKE_INSTALL_PREFIX=/usr ../)"
       - "(cd /opt/io.looking-glass.client/client/build;make)"
-      - "/opt/io.looking-glass.client/client/build/looking-glass-client --help"
       - "(cd /opt/io.looking-glass.clinet/client/build;make install)"
       - "rm -rfv /opt/io.looking-glass.client"
   - type: rpm-ostree
