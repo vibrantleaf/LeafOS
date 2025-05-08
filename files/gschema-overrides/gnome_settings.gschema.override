@@ -51,15 +51,15 @@ dock-fixed=true
 dock-position='BOTTOM'
 
 [org.gnome.desktop.interface]
-font-name='Inter Variable 13'
-document-font-name='Inter Variable 13'
-monospace-font-name='JetBrains Mono 18'
+font-name='Adwaita Sans 13'
+document-font-name='Adwaita Sans 13'
+monospace-font-name='Adwaita Mono 16'
 font-antialiasing='rgba'
 font-hinting='slight'
 font-rgba-order='rgb'
 
 [org.gnome.Ptyxis]
-font-name='JetBrains Mono 18'
+font-name='Adwaita Mono 16
 interface-style='light'
 new-tab-position='last'
 cursor-shape='block'
