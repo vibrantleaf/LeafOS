@@ -84,13 +84,11 @@ modules:
   - type: rpm-ostree
     remove:
      - "cmake"
-     - "gcc"
      - "gcc-c++"
      - "libglvnd-devel"
-     - "fontconfig-devel"
+     - "cmake-data"
      - "spice-protocol"
      - "nettle-devel"
-     - "pkgconf-pkg-config"
      - "binutils-devel"
      - "libXi-devel"
      - "libXinerama-devel"
