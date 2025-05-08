@@ -58,7 +58,7 @@ modules:
      - "libXrandr-devel"
      - "dejavu-sans-mono-fonts"
      - "libdecor-devel"
-     - "pipewire-devel"
+     #- "pipewire-devel"
      - "libsamplerate-devel"
   - type: script
     snippets:
@@ -91,7 +91,7 @@ modules:
      - "libXScrnSaver-devel"
      - "libXrandr-devel"
      - "libdecor-devel"
-     - "pipewire-devel"
+     #- "pipewire-devel"
      - "libsamplerate-devel"
   
   # Vibrant Updater
