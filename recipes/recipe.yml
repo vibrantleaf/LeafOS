@@ -17,10 +17,8 @@ modules:
   
   # Virtualisation Stack
   - type: rpm-ostree
-    repos:
-      - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
-    group-install:
-      - "virtualization"
+  #  repos:
+  #    - "https://copr.fedorainfracloud.org/coprs/hikariknight/looking-glass-kvmfr/repo/fedora-42/hikariknight-looking-glass-kvmfr-fedora-42.repo"
     install:
       - "virt-install"
       - "libvirt-daemon-config-network"
@@ -34,23 +32,82 @@ modules:
       - "swtpm"
       - "bridge-utils"
       - "gnome-boxes"
-  - type: akmods
+  #- type: akmods
+  #  install:
+  #    - "kvmfr"
+  - type: rpm-ostree
     install:
-      - "kvmfr"
+     - "cmake"
+     - "gcc"
+     - "gcc-c++"
+     - "libglvnd-devel"
+     - "fontconfig-devel"
+     - "spice-protocol"
+     - "make"
+     - "nettle-devel"
+     - "pkgconf-pkg-config"
+     - "binutils-devel"
+     - "libXi-devel"
+     - "libXinerama-devel"
+     - "libXcursor-devel"
+     - "libXpresent-devel"
+     - "libxkbcommon-x11-devel"
+     - "wayland-devel"
+     - "wayland-protocols-devel"
+     - "libXScrnSaver-devel"
+     - "libXrandr-devel"
+     - "dejavu-sans-mono-fonts"
+     - "libdecor-devel"
+     - "pipewire-devel"
+     - "libsamplerate-devel"
+  - type: script
+    snippets:
+      - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
+      - "(cd /opt/io.looking-glass.client/;git checkout $($(git describe --tags '$(git rev-list --tags --max-count=1)'))"
+      - "mkdir -p /opt/io.looking-glass.client/client/build"
+      - "(cd /opt/io.looking-glass.client/client/build;cmake ../)"
+      - "(cd /opt/io.looking-glass.client/client/build;make)"
+      - "(cd /opt/io.looking-glass.clinet/client/build;make install)"
+      - "rm -rfv /opt/io.looking-glass.client"
+  - type: rpm-ostree
+    remove:
+     - "cmake"
+     - "gcc"
+     - "gcc-c++"
+     - "libglvnd-devel"
+     - "fontconfig-devel"
+     - "spice-protocol"
+     - "make"
+     - "nettle-devel"
+     - "pkgconf-pkg-config"
+     - "binutils-devel"
+     - "libXi-devel"
+     - "libXinerama-devel"
+     - "libXcursor-devel"
+     - "libXpresent-devel"
+     - "libxkbcommon-x11-devel"
+     - "wayland-devel"
+     - "wayland-protocols-devel"
+     - "libXScrnSaver-devel"
+     - "libXrandr-devel"
+     - "libdecor-devel"
+     - "pipewire-devel"
+     - "libsamplerate-devel"
+  
   # Vibrant Updater
   - type: rpm-ostree
     install:
       - "git"
   - type: script
     snippets:
-      - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/vibrant-updater"
+      - "git clone --branch 1.0.12-2025-01-26 https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "curl -Lo /usr/bin/vibrant-updater https://codeberg.org/vibrantleaf/vibrant-updater/releases/download/1.0.12-2025-01-26/vibrant-updater.linux.x86_64.1.0.12-2025-01-26"
       - "chmod +x /usr/bin/vibrant-updater"
       - "mkdir -p /usr/share/vibrant-updater/"
-      - "install -Dm 644 /opt/vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
-      - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
-      - "install -Dm 644 /opt/vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
-      - "rm -rfv /opt/vibrant-updater"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
+      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
   
   # Bluebuild CLI
   - type: copy
@@ -78,7 +135,7 @@ modules:
       - "libbluray"
       - "libdvdcss"
 
-  # Flatpaks
+  # Default Flatpaks
   - type: default-flatpaks
     notify: true
     user: {}
@@ -93,7 +150,7 @@ modules:
         - com.github.tchx84.Flatseal
         - io.gitlab.adhami3310.Impression
 
-  # GNOME tweaks
+  # Set GNOME tweaks
   - type: gnome-extensions
     install:
       - 4655 # Date Menu Formatter
@@ -106,17 +163,17 @@ modules:
     include:
       - gnome_settings.gschema.override
       
-  # Bluefin Wallpapers
+  # Get Bluefin Wallpapers
   - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/backgrounds/bluefin
     dest: /usr/share/backgrounds/bluefin
 
-  # Aruroa Wallpapers
+  # Get Aruroa Wallpapers
   - type: copy
     from: ghcr.io/ublue-os/aurora:stable
     src: /usr/share/backgrounds/aurora
-    dest: /usr/share/backgrounds/auroa
+    dest: /usr/share/backgrounds/aurora
 
 # Cleanning
   - type: rpm-ostree
@@ -128,7 +185,9 @@ modules:
       - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-compiz-windows-effect"
       - "rom-properties-gtk3"
-      - "steamdeck-backgrounds"
+      - "firefox"
+      - "firefox-langpacks"
+      #- "steamdeck-backgrounds"
       #- mediawriter
       
   # Signing    
