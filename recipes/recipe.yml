@@ -77,6 +77,7 @@ modules:
       - "install -Dm 644 /opt/io.looking-glass.client/LICENSE /usr/share/doc/looking-glass-client/LICENSE"
       - "install -Dm 644 /opt/io.looking-glass.client/AUTHORS /usr/share/doc/looking-glass-client/AUTHORS"
       - "install -Dm 644 /opt/io.looking-glass.client/CONTRIBUTORS /usr/share/doc/looking-glass-client/CONTRIBUTORS"
+      - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
       #- "(cd /opt/io.looking-glass.clinet/client/build;make install)"
       - "chmod +x /usr/bin/looking-glass-client"
       - "rm -rfv /opt/io.looking-glass.client"
