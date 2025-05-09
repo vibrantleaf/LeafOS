@@ -138,6 +138,11 @@ modules:
   - type: gschema-overrides
     include:
       - gnome_settings.gschema.override
+
+ - type: bling
+   install:
+     - gnome-vrr
+     - dconf-update-service
       
   # Get Bluefin Wallpapers.
   - type: copy
