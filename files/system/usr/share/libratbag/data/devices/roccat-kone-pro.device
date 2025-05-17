@@ -1,0 +1,8 @@
+[Device]
+Name=Roccat Kone Pro
+DeviceMatch=usb:1e7d:2c88
+DeviceType=mouse
+Driver=roccat
+
+
+# yoinked from: https://github.com/vibrantleaf/libratbag/blob/fa7b4aba072fadd66c95e9a935ded977f1fd3fad/data/devices/roccat-kone-pro.device
