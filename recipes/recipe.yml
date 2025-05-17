@@ -208,6 +208,7 @@ modules:
     snippets:
       - "chmod 644 /usr/share/applications/looking-glass.desktop"
       - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
+      - "chmod 644 /usr/share/applications/toggle-automatic-system-updates.desktop"
       - "chmod +x /usr/bin/bluebuild"
       - "chmod +x /usr/bin/looking-glass-client"
       - "chmod +x /usr/bin/vibrant-updater"
