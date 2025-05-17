@@ -142,7 +142,7 @@ modules:
   - type: bling
     install:
       - gnome-vrr
-      - dconf-update-service
+      #- dconf-update-service
       
   # Get Bluefin Wallpapers.
   - type: copy
