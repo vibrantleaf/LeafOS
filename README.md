@@ -42,3 +42,14 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
 ```
+
+## FAQ
+Q: No `sudo`?
+A: Use `run0` instead, heres are two examples for how use `run0`
+```
+run0 echo 'true'
+```
+
+```
+run0 systemctl reboot -r +60
+```
