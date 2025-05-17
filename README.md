@@ -47,7 +47,7 @@ cosign verify --key cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
 
 Q: No `sudo`?
 
-A: Use `run0` instead, *please consider aliassing `sudo` to `run0` if you find that to be problematic*.
+A: I dont incude `sudo` in morgi-gwyrdd, Use `run0` instead, *please consider aliassing `sudo` to `run0` if you find that to be problematic*.
 
 Here are two examples for how use `run0`:
 ```
