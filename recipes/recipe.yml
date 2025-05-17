@@ -196,6 +196,7 @@ modules:
       #- "steamdeck-backgrounds"
       #- mediawriter
       - "sudo"
+      - "sudo-python-plugin"
 
   - type: script
     snippets:
