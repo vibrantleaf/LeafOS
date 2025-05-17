@@ -5,3 +5,6 @@ polkit.addRule(function(action, subject) {
         }
     }
 });
+
+# yoinked from: https://www.reddit.com/r/linuxquestions/comments/w1tj9j/pkexec_to_ask_only_for_once_in_a_terminal/
+# with some minor minor modifications 
