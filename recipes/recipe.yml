@@ -86,6 +86,10 @@ modules:
       - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
       # remove dnf package protection for sudo
       - "rm -fv /etc/dnf/protected.d/sudo.conf"
+      # grab the morgi-gwyrdd cosign public key
+      - "git clone https://github.com/vibrantleaf/morgi-gwyrdd.git /opt/com.github.vibrantleaf.morgi-gwyrdd"
+      - "mkdir -p /usr/share/morgi-gwyrdd"
+      - "cp -fv /opt/com.github.vibrantleaf.morgi-gwyrdd/cosign.pub /usr/share/morgi-gwyrdd/cosign.pub"
       
   # Bluebuild CLI.
   - type: copy
@@ -209,6 +213,7 @@ modules:
       - "chmod +x /usr/bin/vibrant-updater"
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
+      - "rm -rfv /opt/com.github.vibrantleaf.morgi-gwyrdd/"
       - "rm -fv /usr/etc/.gitkeep"
 
   # Signing.
