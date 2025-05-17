@@ -192,6 +192,7 @@ modules:
       #- "firefox-langpacks"
       #- "steamdeck-backgrounds"
       #- mediawriter
+      - sudo
 
   - type: script
     snippets:
