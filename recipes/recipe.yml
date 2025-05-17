@@ -81,7 +81,10 @@ modules:
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
-  
+      # branding
+      - "sed -i 's@bazzite@morgi-gwyrdd@g' /usr/share/ublue-os/image-info.json"
+      - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
+      
   # Bluebuild CLI.
   - type: copy
     from: ghcr.io/blue-build/cli:latest
@@ -130,7 +133,7 @@ modules:
     install:
       - 4655 # Date Menu Formatter
       - 6784 # Wiggle
-      - 3733 # Tiling Assistant
+      #- 3733 # Tiling Assistant
       - 7867 # App Grid Wizard
       - 4691 # PiP on top
       - 5940 # Quick Settings Audio Panel
@@ -192,7 +195,7 @@ modules:
       #- "firefox-langpacks"
       #- "steamdeck-backgrounds"
       #- mediawriter
-      - sudo
+      - "sudo"
 
   - type: script
     snippets:
