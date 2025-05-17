@@ -209,7 +209,7 @@ modules:
       - "chmod +x /usr/bin/vibrant-updater"
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
-      - "rm -fv /etc/.gitkeep"
+      - "rm -fv /usr/etc/.gitkeep"
 
   # Signing.
   - type: signing
