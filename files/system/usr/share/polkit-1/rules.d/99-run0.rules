@@ -1,0 +1,10 @@
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.systemd1.manage-units") {
+        if (subject.isInGroup("wheel")) {
+            return polkit.Result.AUTH_ADMIN_KEEP;
+        }
+    }
+});
+
+# yoinked from: https://www.reddit.com/r/linuxquestions/comments/w1tj9j/pkexec_to_ask_only_for_once_in_a_terminal/
+# with some minor minor modifications 
