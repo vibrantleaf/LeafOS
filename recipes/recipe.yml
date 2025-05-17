@@ -84,6 +84,8 @@ modules:
       # branding
       - "sed -i 's@bazzite@morgi-gwyrdd@g' /usr/share/ublue-os/image-info.json"
       - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
+      # remove dnf package protection for sudo
+      - "rm -fv /etc/dnf/protected.d/sudo.conf"
       
   # Bluebuild CLI.
   - type: copy
