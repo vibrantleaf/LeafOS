@@ -205,7 +205,6 @@ modules:
       - "gnome-shell-extension-just-perfection"
       - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-compiz-windows-effect"
-      - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-desktop-cube"
       - "gnome-shell-extension-caffeine"
       - "gnome-shell-extension-window-list"
