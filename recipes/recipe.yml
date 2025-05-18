@@ -16,9 +16,9 @@ modules:
     include:
       - morgi-gwyrdd-generic-hostname.just
   
-  # Virtualisation Stack.
   - type: rpm-ostree
     install:
+      # virtualisation stack
       - "virt-install"
       - "libvirt-daemon-config-network"
       - "libvirt-daemon-kvm"
@@ -31,6 +31,7 @@ modules:
       - "swtpm"
       - "bridge-utils"
       - "gnome-boxes"
+      # build deps
       - "cmake"
       - "gcc"
       - "gcc-c++"
@@ -56,6 +57,11 @@ modules:
       - "pulseaudio-libs-devel"
       - "libsamplerate-devel"
       - "go"
+      # gnome shell extensions
+      - "gnome-shell-extension-dash-to-dock"
+      # rpmfusion tainted repos
+      - "rpmfusion-free-release-tainted"
+      - "rpmfusion-nonfree-release-tainted"
   
   - type: script
     snippets:
@@ -96,13 +102,8 @@ modules:
     from: ghcr.io/blue-build/cli:latest
     src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
-
-  # Codecs.
-  - type: rpm-ostree
-    install:
-      - "rpmfusion-free-release-tainted"
-      - "rpmfusion-nonfree-release-tainted"
-
+  
+  # codecs
   - type: rpm-ostree
     install:
       - "gstreamer1-plugin-libav"
@@ -139,7 +140,6 @@ modules:
     install:
       - 4655 # Date Menu Formatter
       - 6784 # Wiggle
-      #- 3733 # Tiling Assistant
       - 7867 # App Grid Wizard
       - 4691 # PiP on top
       - 5940 # Quick Settings Audio Panel
@@ -158,12 +158,21 @@ modules:
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/backgrounds/bluefin
     dest: /usr/share/backgrounds/bluefin
+ - type: copy
+    from: ghcr.io/ublue-os/bluefin:stable
+    src: /usr/share/gnome-backgrounds/*.xml
+    dest: /usr/share/gnome-backgrounds/
 
-  # Get Aruroa Wallpapers.
-  - type: copy
-    from: ghcr.io/ublue-os/aurora:stable
-    src: /usr/share/backgrounds/aurora
-    dest: /usr/share/backgrounds/aurora
+  # temperaly removed aurora backgrounds
+  #  because i have to create .xml files to get them
+  #  working in gnome-settings  and this will speed up
+  #  the build time in the prosess
+  
+  ## Get Aruroa Wallpapers.
+  #- type: copy
+  #  from: ghcr.io/ublue-os/aurora:stable
+  #  src: /usr/share/backgrounds/aurora
+  #  dest: /usr/share/backgrounds/aurora
   
   # Cleanning.
   - type: rpm-ostree
@@ -195,7 +204,19 @@ modules:
       - "gnome-shell-extension-just-perfection"
       - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
       - "gnome-shell-extension-compiz-windows-effect"
+      - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
+      - "gnome-shell-extension-desktop-cube"
+      - "gnome-shell-extension-caffeine"
+      - "gnome-shell-extension-window-list"
+      - "gnome-shell-extension-hotedge"
+      - "gnome-shell-extension-restart-to"
+      - "gnome-shell-extension-burn-my-windows"
+      - "gnome-shell-extension-coverflow-alt-tab"
+      - "gnome-shell-extension-caribou-blocker"
       - "rom-properties-gtk3"
+      - "rom-properties"
+      - "steamdeck-gnome-presets"
+      - "discover-overlay"
       #- "gnome-tweaks"
       #- "firefox"
       #- "firefox-langpacks"
@@ -203,6 +224,7 @@ modules:
       #- mediawriter
       - "sudo"
       - "sudo-python-plugin"
+      - "webapp-manager"
 
   - type: script
     snippets:
@@ -215,6 +237,7 @@ modules:
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
       - "rm -rfv /opt/com.github.vibrantleaf.morgi-gwyrdd/"
+      - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -fv /usr/etc/.gitkeep"
 
   # Signing.
