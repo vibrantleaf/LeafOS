@@ -161,8 +161,8 @@ modules:
     
   - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
-    src: /usr/share/gnome-backgrounds/*.xml
-    dest: /usr/share/gnome-backgrounds/
+    src: /usr/share/gnome-backgrounds
+    dest: /usr/share/gnome-backgrounds
 
   # temperaly removed aurora backgrounds
   #  because i have to create .xml files to get them
