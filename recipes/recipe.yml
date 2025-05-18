@@ -212,7 +212,6 @@ modules:
       - "gnome-shell-extension-burn-my-windows"
       #- "gnome-shell-extension-coverflow-alt-tab"
       - "rom-properties-gtk3"
-      - "rom-properties"
       - "discover-overlay"
       #- "gnome-tweaks"
       #- "firefox"
