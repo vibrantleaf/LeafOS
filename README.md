@@ -55,5 +55,5 @@ run0 echo 'true'
 ```
 
 ```
-run0 systemctl reboot -r +60
+run0 systemctl reboot
 ```
