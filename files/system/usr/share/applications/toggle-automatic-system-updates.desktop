@@ -3,6 +3,6 @@ Type=Application
 Name=Toggle Automatic Updates
 Comment=Toggle the Automatic System Updates
 Exec=/usr/bin/ujust toggle-updates
-Icon=ublue-update
+Icon=action-unavailable-symbolic
 Categories=ConsoleOnly;System;
 Terminal=true
