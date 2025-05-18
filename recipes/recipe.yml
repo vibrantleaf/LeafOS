@@ -213,7 +213,6 @@ modules:
       #- "gnome-shell-extension-coverflow-alt-tab"
       - "rom-properties-gtk3"
       - "rom-properties"
-      - "steamdeck-gnome-presets"
       - "discover-overlay"
       #- "gnome-tweaks"
       #- "firefox"
