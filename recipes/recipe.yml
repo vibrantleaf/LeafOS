@@ -158,7 +158,8 @@ modules:
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/backgrounds/bluefin
     dest: /usr/share/backgrounds/bluefin
- - type: copy
+    
+  - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/gnome-backgrounds/*.xml
     dest: /usr/share/gnome-backgrounds/
