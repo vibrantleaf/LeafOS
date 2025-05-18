@@ -211,7 +211,8 @@ modules:
       - "gnome-shell-extension-restart-to"
       - "gnome-shell-extension-burn-my-windows"
       #- "gnome-shell-extension-coverflow-alt-tab"
-      - "rom-properties-gtk3"
+      - "rom-properties"
+      #- "rom-properties-gtk3"
       - "discover-overlay"
       #- "gnome-tweaks"
       #- "firefox"
@@ -235,6 +236,9 @@ modules:
       - "rm -rfv /opt/com.github.vibrantleaf.morgi-gwyrdd/"
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -fv /usr/etc/.gitkeep"
+      - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
+      
+      
 
   # Signing.
   - type: signing
