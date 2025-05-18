@@ -210,7 +210,7 @@ modules:
       - "gnome-shell-extension-window-list"
       - "gnome-shell-extension-restart-to"
       - "gnome-shell-extension-burn-my-windows"
-      - "gnome-shell-extension-coverflow-alt-tab"
+      #- "gnome-shell-extension-coverflow-alt-tab"
       - "rom-properties-gtk3"
       - "rom-properties"
       - "steamdeck-gnome-presets"
