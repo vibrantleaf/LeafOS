@@ -214,6 +214,8 @@ modules:
       - "rom-properties"
       - "rom-properties-utils"
       - "rom-properties-gtk3"
+      - "rom-properties-common"
+      - "rom-properties-thumbnailer-dbus"
       - "discover-overlay"
       #- "gnome-tweaks"
       #- "firefox"
