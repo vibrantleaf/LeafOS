@@ -208,7 +208,6 @@ modules:
       - "gnome-shell-extension-desktop-cube"
       - "gnome-shell-extension-caffeine"
       - "gnome-shell-extension-window-list"
-      - "gnome-shell-extension-hotedge"
       - "gnome-shell-extension-restart-to"
       - "gnome-shell-extension-burn-my-windows"
       - "gnome-shell-extension-coverflow-alt-tab"
