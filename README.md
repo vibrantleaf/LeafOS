@@ -48,7 +48,7 @@ cd morgi-gwyrdd
 just --justfile ./.justfile build-iso-from-image
 ```
 
-If you don't have git (you will still need the Bluebuild CLI and Just you can just download the [.zip file](https://codeload.github.com/vibrantleaf/morgi-gwyrdd/zip/refs/heads/main), extract it, open the folder in your termimal and run the following:
+If you don't have git (you will still need the Bluebuild CLI and Just you can just download the [.zip file](https://github.com/vibrantleaf/morgi-gwyrdd/archive/refs/heads/main.zip), extract it, open the folder in your termimal and run the following:
 
 ```bash
 just --justfile ./.justfile build-iso-from-image
