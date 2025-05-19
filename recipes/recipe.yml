@@ -14,7 +14,8 @@ modules:
   - type: justfiles
     validate: true
     include:
-      - morgi-gwyrdd-generic-hostname.just
+      - 80-morgi-gwyrdd-generic-hostname.just
+      - 81-morgi-gwyrdd-stop-waydroid.just
   
   - type: rpm-ostree
     install:
