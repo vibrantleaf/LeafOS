@@ -40,7 +40,7 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 > [!WARNING]
 > This process may take a while to fully complete.
 
-If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](https://git-scm.com/),  [Just](https://just.systems/man/en/) and [Podman](https://podman.io/) or [Buildah](https://buildah.io/) & [Skopeo](https://github.com/containers/skopeo/blob/main/README.md) or [Docker](https://www.docker.com/) and you can just use the following commands in your termimal to build yourself a offline ISO installer image.
+If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](https://git-scm.com/),  [Just](https://just.systems/man/en/) and [Podman](https://podman.io/) or [Docker](https://www.docker.com/) and you can just use the following commands in your termimal to build yourself a offline ISO installer image.
 
 ```bash
 git clone https://github.com/vibrantleaf/morgi-gwyrdd.git
