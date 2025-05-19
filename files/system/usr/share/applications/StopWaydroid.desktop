@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Stop Waydroid
+Comment=Stop Waydroid
+Exec='/usr/bin/just --justfile /usr/share/bluebuild/justfiles/morgi-gwyrdd-stop-waydroid.just stop-waydroid'
+Terminal=true
+Icon=waydroid
+Categories=X-WayDroid-App;
