@@ -2,4 +2,5 @@ cosign.key
 cosign.private
 /Containerfile
 morgi-gwyrdd-latest.iso
+morgi-gwyrdd-latest.iso-CHECKSUM
 unsaved\ file\ *
