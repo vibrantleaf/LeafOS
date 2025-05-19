@@ -66,7 +66,7 @@ modules:
   
   - type: script
     snippets:
-      # looking-glass
+      # Install looking-glass.
       - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
       - "(cd /opt/io.looking-glass.client/;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
       - "mkdir -p /opt/io.looking-glass.client/client/build"
@@ -79,7 +79,7 @@ modules:
       - "install -Dm 644 /opt/io.looking-glass.client/AUTHORS /usr/share/doc/looking-glass-client/AUTHORS"
       - "install -Dm 644 /opt/io.looking-glass.client/CONTRIBUTORS /usr/share/doc/looking-glass-client/CONTRIBUTORS"
       - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
-      # vibrant-updater.
+      # Install vibrant-updater.
       - "git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "(cd /opt/org.codeberg.vibrantleaf.vibrant-updater;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
       - "go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go"
@@ -88,12 +88,18 @@ modules:
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
-      # branding
+      # Setup branding.
       - "sed -i 's@bazzite@morgi-gwyrdd@g' /usr/share/ublue-os/image-info.json"
       - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
-      # remove dnf package protection for sudo
+      - "sed -i 's@Bazzite@morgi-gwyrdd@g' /usr/lib/os-release"
+      - "sed -i 's@bazzite-gnome@morgi-gwyrdd@g' /usr/lib/os-release"
+      - "sed -i 's@https://bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd@g' /usr/lib/os-release"
+      - "sed -i 's@https://docs.bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd/wiki@g' /usr/lib/os-release"
+      - "sed -i 's@https://discord.bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd/discussions@g' /usr/lib/os-release"
+      - "sed -i 's@https://github.com/ublue-os/bazzite/issues/@https://github.com/vibrantleaf/morgi-gwyrdd/issues@g' /usr/lib/os-release"
+      # Remove dnf package protection for sudo.
       - "rm -fv /etc/dnf/protected.d/sudo.conf"
-      # grab the morgi-gwyrdd cosign public key
+      # Grab the morgi-gwyrdd cosign public key from the repo.
       - "git clone https://github.com/vibrantleaf/morgi-gwyrdd.git /opt/com.github.vibrantleaf.morgi-gwyrdd"
       - "mkdir -p /usr/share/morgi-gwyrdd"
       - "cp -fv /opt/com.github.vibrantleaf.morgi-gwyrdd/cosign.pub /usr/share/morgi-gwyrdd/cosign.pub"
@@ -164,17 +170,17 @@ modules:
     from: ghcr.io/ublue-os/bluefin:stable
     src: /usr/share/gnome-background-properties/
     dest: /usr/share/gnome-background-properties/
-
-  # temperaly removed aurora backgrounds
-  #  because i have to create .xml files to get them
-  #  working in gnome-settings  and this will speed up
-  #  the build time in the prosess
   
-  ## Get Aruroa Wallpapers.
-  #- type: copy
-  #  from: ghcr.io/ublue-os/aurora:stable
-  #  src: /usr/share/backgrounds/aurora
-  #  dest: /usr/share/backgrounds/aurora
+  # Get Aruroa Wallpapers.
+  - type: copy
+    from: ghcr.io/ublue-os/aurora:stable
+    src: /usr/share/backgrounds/aurora
+    dest: /usr/share/backgrounds/aurora
+
+  - type: copy
+    from: ghcr.io/ublue-os/aurora:stable
+    src: /usr/share/gnome-background-properties
+    dest: /usr/share/gnome-background-properties
   
   # Cleanning.
   - type: rpm-ostree
@@ -241,8 +247,6 @@ modules:
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -fv /usr/etc/.gitkeep"
       - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
-      
-      
 
   # Signing.
   - type: signing
