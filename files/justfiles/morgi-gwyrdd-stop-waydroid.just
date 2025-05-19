@@ -1,5 +1,5 @@
 # Stop Waydroid
-set-generic-hostname:
+stop-waydroid:
     #!/usr/bin/env bash
     if [ "$(command -v run0)" ]
     then
