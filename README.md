@@ -40,7 +40,7 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 > [!WARNING]
 > This process may take a while to fully complete.
 
-If you have [Git](https://git-scm.com/), the [Bluebuild CLI](https://blue-build.org/how-to/local/) and [Just](https://just.systems/man/en/) you can just use the following commands in your termimal to build yourself a offline ISO installer image.
+If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](https://git-scm.com/),  [Just](https://just.systems/man/en/) and [Podman](https://podman.io/) or [Buildah](https://buildah.io/) & [Skopeo](https://github.com/containers/skopeo/blob/main/README.md) or [Docker](https://www.docker.com/) and you can just use the following commands in your termimal to build yourself a offline ISO installer image.
 
 ```bash
 git clone https://github.com/vibrantleaf/morgi-gwyrdd.git
@@ -48,7 +48,7 @@ cd morgi-gwyrdd
 just --justfile ./.justfile build-iso-from-image
 ```
 
-If you don't have git (you will still need the Bluebuild CLI and Just you can just download the [.zip file](https://github.com/vibrantleaf/morgi-gwyrdd/archive/refs/heads/main.zip), extract it, open the `morgi-gwyrdd-main` folder in your termimal and run the following command:
+If you don't have git (you will still need the other tools listed above) you can just download the [.zip file](https://github.com/vibrantleaf/morgi-gwyrdd/archive/refs/heads/main.zip), extract it, open the `morgi-gwyrdd-main` folder in your termimal and run the following command:
 
 ```bash
 just --justfile ./.justfile build-iso-from-image
