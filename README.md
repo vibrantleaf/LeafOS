@@ -36,13 +36,20 @@ The `latest` tag will automatically point to the latest build. That build will s
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](hhttps://blue-build.org/how-to/generate-iso/). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
 ### ISO: Tldr
+
+> [!WARNING]
+> This process may take a while to fully complete.
+
 If you have [Git](https://git-scm.com/), the [Bluebuild CLI](https://blue-build.org/how-to/local/) and [Just](https://just.systems/man/en/) you can just use the following commands in your termimal to build yourself a offline ISO installer image.
+
 ```bash
 git clone https://github.com/vibrantleaf/morgi-gwyrdd.git
 cd morgi-gwyrdd
 just --justfile ./.justfile build-iso-from-image
 ```
+
 If you don't have git (you will still need the Bluebuild CLI and Just you can just download the [.zip file](https://codeload.github.com/vibrantleaf/morgi-gwyrdd/zip/refs/heads/main), extract it, open the folder in your termimal and run the following:
+
 ```bash
 just --justfile ./.justfile build-iso-from-image
 ```
