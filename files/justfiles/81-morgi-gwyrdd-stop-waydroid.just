@@ -1,3 +1,5 @@
+#!/usr/bin/env -S just --justfile
+
 # Stop Waydroid
 stop-waydroid:
     #!/usr/bin/env bash

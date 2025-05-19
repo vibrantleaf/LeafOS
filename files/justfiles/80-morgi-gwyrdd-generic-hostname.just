@@ -1,3 +1,6 @@
+#!/usr/bin/env -S just --justfile
+
+
 # Set Generic Hostname
 set-generic-hostname:
     #!/usr/bin/env bash
