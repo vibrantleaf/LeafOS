@@ -1,7 +1,7 @@
 # Stop Waydroid
 stop-waydroid:
     #!/usr/bin/env bash
-    
+
     #if [ "$(command -v run0)" ]
     #then
     #  printf "\033[0;33m pkexec found using run0 ...\033[0m\n"
@@ -19,7 +19,6 @@ stop-waydroid:
     #  printf "\033[0;33m sudo found using sudo ...\033[0m\n"
     #  pk='sudo'
     #fi
-
 
     run0 waydroid session stop
     run0 waydroid container stop
