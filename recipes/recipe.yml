@@ -14,17 +14,13 @@ modules:
   - type: justfiles
     validate: true
     include:
-      - 80-morgi-gwyrdd-generic-hostname.just
-      - 81-morgi-gwyrdd-stop-waydroid.just
+      - "80-morgi-gwyrdd-generic-hostname.just"
+      - "81-morgi-gwyrdd-stop-waydroid.just"
   
   - type: bling
     install:
       - "rpmfusion"
-
-  - type: script
-    snippets:
-      - "ls -la /etc/yum.repos.d/"
-      - "cat /etc/yum.repos.d/*"
+      - "dconf-update-service"
 
   - type: dnf
     install:
@@ -120,7 +116,7 @@ modules:
         - "solar-backgrounds"
         - "desktop-backgrounds-waves"
         - "fedorainfinity-backgrounds"
-        #codecs
+        # codecs
         - "gstreamer1-plugin-libav"
         - "gstreamer1-plugins-bad-free-extras"
         #- "gstreamer1-plugins-bad-freeworld"
@@ -209,11 +205,6 @@ modules:
     include:
       - gnome_settings.gschema.override
 
-  - type: bling
-    install:
-      #- gnome-vrr
-      - dconf-update-service
-      
   # Get Bluefin Wallpapers.
   - type: copy
     from: ghcr.io/ublue-os/bluefin:stable
