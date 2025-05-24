@@ -61,12 +61,9 @@ modules:
         - "go"
         # gnome shell extensions
         - "gnome-shell-extension-dash-to-dock"
-        # rpmfusion tainted repos
-        - "rpmfusion-free-release-tainted"
-        - "rpmfusion-nonfree-release-tainted"
         # fedora backgrounds
-        - "fedora-workstation-backgrounds"
-        - "f42-backgrounds-gnome"
+        #- "fedora-workstation-backgrounds"
+        #- "f42-backgrounds-gnome"
         - "f41-backgrounds-gnome"
         - "f40-backgrounds-gnome"
         - "f39-backgrounds-gnome"
@@ -114,7 +111,17 @@ modules:
         - "solar-backgrounds"
         - "desktop-backgrounds-waves"
         - "fedorainfinity-backgrounds"
-    
+
+  # rpmfusion tainted repos
+  - type: dnf
+    install:
+      packages:        
+        - "rpmfusion-free-release-tainted"
+  - type: dnf
+    install:
+      packages:
+        - "rpmfusion-nonfree-release-tainted"
+
   - type: script
     snippets:
       # Install looking-glass.
