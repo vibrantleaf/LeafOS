@@ -17,7 +17,7 @@ modules:
       - 80-morgi-gwyrdd-generic-hostname.just
       - 81-morgi-gwyrdd-stop-waydroid.just
   
-  - type: rpm-ostree
+  - type: dnf
     install:
       # virtualisation stack
       - "virt-install"
@@ -161,7 +161,7 @@ modules:
     dest: /usr/bin/bluebuild
   
   # codecs
-  - type: rpm-ostree
+  - type: dnf
     install:
       - "gstreamer1-plugin-libav"
       - "gstreamer1-plugins-bad-free-extras"
@@ -233,7 +233,7 @@ modules:
     dest: /usr/share/gnome-background-properties
   
   # Cleanning.
-  - type: rpm-ostree
+  - type: dnf
     remove:
       - "cmake"
       - "gcc-c++"
