@@ -64,9 +64,9 @@ cosign verify --key cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
 
 ## FAQ
 
-Q: No `sudo`?
+Q.1: No `sudo`?
 
-A: I dont incude `sudo` in morgi-gwyrdd, Use `run0` instead, *please consider aliassing `sudo` to `run0` if you find that to be problematic*.
+A.1: I dont incude `sudo` in morgi-gwyrdd, Use `run0` instead, *please consider aliassing `sudo` to `run0` if you find that to be problematic*.
 
 Here are two examples for how use `run0`:
 ```bash
@@ -76,3 +76,15 @@ run0 echo 'true'
 ```bash
 run0 systemctl reboot
 ```
+
+Q.2: I want to go back to x image
+
+A.2: you can use the rebase back to your image
+if you were using one of universial blue's images before see the ublues [images](https://github.com/orgs/ublue-os/packages) 
+example for bluefin with out nvidia support:
+```bash
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/bluefin:stable
+systemctl reboot
+```
+
+
