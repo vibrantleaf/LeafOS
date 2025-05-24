@@ -71,6 +71,8 @@ curl -L -o /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub https://raw.githubus
 cosign verify --key /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
 ```
 
+This command's output should **not** say that are no matching signatures
+
 ## FAQ
 
 Q.1: No `sudo`?
