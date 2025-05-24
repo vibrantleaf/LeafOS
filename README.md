@@ -80,7 +80,9 @@ run0 systemctl reboot
 Q.2: I want to go back to x image
 
 A.2: you can use the rebase back to your image
+
 if you were using one of universial blue's images before see the ublues [images](https://github.com/orgs/ublue-os/packages) 
+
 example for bluefin with out nvidia support:
 ```bash
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/bluefin:stable
