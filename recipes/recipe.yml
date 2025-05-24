@@ -169,9 +169,9 @@ modules:
       
   # Bluebuild CLI.
   - type: copy
-    from: ghcr.io/blue-build/cli:latest
-    src: /usr/bin/bluebuild
-    dest: /usr/bin/bluebuild
+    from: "ghcr.io/blue-build/cli:latest"
+    src: "/usr/bin/bluebuild"
+    dest: "/usr/bin/bluebuild"
   
   # Default Flatpaks.
   - type: default-flatpaks
@@ -179,18 +179,21 @@ modules:
     user: {}
     system:
       install:
-        - org.mozilla.firefox
-        - org.libreoffice.LibreOffice
-        - org.localsend.localsend_app
-        - dev.geopjr.Collision
-        - org.gnome.World.Secrets
-        - com.belmoussaoui.Authenticator
-        - com.github.tchx84.Flatseal
-        - io.gitlab.adhami3310.Impression
-        - ca.edestcroix.Recordbox
-        - page.tesk.Refine
-        - com.github.marhkb.Pods
-        - io.github.dvlv.boxbuddyrs
+        - "org.mozilla.firefox"
+        - "org.libreoffice.LibreOffice"
+        - "org.localsend.localsend_app"
+        - "dev.geopjr.Collision"
+        - "org.gnome.World.Secrets"
+        - "com.belmoussaoui.Authenticator"
+        - "com.github.tchx84.Flatseal"
+        - "io.gitlab.adhami3310.Impression"
+        - "ca.edestcroix.Recordbox"
+        - "page.tesk.Refine"
+        - "com.github.marhkb.Pods"
+        - "io.github.dvlv.boxbuddyrs"
+        - "net.nokyan.Resources"
+      remove:
+        - "io.missioncenter.MissionCenter"
 
   # Set GNOME tweaks.
   - type: gnome-extensions
@@ -203,29 +206,29 @@ modules:
 
   - type: gschema-overrides
     include:
-      - gnome_settings.gschema.override
+      - "gnome_settings.gschema.override"
 
   # Get Bluefin Wallpapers.
   - type: copy
-    from: ghcr.io/ublue-os/bluefin:stable
-    src: /usr/share/backgrounds/bluefin
-    dest: /usr/share/backgrounds/bluefin
+    from: "ghcr.io/ublue-os/bluefin:stable"
+    src: "/usr/share/backgrounds/bluefin"
+    dest: "/usr/share/backgrounds/bluefin"
     
   - type: copy
-    from: ghcr.io/ublue-os/bluefin:stable
-    src: /usr/share/gnome-background-properties/
-    dest: /usr/share/gnome-background-properties/
+    from: "ghcr.io/ublue-os/bluefin:stable"
+    src: "/usr/share/gnome-background-properties"
+    dest: "/usr/share/gnome-background-properties"
   
   # Get Aruroa Wallpapers.
   - type: copy
-    from: ghcr.io/ublue-os/aurora:stable
-    src: /usr/share/backgrounds/aurora
-    dest: /usr/share/backgrounds/aurora
+    from: "ghcr.io/ublue-os/aurora:stable"
+    src: "/usr/share/backgrounds/aurora"
+    dest: "/usr/share/backgrounds/aurora"
 
   - type: copy
-    from: ghcr.io/ublue-os/aurora:stable
-    src: /usr/share/gnome-background-properties
-    dest: /usr/share/gnome-background-properties
+    from: "ghcr.io/ublue-os/aurora:stable"
+    src: "/usr/share/gnome-background-properties"
+    dest: "/usr/share/gnome-background-properties"
   
   # Cleanning.
   - type: dnf
