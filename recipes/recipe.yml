@@ -166,6 +166,10 @@ modules:
       - "git clone https://github.com/vibrantleaf/morgi-gwyrdd.git /opt/com.github.vibrantleaf.morgi-gwyrdd"
       - "mkdir -p /usr/share/morgi-gwyrdd"
       - "cp -fv /opt/com.github.vibrantleaf.morgi-gwyrdd/cosign.pub /usr/share/morgi-gwyrdd/cosign.pub"
+      # make the steam.desktop & steam big pictue mode desktop file use the normal steam binnary
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
       
   # Bluebuild CLI.
   - type: copy
