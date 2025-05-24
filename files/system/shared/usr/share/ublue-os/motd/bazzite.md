@@ -15,4 +15,3 @@
 - **🔁** [Merge Requests](https://github.com/vibrantleaf/morgi-gwyrdd/pulls)
 - **💬** [Forum](https://github.com/vibrantleaf/morgi-gwyrdd/discussions)
 - **🗎** [Documentation](https://github.com/vibrantleaf/morgi-gwyrdd/wiki) 
-- **🦋** [Bluesky](https://bsky.app/profile/voyagerfrog.bsky.social)
