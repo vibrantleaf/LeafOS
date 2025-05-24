@@ -10,6 +10,10 @@ Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://u
 > [!WARNING]  
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
+
+> [!WARNING]
+> Please verify the image's signature with cosign before rebasing to the image. [see](https://github.com/vibrantleaf/morgi-gwyrdd/blob/main/README.md#verification).
+
 To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
@@ -40,6 +44,9 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 > [!WARNING]
 > This process may take a while to fully complete.
 
+> [!WARNING]
+> Please verify the image's signature with cosign before building a iso from the image. [see](https://github.com/vibrantleaf/morgi-gwyrdd/blob/main/README.md#verification).
+
 If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](https://git-scm.com/),  [Just](https://just.systems/man/en/) and [Podman](https://podman.io/) or [Docker](https://www.docker.com/) and you can just use the following commands in your termimal to build yourself a offline ISO installer image.
 
 ```bash
@@ -59,7 +66,9 @@ just --justfile ./.justfile build-iso-from-image
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+curl -L -o /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub https://raw.githubusercontent.com/vibrantleaf/morgi-gwyrdd/refs/heads/main/cosign.pub
+
+cosign verify --key /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
 ```
 
 ## FAQ
@@ -85,6 +94,9 @@ if you were using one of universial blue's images before see the ublues [images]
 
 example for bluefin with out nvidia support:
 ```bash
+curl -L -o /var/tmp/io.projectbluefin.cosign.pub https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/cosign.pub
+cosign verify --key /var/tmp/io.projectbluefin.cosign.pub ghcr.io/ublue-os/bluefin:stable
+
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/bluefin:stable
 systemctl reboot
 ```
