@@ -17,6 +17,10 @@ modules:
       - 80-morgi-gwyrdd-generic-hostname.just
       - 81-morgi-gwyrdd-stop-waydroid.just
   
+  - type: bling
+    install:
+      - "rpmfusion"
+      
   - type: dnf
     install:
       packages:
