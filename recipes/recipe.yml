@@ -20,7 +20,12 @@ modules:
   - type: bling
     install:
       - "rpmfusion"
-      
+
+  - type: script
+    snippets:
+      - "ls -la /usr/etc/yum.repos.d/"
+      - "cat /usr/etc/yum.repos.d/*"
+
   - type: dnf
     install:
       packages:
@@ -115,16 +120,16 @@ modules:
         - "solar-backgrounds"
         - "desktop-backgrounds-waves"
         - "fedorainfinity-backgrounds"
-
-  # rpmfusion tainted repos
-  - type: dnf
-    install:
-      packages:        
-        - "rpmfusion-free-release-tainted"
-  - type: dnf
-    install:
-      packages:
-        - "rpmfusion-nonfree-release-tainted"
+        #codecs
+        - "gstreamer1-plugin-libav"
+        - "gstreamer1-plugins-bad-free-extras"
+        - "gstreamer1-plugins-bad-freeworld"
+        - "gstreamer1-plugins-ugly"
+        - "gstreamer1-vaapi"
+        - "libaacs"
+        - "libbdplus"
+        - "libbluray"
+        - "libdvdcss"
 
   - type: script
     snippets:
@@ -172,20 +177,6 @@ modules:
     src: /usr/bin/bluebuild
     dest: /usr/bin/bluebuild
   
-  # codecs
-  - type: dnf
-    install:
-      packages:
-        - "gstreamer1-plugin-libav"
-        - "gstreamer1-plugins-bad-free-extras"
-        - "gstreamer1-plugins-bad-freeworld"
-        - "gstreamer1-plugins-ugly"
-        - "gstreamer1-vaapi"
-        - "libaacs"
-        - "libbdplus"
-        - "libbluray"
-        - "libdvdcss"
-
   # Default Flatpaks.
   - type: default-flatpaks
     notify: true
