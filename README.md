@@ -14,25 +14,17 @@ Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://u
 > [!WARNING]
 > Please verify the image's signature with cosign before rebasing to the image. [see](https://github.com/vibrantleaf/morgi-gwyrdd/blob/main/README.md#verification).
 
-To rebase an existing atomic Fedora installation to the latest build:
+To switch an existing atomic Fedora installation to the latest build:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
+- First switch to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
   ```bash
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+  bootc switch --apply /ghcr.io/vibrantleaf/morgi-gwyrdd:latest
   ```
-- Reboot to complete the rebase: *(if needed)*
+- Then switch to the signed image, like so:
   ```bash
-  systemctl reboot
+  bootc switch --enforce-container-sigpolicy --apply /ghcr.io/vibrantleaf/morgi-gwyrdd:latest
   ```
-- Then rebase to the signed image, like so:
-  ```bash
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/vibrantleaf/morgi-gwyrdd:latest
-  ```
-- Reboot again to complete the installation
-  ```bash
-  systemctl reboot
-  ```
-
+  
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
 ## ISO
@@ -99,8 +91,7 @@ example for bluefin with out nvidia support:
 curl -L -o /var/tmp/io.projectbluefin.cosign.pub https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/cosign.pub
 cosign verify --key /var/tmp/io.projectbluefin.cosign.pub ghcr.io/ublue-os/bluefin:stable
 
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/bluefin:stable
-systemctl reboot
+bootc switch --enforce-container-sigpolicy --apply ghcr.io/ublue-os/bluefin:stable
 ```
 
 
