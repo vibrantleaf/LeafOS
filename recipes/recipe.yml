@@ -284,6 +284,7 @@ modules:
 
   - type: script
     snippets:
+      - "bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild"
       - "chmod 644 /usr/share/applications/looking-glass.desktop"
       - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
       - "chmod 644 /usr/share/applications/toggle-automatic-system-updates.desktop"
