@@ -270,6 +270,8 @@ modules:
         - "gnome-shell-extension-window-list"
         - "gnome-shell-extension-restart-to"
         - "gnome-shell-extension-burn-my-windows"
+        - "gnome-shell-extension-places-menu"
+        - "gnome-shell-extension-launch-new-instance"
         #- "gnome-shell-extension-coverflow-alt-tab"
         - "rom-properties"
         - "rom-properties-utils"
