@@ -44,13 +44,13 @@ If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](htt
 ```bash
 git clone https://github.com/vibrantleaf/morgi-gwyrdd.git
 cd morgi-gwyrdd
-just --justfile ./.justfile build-iso-from-image
+just --justfile .justfile build-iso-from-image
 ```
 
 If you don't have git (you will still need the other tools listed above) you can just download the [.zip file](https://github.com/vibrantleaf/morgi-gwyrdd/archive/refs/heads/main.zip), extract it, open the `morgi-gwyrdd-main` folder in your termimal and run the following command:
 
 ```bash
-just --justfile ./.justfile build-iso-from-image
+just --justfile .justfile build-iso-from-image
 ```
 
 ## Verification
