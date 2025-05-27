@@ -28,6 +28,8 @@ modules:
         remove:
           - "updates-archive"
     install:
+      install-weak-deps: false
+      
       packages:
         - "virt-install"
         - "libvirt-daemon-config-network"
@@ -241,6 +243,7 @@ modules:
   # Cleanning.
   - type: dnf
     remove:
+      clean_requirements_on_remove: true
       packages:
         - "cmake"
         - "gcc-c++"
