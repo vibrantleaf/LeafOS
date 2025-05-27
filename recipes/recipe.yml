@@ -21,8 +21,12 @@ modules:
     install:
       - "rpmfusion"
       - "dconf-update-service"
-
+  
   - type: dnf
+    repos:
+      files:
+        remove:
+          - "updates-archive"
     install:
       packages:
         - "virt-install"
