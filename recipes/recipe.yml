@@ -30,11 +30,11 @@ modules:
     install:
       install-weak-deps: false
       packages:
+        # virtualisation stack
         - "virt-install"
         - "libvirt-daemon-config-network"
         - "libvirt-daemon-kvm"
         - "edk2-ovmf"
-        # virtualisation stack
         - "virt-manager"
         - "virt-viewer"
         - "libguestfs-tools"
