@@ -16,6 +16,8 @@ modules:
     include:
       - "80-sharkfin-generic-hostname.just"
       - "81-sharkfin-stop-waydroid.just"
+      - "82-sharkfin-setup-waydroid.just"
+      - "83-sharkfin-reset-waydroid.just"
   
   - type: bling
     install:
