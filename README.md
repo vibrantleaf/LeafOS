@@ -1,5 +1,5 @@
-# Morgi Gwyrdd
- &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/morgi-gwyrdd/actions/workflows/build.yml)
+# Sharkfin 🦈
+ &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/sharkfin/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/sharkfin/actions/workflows/build.yml)
 
 Just my personal fork of [Bazzite](https://bazzite.gg/).
 
@@ -12,17 +12,17 @@ Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://u
 
 
 > [!WARNING]
-> Please verify the image's signature with cosign before rebasing to the image. [see](https://github.com/vibrantleaf/morgi-gwyrdd/blob/main/README.md#verification).
+> Please verify the image's signature with cosign before rebasing to the image. [see](https://github.com/vibrantleaf/sharkfin/blob/main/README.md#verification).
 
 To switch an existing atomic Fedora installation to the latest build:
 
 - First switch to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
   ```bash
-  bootc switch --apply /ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+  bootc switch --apply /ghcr.io/vibrantleaf/sharkfin:latest
   ```
 - Then switch to the signed image, like so:
   ```bash
-  bootc switch --enforce-container-sigpolicy --apply /ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+  bootc switch --enforce-container-sigpolicy --apply /ghcr.io/vibrantleaf/sharkfin:latest
   ```
   
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
@@ -37,17 +37,17 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 > This process may take a while to fully complete.
 
 > [!WARNING]
-> Please verify the image's signature with cosign before building a iso from the image. [see](https://github.com/vibrantleaf/morgi-gwyrdd/blob/main/README.md#verification).
+> Please verify the image's signature with cosign before building a iso from the image. [see](https://github.com/vibrantleaf/sharkfin/blob/main/README.md#verification).
 
 If you have the [Bluebuild CLI](https://blue-build.org/how-to/local/), [Git](https://git-scm.com/),  [Just](https://just.systems/man/en/) and [Podman](https://podman.io/) or [Docker](https://www.docker.com/) and you can just use the following commands in your termimal to build yourself a offline ISO installer image.
 
 ```bash
-git clone https://github.com/vibrantleaf/morgi-gwyrdd.git
+git clone https://github.com/vibrantleaf/sharkfin.git
 cd morgi-gwyrdd
 just --justfile .justfile build-iso-from-image
 ```
 
-If you don't have git (you will still need the other tools listed above) you can just download the [.zip file](https://github.com/vibrantleaf/morgi-gwyrdd/archive/refs/heads/main.zip), extract it, open the `morgi-gwyrdd-main` folder in your termimal and run the following command:
+If you don't have git (you will still need the other tools listed above) you can just download the [.zip file](https://github.com/vibrantleaf/sharkfin/archive/refs/heads/main.zip), extract it, open the `morgi-gwyrdd-main` folder in your termimal and run the following command:
 
 ```bash
 just --justfile .justfile build-iso-from-image
@@ -58,9 +58,9 @@ just --justfile .justfile build-iso-from-image
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-curl -L -o /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub https://raw.githubusercontent.com/vibrantleaf/morgi-gwyrdd/refs/heads/main/cosign.pub
+curl -L -o /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub https://raw.githubusercontent.com/vibrantleaf/sharkfin/refs/heads/main/cosign.pub
 
-cosign verify --key /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+cosign verify --key /var/tmp/com.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:latest
 ```
 
 This command's output should **not** say that are no matching signatures

@@ -22,7 +22,7 @@ build-iso-from-recipe:
       pk='sudo'
     fi
 
-    $pk bluebuild generate-iso --iso-name morgi-gwyrdd-latest.iso recipe recipes/recipe.yml
+    $pk bluebuild generate-iso --iso-name sharkfin-latest.iso recipe recipes/recipe.yml
 
 # Build iso file from the image
 build-iso-from-image:
@@ -46,4 +46,4 @@ build-iso-from-image:
       pk='sudo'
     fi
 
-    $pk bluebuild generate-iso --iso-name morgi-gwyrdd-latest.iso image ghcr.io/vibrantleaf/morgi-gwyrdd:latest
+    $pk bluebuild generate-iso --iso-name sharkfin-latest.iso image ghcr.io/vibrantleaf/sharkfin:latest

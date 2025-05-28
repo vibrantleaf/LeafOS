@@ -11,7 +11,7 @@
 | `fastfetch` | View system information |
 
 %TIP%
-- **** [Report an issue](https://github.com/vibrantleaf/morgi-gwyrdd/issues)
-- **🔁** [Merge Requests](https://github.com/vibrantleaf/morgi-gwyrdd/pulls)
-- **💬** [Forum](https://github.com/vibrantleaf/morgi-gwyrdd/discussions)
-- **🗎** [Documentation](https://github.com/vibrantleaf/morgi-gwyrdd/wiki) 
+- **** [Report an issue](https://github.com/vibrantleaf/sharkfin/issues)
+- **🔁** [Merge Requests](https://github.com/vibrantleaf/sharkfin/pulls)
+- **💬** [Forum](https://github.com/vibrantleaf/sharkfin/discussions)
+- **🗎** [Documentation](https://github.com/vibrantleaf/sharkfin/wiki) 

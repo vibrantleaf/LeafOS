@@ -1,5 +1,5 @@
 ---
-name: morgi-gwyrdd
+name: sharkfin
 description: This is just my persoanl fork of bazzite.
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
@@ -14,8 +14,8 @@ modules:
   - type: justfiles
     validate: true
     include:
-      - "80-morgi-gwyrdd-generic-hostname.just"
-      - "81-morgi-gwyrdd-stop-waydroid.just"
+      - "80-sharkfin-generic-hostname.just"
+      - "81-sharkfin-stop-waydroid.just"
   
   - type: bling
     install:
@@ -157,20 +157,20 @@ modules:
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
       - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
       # Setup branding.
-      - "sed -i 's@bazzite@morgi-gwyrdd@g' /usr/share/ublue-os/image-info.json"
+      - "sed -i 's@bazzite@sharkfin@g' /usr/share/ublue-os/image-info.json"
       - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
-      - "sed -i 's@Bazzite@morgi-gwyrdd@g' /usr/lib/os-release"
-      - "sed -i 's@bazzite-gnome@morgi-gwyrdd@g' /usr/lib/os-release"
-      - "sed -i 's@https://bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd@g' /usr/lib/os-release"
-      - "sed -i 's@https://docs.bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd/wiki@g' /usr/lib/os-release"
-      - "sed -i 's@https://discord.bazzite.gg@https://github.com/vibrantleaf/morgi-gwyrdd/discussions@g' /usr/lib/os-release"
-      - "sed -i 's@https://github.com/ublue-os/bazzite/issues/@https://github.com/vibrantleaf/morgi-gwyrdd/issues@g' /usr/lib/os-release"
+      - "sed -i 's@Bazzite@sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@bazzite-gnome@sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@https://bazzite.gg@https://github.com/vibrantleaf/sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@https://docs.bazzite.gg@https://github.com/vibrantleaf/sharkfin/wiki@g' /usr/lib/os-release"
+      - "sed -i 's@https://discord.bazzite.gg@https://github.com/vibrantleaf/sharkfin/discussions@g' /usr/lib/os-release"
+      - "sed -i 's@https://github.com/ublue-os/bazzite/issues/@https://github.com/vibrantleaf/sharkfin/issues@g' /usr/lib/os-release"
       # Remove dnf package protection for sudo.
       - "rm -fv /etc/dnf/protected.d/sudo.conf"
-      # Grab the morgi-gwyrdd cosign public key from the repo.
-      - "git clone https://github.com/vibrantleaf/morgi-gwyrdd.git /opt/com.github.vibrantleaf.morgi-gwyrdd"
-      - "mkdir -p /usr/share/morgi-gwyrdd"
-      - "cp -fv /opt/com.github.vibrantleaf.morgi-gwyrdd/cosign.pub /usr/share/morgi-gwyrdd/cosign.pub"
+      # Grab the sharkfin cosign public key from the repo.
+      - "git clone https://github.com/vibrantleaf/sharkfin.git /opt/com.github.vibrantleaf.sharkfin"
+      - "mkdir -p /usr/share/sharkfin"
+      - "cp -fv /opt/com.github.vibrantleaf.sharkfin/cosign.pub /usr/share/sharkfin/cosign.pub"
       # make the steam.desktop & steam big pictue mode desktop file use the normal steam binnary
       - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
@@ -308,7 +308,7 @@ modules:
       - "chmod +x /usr/bin/vibrant-updater"
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
-      - "rm -rfv /opt/com.github.vibrantleaf.morgi-gwyrdd/"
+      - "rm -rfv /opt/com.github.vibrantleaf.sharkfin/"
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -fv /usr/etc/.gitkeep"
       - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
