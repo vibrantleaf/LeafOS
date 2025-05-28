@@ -265,6 +265,7 @@ modules:
         - "libsamplerate-devel"
         #- "go"
         - "lutris"
+        - "winetricks"
         - "gnome-shell-extension-hotedge"
         - "gnome-shell-extension-bazzite-menu"
         - "gnome-shell-extension-just-perfection"
@@ -292,6 +293,7 @@ modules:
         - "sudo"
         - "sudo-python-plugin"
         - "webapp-manager"
+        
 
   - type: script
     snippets:
@@ -312,6 +314,8 @@ modules:
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -fv /usr/etc/.gitkeep"
       - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
+      - "rm -fv /usr/sbin/protontricks"
+      - "rm -fv /usr/bin/protontricks"
 
   # Signing.
   - type: signing
