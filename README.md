@@ -80,6 +80,11 @@ run0 echo 'true'
 run0 systemctl reboot
 ```
 
+`run0` not displaying output? use `pkexec`
+```bash
+pkexec blkid
+```
+
 Q.2: I want to go back to x image
 
 A.2: you can use the rebase back to your image
