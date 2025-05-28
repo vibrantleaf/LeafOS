@@ -72,8 +72,8 @@ modules:
         # gnome shell extensions
         - "gnome-shell-extension-dash-to-dock"
         # fedora backgrounds
-        #- "fedora-workstation-backgrounds"
-        #- "f42-backgrounds-gnome"
+        - "fedora-workstation-backgrounds"
+        - "f42-backgrounds-gnome"
         - "f41-backgrounds-gnome"
         - "f40-backgrounds-gnome"
         - "f39-backgrounds-gnome"
@@ -103,8 +103,8 @@ modules:
         - "f22-backgrounds-gnome"
         - "f21-backgrounds-extras-gnome"
         - "f21-backgrounds-gnome"
-        #- "heisenbug-backgrounds-extras-gnome"
-        #- "heisenbug-backgrounds-gnome"
+        - "heisenbug-backgrounds-extras-gnome"
+        - "heisenbug-backgrounds-gnome"
         - "schroedinger-cat-backgrounds-extras-gnome"
         - "schroedinger-cat-backgrounds-gnome"
         - "spherical-cow-backgrounds-extras-gnome"
@@ -124,8 +124,8 @@ modules:
         # codecs
         - "gstreamer1-plugin-libav"
         - "gstreamer1-plugins-bad-free-extras"
-        #- "gstreamer1-plugins-bad-freeworld"
-        #- "gstreamer1-plugins-ugly"
+        - "gstreamer1-plugins-bad-freeworld"
+        - "gstreamer1-plugins-ugly"
         - "gstreamer1-vaapi"
         - "libaacs"
         - "libbdplus"
