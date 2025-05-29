@@ -304,6 +304,7 @@ modules:
       - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
       - "chmod 644 /usr/share/applications/toggle-automatic-system-updates.desktop"
       - "chmod 644 /usr/share/applications/stop-waydroid.desktop"
+      - "chmod 644 /usr/share/applications/reset-waydroid.desktop"
       - "chmod 644 /usr/bin/bluebuild"
       - "chmod 644 /usr/bin/looking-glass-client"
       - "chmod 644 /usr/bin/vibrant-updater"
