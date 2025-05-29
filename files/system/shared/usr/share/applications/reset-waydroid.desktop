@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Reset Waydroid
+Comment=Reset Waydroid
+Exec='/usr/bin/just --justfile /usr/share/bluebuild/justfiles/83-sharkfin-reset-waydroid.just reset-waydroid'
+Terminal=true
+Icon=waydroid
+Categories=X-WayDroid-App;
