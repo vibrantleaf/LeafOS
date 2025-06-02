@@ -216,7 +216,7 @@ modules:
       - 5940 # Quick Settings Audio Panel
       - 4269 # Alphabetical App Grid
       - 3733 # Tiling Assistant
-      - 1007 # Window Is Ready - Notification Remover
+      #- 1007 # Window Is Ready - Notification Remover
 
   - type: gschema-overrides
     include:
