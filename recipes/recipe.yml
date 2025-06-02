@@ -214,6 +214,8 @@ modules:
       - 7867 # App Grid Wizard
       - 4691 # PiP on top
       - 5940 # Quick Settings Audio Panel
+      - 4269 # Alphabetical App Grid
+      - 3733 # Tiling Assistant
 
   - type: gschema-overrides
     include:
@@ -274,7 +276,7 @@ modules:
         - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
         - "gnome-shell-extension-compiz-windows-effect"
         - "gnome-shell-extension-desktop-cube"
-        - "gnome-shell-extension-caffeine"
+        #- "gnome-shell-extension-caffeine"
         - "gnome-shell-extension-window-list"
         - "gnome-shell-extension-restart-to"
         - "gnome-shell-extension-burn-my-windows"
