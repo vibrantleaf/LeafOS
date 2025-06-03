@@ -179,7 +179,7 @@ modules:
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
       # use pkexec in just files
       - "sed -i 's@sudo@pkexec@' /usr/share/ublue-os/just/*.just"
-      
+      - "sed -i 's@sudo@pkexec@' /usr/share/bluebuild/just/*.just"
       
   # Bluebuild CLI.
   - type: copy
