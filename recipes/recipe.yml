@@ -318,6 +318,7 @@ modules:
       - "rm -rfv /opt/io.looking-glass.client"
       - "rm -rfv /opt/com.github.vibrantleaf.sharkfin/"
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
+      - "rm -rfv /usr/share/sounds/steam"
       - "rm -fv /usr/etc/.gitkeep"
       - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
       - "rm -fv /usr/sbin/protontricks"
