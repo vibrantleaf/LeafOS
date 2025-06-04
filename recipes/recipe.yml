@@ -23,16 +23,6 @@ modules:
     install:
       - "rpmfusion"
       - "dconf-update-service"
-  
-  # sudo -> sudo-rs 
-  - type: dnf
-    remove:
-      packages:
-        - "sudo"
-        - "sudo-python-plugin"
-    install:
-      packages:
-        - "sudo-rs"
 
   - type: dnf
     repos:
@@ -187,7 +177,17 @@ modules:
       - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
-      
+    
+  # sudo -> sudo-rs 
+  - type: dnf
+    remove:
+      packages:
+        - "sudo"
+        - "sudo-python-plugin"
+    install:
+      packages:
+        - "sudo-rs"
+
   # Bluebuild CLI.
   - type: copy
     from: "ghcr.io/blue-build/cli:latest"
