@@ -310,6 +310,7 @@ modules:
 
   - type: script
     snippets:
+      - "ln -s /usr/bin/sudo-rs /usr/bin/sudo"
       - "bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild"
       - "chmod 644 /usr/share/applications/looking-glass.desktop"
       - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
