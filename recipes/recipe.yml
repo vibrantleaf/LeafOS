@@ -24,6 +24,16 @@ modules:
       - "rpmfusion"
       - "dconf-update-service"
   
+  # sudo -> sudo-rs 
+  - type: dnf
+    remove:
+      packages:
+        - "sudo"
+        - "sudo-python-plugin"
+    install:
+      packages:
+        - "sudo-rs"
+
   - type: dnf
     repos:
       files:
@@ -177,9 +187,6 @@ modules:
       - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
-      # use pkexec in just files
-      - "sed -i 's@sudo@pkexec@' /usr/share/ublue-os/just/*.just"
-      #- "sed -i 's@sudo@pkexec@' /usr/share/bluebuild/just/*.just"
       
   # Bluebuild CLI.
   - type: copy
@@ -298,8 +305,6 @@ modules:
         #- "firefox-langpacks"
         #- "steamdeck-backgrounds"
         #- mediawriter
-        - "sudo"
-        - "sudo-python-plugin"
         - "webapp-manager"
         
 

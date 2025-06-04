@@ -66,37 +66,18 @@ cosign verify --key /var/tmp/com.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrant
 This command's output should **not** say that are no matching signatures
 
 ## FAQ
+Q.1: I want to go back to x image
 
-Q.1: No `sudo`?
-
-A.1: I dont incude `sudo` in morgi-gwyrdd, Use `run0` instead, *please consider aliassing `sudo` to `run0` if you find that to be problematic*.
-
-Here are two examples for how use `run0`:
-```bash
-run0 echo 'true'
-```
-
-```bash
-run0 systemctl reboot
-```
-
-`run0` not displaying output? use `pkexec`
-```bash
-pkexec blkid
-```
-
-Q.2: I want to go back to x image
-
-A.2: you can use the rebase back to your image
+A.1: you can use the rebase back to your image
 
 if you were using one of universial blue's images before see the ublues [images](https://github.com/orgs/ublue-os/packages) 
 
-example for bluefin with out nvidia support:
+example for bluefin stable with out nvidia support:
 ```bash
 curl -L -o /var/tmp/io.projectbluefin.cosign.pub https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/cosign.pub
 cosign verify --key /var/tmp/io.projectbluefin.cosign.pub ghcr.io/ublue-os/bluefin:stable
 
-bootc switch --enforce-container-sigpolicy --apply ghcr.io/ublue-os/bluefin:stable
+sudo bootc switch --enforce-container-sigpolicy --apply ghcr.io/ublue-os/bluefin:stable
 ```
 
 
