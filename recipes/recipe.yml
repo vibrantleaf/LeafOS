@@ -332,6 +332,9 @@ modules:
       - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
       - "rm -fv /usr/sbin/protontricks"
       - "rm -fv /usr/bin/protontricks"
+      - "dnf clean all"
+      - "rm -rfv /var/cache/*"
+      - "rm -rfv /tmp/*"
 
   # Signing.
   - type: signing
