@@ -333,7 +333,6 @@ modules:
       - "rm -fv /usr/sbin/protontricks"
       - "rm -fv /usr/bin/protontricks"
       - "dnf clean all"
-      - "rm -rfv /var/cache/* !('/var/cache/rpm-ostree')"
       - "rm -rfv /tmp/*"
 
   # Signing.
