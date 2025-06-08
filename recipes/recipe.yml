@@ -18,6 +18,7 @@ modules:
       - "81-sharkfin-stop-waydroid.just"
       - "82-sharkfin-setup-waydroid.just"
       - "83-sharkfin-reset-waydroid.just"
+      - "84-sharkfin-extract-fonts-from-windows-iso.just"
   
   - type: bling
     install:
@@ -177,6 +178,9 @@ modules:
       - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
       - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
+      # 
+      - "git clone https://gist.github.com/AggamR/314eaa3ef6d5488ed7ebd9eb39404390.git /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso"
+      - "install -Dm 644 /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso/getMsFontsIso.sh /usr/libexec/extract_fonts_from_windows_iso.sh"
     
   # sudo -> sudo-rs 
   - type: dnf
@@ -323,6 +327,7 @@ modules:
       - "chmod +x /usr/bin/bluebuild"
       - "chmod +x /usr/bin/looking-glass-client"
       - "chmod +x /usr/bin/vibrant-updater"
+      - "chmod +x /usr/libexec/extract_fonts_from_windows_iso.sh"
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
       - "rm -rfv /opt/com.github.vibrantleaf.sharkfin/"
