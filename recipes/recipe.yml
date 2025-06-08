@@ -331,6 +331,7 @@ modules:
       - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
       - "rm -rfv /opt/io.looking-glass.client"
       - "rm -rfv /opt/com.github.vibrantleaf.sharkfin/"
+      - "rm -rfv /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso"
       - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
       - "rm -rfv /usr/share/sounds/steam"
       - "rm -fv /usr/etc/.gitkeep"
