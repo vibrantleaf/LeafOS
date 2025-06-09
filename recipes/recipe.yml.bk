@@ -1,7 +1,7 @@
 ---
 name: sharkfin
 description: This is just my persoanl fork of bazzite.
-base-image: ghcr.io/ublue-os/bluefin
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 modules:
   # Copy files to the image.
@@ -19,7 +19,7 @@ modules:
       - "82-sharkfin-setup-waydroid.just"
       - "83-sharkfin-reset-waydroid.just"
       - "84-sharkfin-extract-fonts-from-windows-iso.just"
-
+  
   - type: bling
     install:
       - "rpmfusion"
@@ -134,25 +134,70 @@ modules:
         - "libbdplus"
         - "libbluray"
         - "libdvdcss"
-        # steam
-        - "steam"
-        - "steam-devices"
-        - "gamemode"
-        - "mangohud"
-        - "gamescope"
-        - "vkbasalt"
-        # misc
-        - "crun"
-        - "podman"
-        - "podman-compose"
 
+  - type: script
+    snippets:
+      # Install looking-glass.
+      - "git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client"
+      - "(cd /opt/io.looking-glass.client/;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
+      - "mkdir -p /opt/io.looking-glass.client/client/build"
+      - "(cd /opt/io.looking-glass.client/client/build;cmake -DENABLE_PIPEWIRE=no -DENABLE_LIBDECOR=ON -DCMAKE_INSTALL_PREFIX=/usr ../)"
+      - "(cd /opt/io.looking-glass.client/client/build;make)"
+      - "mkdir -p /usr/share/doc/looking-glass-client/"
+      - "install -Dm 644 /opt/io.looking-glass.client/client/build/looking-glass-client /usr/bin/looking-glass-client"
+      - "install -Dm 644 /opt/io.looking-glass.client/README.md /usr/share/doc/looking-glass-client/README.md"
+      - "install -Dm 644 /opt/io.looking-glass.client/LICENSE /usr/share/doc/looking-glass-client/LICENSE"
+      - "install -Dm 644 /opt/io.looking-glass.client/AUTHORS /usr/share/doc/looking-glass-client/AUTHORS"
+      - "install -Dm 644 /opt/io.looking-glass.client/CONTRIBUTORS /usr/share/doc/looking-glass-client/CONTRIBUTORS"
+      - "install -Dm 644 /opt/io.looking-glass.client/resources/lg-logo.svg /usr/share/icons/hicolor/scalable/apps/io.looking-glass.client.svg"
+      # Install vibrant-updater.
+      - "git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater"
+      - "(cd /opt/org.codeberg.vibrantleaf.vibrant-updater;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))"
+      - "go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go"
+      - "mkdir -p /usr/share/vibrant-updater/"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater.just /usr/share/vibrant-updater/VibrantUpdater.just"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/src/VibrantUpdater-user.timer /usr/share/vibrant-updater/VibrantUpdater-user.timer"
+      - "install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.vibrant-updater.svg"      
+      # Setup branding.
+      - "sed -i 's@bazzite@sharkfin@g' /usr/share/ublue-os/image-info.json"
+      - "sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json"
+      - "sed -i 's@Bazzite@sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@bazzite-gnome@sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@https://bazzite.gg@https://github.com/vibrantleaf/sharkfin@g' /usr/lib/os-release"
+      - "sed -i 's@https://docs.bazzite.gg@https://github.com/vibrantleaf/sharkfin/wiki@g' /usr/lib/os-release"
+      - "sed -i 's@https://discord.bazzite.gg@https://github.com/vibrantleaf/sharkfin/discussions@g' /usr/lib/os-release"
+      - "sed -i 's@https://github.com/ublue-os/bazzite/issues/@https://github.com/vibrantleaf/sharkfin/issues@g' /usr/lib/os-release"
+      # Remove dnf package protection for sudo.
+      - "rm -fv /etc/dnf/protected.d/sudo.conf"
+      # Grab the sharkfin cosign public key from the repo.
+      - "git clone https://github.com/vibrantleaf/sharkfin.git /opt/com.github.vibrantleaf.sharkfin"
+      - "mkdir -p /usr/share/sharkfin"
+      - "cp -fv /opt/com.github.vibrantleaf.sharkfin/cosign.pub /usr/share/sharkfin/cosign.pub"
+      # make the steam.desktop & steam big pictue mode desktop file use the normal steam binnary
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam@Exec=/usr/bin/steam@g' /usr/share/applications/steam.desktop"
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/steam.desktop"
+      - "sed -i 's@Exec=/usr/bin/bazzite-steam-bpm@Exec=/usr/bin/steam -gamepadui@g' /usr/share/applications/bazzite-steam-bpm.desktop"
+      # 
+      - "git clone https://gist.github.com/AggamR/314eaa3ef6d5488ed7ebd9eb39404390.git /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso"
+      - "install -Dm 644 /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso/getMsFontsIso.sh /usr/libexec/extract_fonts_from_windows_iso.sh"
+    
+  # sudo -> sudo-rs 
+  - type: dnf
+    remove:
+      packages:
+        - "sudo"
+        - "sudo-python-plugin"
+    install:
+      packages:
+        - "sudo-rs"
 
   # Bluebuild CLI.
   - type: copy
     from: "ghcr.io/blue-build/cli:latest"
     src: "/usr/bin/bluebuild"
     dest: "/usr/bin/bluebuild"
-
+  
   # Default Flatpaks.
   - type: default-flatpaks
     notify: true
@@ -191,20 +236,17 @@ modules:
     include:
       - "gnome_settings.gschema.override"
 
-  ## Get Bazzite Wallpapers.
-  #- type: copy
-  #  from: "ghcr.io/ublue-os/bazzite:stable"
-  #  src: "/usr/share/backgrounds/convergence"
-  #  dest: "/usr/share/backgrounds/convergence"
-  #- type: copy
-  #  from: "ghcr.io/ublue-os/bazzite:stable"
-  #  src: "/usr/share/backgrounds/steamdeck"
-  #  dest: "/usr/share/backgrounds/steamdeck"
-  #- type: copy
-  #  from: "ghcr.io/ublue-os/bazzite:stable"
-  #  src: "/usr/share/gnome-background-properties"
-  #  dest: "/usr/share/gnome-background-properties"
-
+  # Get Bluefin Wallpapers.
+  - type: copy
+    from: "ghcr.io/ublue-os/bluefin:stable"
+    src: "/usr/share/backgrounds/bluefin"
+    dest: "/usr/share/backgrounds/bluefin"
+    
+  - type: copy
+    from: "ghcr.io/ublue-os/bluefin:stable"
+    src: "/usr/share/gnome-background-properties"
+    dest: "/usr/share/gnome-background-properties"
+  
   # Get Aruroa Wallpapers.
   - type: copy
     from: "ghcr.io/ublue-os/aurora:stable"
@@ -215,17 +257,7 @@ modules:
     from: "ghcr.io/ublue-os/aurora:stable"
     src: "/usr/share/gnome-background-properties"
     dest: "/usr/share/gnome-background-properties"
-
-  - type: script
-    scripts:
-     - 41-get-looking-glass.sh
-     - 42-get-vibrant-updater.sh
-     - 40-branding.sh
-     - 45-get-bazzite-repos.sh
-     - 44-get-bazzite-kernel.sh
-     - 43-get-bazzite-firmware.sh
-     - 49-extras.sh
-
+  
   # Cleanning.
   - type: dnf
     remove:
@@ -278,10 +310,35 @@ modules:
         #- "steamdeck-backgrounds"
         #- mediawriter
         - "webapp-manager"
+        
 
   - type: script
-    scripts:
-      - 50-cleanup.sh
+    snippets:
+      - "ln -s /usr/bin/sudo-rs /usr/bin/sudo"
+      - "bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild"
+      - "chmod 644 /usr/share/applications/looking-glass.desktop"
+      - "chmod 644 /usr/share/applications/vibrant-updater.desktop"
+      - "chmod 644 /usr/share/applications/toggle-automatic-system-updates.desktop"
+      - "chmod 644 /usr/share/applications/stop-waydroid.desktop"
+      - "chmod 644 /usr/share/applications/reset-waydroid.desktop"
+      - "chmod 644 /usr/bin/bluebuild"
+      - "chmod 644 /usr/bin/looking-glass-client"
+      - "chmod 644 /usr/bin/vibrant-updater"
+      - "chmod +x /usr/bin/bluebuild"
+      - "chmod +x /usr/bin/looking-glass-client"
+      - "chmod +x /usr/bin/vibrant-updater"
+      - "chmod +x /usr/libexec/extract_fonts_from_windows_iso.sh"
+      - "rm -rfv /opt/org.codeberg.vibrantleaf.vibrant-updater"
+      - "rm -rfv /opt/io.looking-glass.client"
+      - "rm -rfv /opt/com.github.vibrantleaf.sharkfin/"
+      - "rm -rfv /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso"
+      - "rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
+      - "rm -rfv /usr/share/sounds/steam"
+      - "rm -fv /usr/etc/.gitkeep"
+      - "rm -fv /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop"
+      - "rm -fv /usr/sbin/protontricks"
+      - "rm -fv /usr/bin/protontricks"
+      - "dnf clean all"
 
   # Signing.
   - type: signing
