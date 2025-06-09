@@ -27,8 +27,10 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - main.recipe.yaml
-          - nvidia.recipe.yaml
+          - sharkfin.recipe.yaml
+          - sharkfin-nvidia.recipe.yaml
+          - sharkfin-dx.recipe.yaml
+          - sharkfin-dx-nvidia.yaml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

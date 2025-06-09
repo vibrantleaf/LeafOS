@@ -1,0 +1,287 @@
+---
+name: sharkfin
+description: This is just my persoanl fork of bluefin.
+base-image: ghcr.io/ublue-os/bluefin-dx-nvidia
+image-version: latest
+modules:
+  # Copy files to the image.
+  - type: files
+    files:
+      - source: system/shared
+        destination: /
+
+  # Just Files.
+  - type: justfiles
+    validate: true
+    include:
+      - "80-sharkfin-generic-hostname.just"
+      - "81-sharkfin-stop-waydroid.just"
+      - "82-sharkfin-setup-waydroid.just"
+      - "83-sharkfin-reset-waydroid.just"
+      - "84-sharkfin-extract-fonts-from-windows-iso.just"
+
+  - type: bling
+    install:
+      - "rpmfusion"
+      - "dconf-update-service"
+
+  - type: dnf
+    repos:
+      files:
+        remove:
+          - "updates-archive"
+    install:
+      install-weak-deps: false
+      packages:
+        # virtualisation stack
+        - "virt-install"
+        - "libvirt-daemon-config-network"
+        - "libvirt-daemon-kvm"
+        - "edk2-ovmf"
+        - "virt-manager"
+        - "virt-viewer"
+        - "libguestfs-tools"
+        - "python3-libguestfs"
+        - "virt-top"
+        - "swtpm"
+        - "bridge-utils"
+        - "gnome-boxes"
+        # build deps
+        - "cmake"
+        - "gcc"
+        - "gcc-c++"
+        - "libglvnd-devel"
+        - "fontconfig-devel"
+        - "spice-protocol"
+        - "make"
+        - "nettle-devel"
+        - "pkgconf-pkg-config"
+        - "binutils-devel"
+        - "libXi-devel"
+        - "libXinerama-devel"
+        - "libXcursor-devel"
+        - "libXpresent-devel"
+        - "libxkbcommon-x11-devel"
+        - "wayland-devel"
+        - "wayland-protocols-devel"
+        - "libXScrnSaver-devel"
+        - "libXrandr-devel"
+        - "dejavu-sans-mono-fonts"
+        - "libdecor-devel"
+        #- "pipewire-devel"
+        - "pulseaudio-libs-devel"
+        - "libsamplerate-devel"
+        - "go"
+        # gnome shell extensions
+        - "gnome-shell-extension-dash-to-dock"
+        # fedora backgrounds
+        - "fedora-workstation-backgrounds"
+        - "f42-backgrounds-gnome"
+        - "f41-backgrounds-gnome"
+        - "f40-backgrounds-gnome"
+        - "f39-backgrounds-gnome"
+        - "f38-backgrounds-gnome"
+        - "f38-backgrounds-gnome"
+        - "f37-backgrounds-gnome"
+        - "f36-backgrounds-gnome"
+        - "f35-backgrounds-gnome"
+        - "f34-backgrounds-gnome"
+        - "f33-backgrounds-gnome"
+        - "f32-backgrounds-gnome"
+        - "f31-backgrounds-gnome"
+        - "f30-backgrounds-gnome"
+        - "f29-backgrounds-gnome"
+        - "f28-backgrounds-extras-gnome"
+        - "f28-backgrounds-gnome"
+        - "f27-backgrounds-gnome"
+        - "f26-backgrounds-extras-gnome"
+        - "f26-backgrounds-gnome"
+        - "f25-backgrounds-extras-gnome"
+        - "f25-backgrounds-gnome"
+        - "f24-backgrounds-extras-gnome"
+        - "f24-backgrounds-gnome"
+        - "f23-backgrounds-extras-gnome"
+        - "f23-backgrounds-gnome"
+        - "f22-backgrounds-extras-gnome"
+        - "f22-backgrounds-gnome"
+        - "f21-backgrounds-extras-gnome"
+        - "f21-backgrounds-gnome"
+        #- "heisenbug-backgrounds-extras-gnome"
+        #- "heisenbug-backgrounds-gnome"
+        - "schroedinger-cat-backgrounds-extras-gnome"
+        - "schroedinger-cat-backgrounds-gnome"
+        - "spherical-cow-backgrounds-extras-gnome"
+        - "spherical-cow-backgrounds-gnome"
+        - "beefy-miracle-backgrounds-gnome"
+        - "verne-backgrounds-extras-gnome"
+        - "verne-backgrounds-gnome"
+        - "lovelock-backgrounds-gnome"
+        - "laughlin-backgrounds-extras-gnome"
+        - "laughlin-backgrounds-gnome"
+        - "goddard-backgrounds-gnome"
+        - "constantine-backgrounds"
+        - "leonidas-backgrounds-lion"
+        - "solar-backgrounds"
+        - "desktop-backgrounds-waves"
+        - "fedorainfinity-backgrounds"
+        # codecs
+        - "gstreamer1-plugin-libav"
+        - "gstreamer1-plugins-bad-free-extras"
+        #- "gstreamer1-plugins-bad-freeworld"
+        #- "gstreamer1-plugins-ugly"
+        - "gstreamer1-vaapi"
+        - "libaacs"
+        - "libbdplus"
+        - "libbluray"
+        - "libdvdcss"
+        # steam
+        - "steam"
+        - "steam-devices"
+        - "gamemode"
+        - "mangohud"
+        - "gamescope"
+        - "vkbasalt"
+        # misc
+        - "crun"
+        - "podman"
+        - "podman-compose"
+
+
+  # Bluebuild CLI.
+  - type: copy
+    from: "ghcr.io/blue-build/cli:latest"
+    src: "/usr/bin/bluebuild"
+    dest: "/usr/bin/bluebuild"
+
+  # Default Flatpaks.
+  - type: default-flatpaks
+    notify: true
+    user: {}
+    system:
+      install:
+        - "org.mozilla.firefox"
+        - "org.libreoffice.LibreOffice"
+        - "org.localsend.localsend_app"
+        - "dev.geopjr.Collision"
+        - "org.gnome.World.Secrets"
+        - "com.belmoussaoui.Authenticator"
+        - "com.github.tchx84.Flatseal"
+        - "io.gitlab.adhami3310.Impression"
+        - "ca.edestcroix.Recordbox"
+        - "page.tesk.Refine"
+        - "com.github.marhkb.Pods"
+        - "io.github.dvlv.boxbuddyrs"
+        - "net.nokyan.Resources"
+      remove:
+        - "io.missioncenter.MissionCenter"
+
+  # Set GNOME tweaks.
+  - type: gnome-extensions
+    install:
+      - 4655 # Date Menu Formatter
+      - 6784 # Wiggle
+      #- 7867 # App Grid Wizard
+      - 4691 # PiP on top
+      - 5940 # Quick Settings Audio Panel
+      - 4269 # Alphabetical App Grid
+      - 3733 # Tiling Assistant
+      #- 1007 # Window Is Ready - Notification Remover
+
+  - type: gschema-overrides
+    include:
+      - "gnome_settings.gschema.override"
+
+  ## Get Bazzite Wallpapers.
+  #- type: copy
+  #  from: "ghcr.io/ublue-os/bazzite:stable"
+  #  src: "/usr/share/backgrounds/convergence"
+  #  dest: "/usr/share/backgrounds/convergence"
+  #- type: copy
+  #  from: "ghcr.io/ublue-os/bazzite:stable"
+  #  src: "/usr/share/backgrounds/steamdeck"
+  #  dest: "/usr/share/backgrounds/steamdeck"
+  #- type: copy
+  #  from: "ghcr.io/ublue-os/bazzite:stable"
+  #  src: "/usr/share/gnome-background-properties"
+  #  dest: "/usr/share/gnome-background-properties"
+
+  # Get Aruroa Wallpapers.
+  - type: copy
+    from: "ghcr.io/ublue-os/aurora:stable"
+    src: "/usr/share/backgrounds/aurora"
+    dest: "/usr/share/backgrounds/aurora"
+
+  - type: copy
+    from: "ghcr.io/ublue-os/aurora:stable"
+    src: "/usr/share/gnome-background-properties"
+    dest: "/usr/share/gnome-background-properties"
+
+  - type: script
+    scripts:
+     - 41-get-looking-glass.sh
+     - 42-get-vibrant-updater.sh
+     - 40-branding.sh
+     - 45-get-bazzite-repos.sh
+     - 44-get-bazzite-kernel.sh
+     - 43-get-bazzite-firmware.sh
+     - 49-extras.sh
+
+  # Cleanning.
+  - type: dnf
+    remove:
+      packages:
+        - "cmake"
+        - "gcc-c++"
+        - "libglvnd-devel"
+        - "cmake-data"
+        - "spice-protocol"
+        - "nettle-devel"
+        - "binutils-devel"
+        - "libXi-devel"
+        - "libXinerama-devel"
+        - "libXcursor-devel"
+        - "libXpresent-devel"
+        - "libxkbcommon-x11-devel"
+        - "wayland-devel"
+        - "wayland-protocols-devel"
+        - "libXScrnSaver-devel"
+        - "libXrandr-devel"
+        - "libdecor-devel"
+        #- "pipewire-devel"
+        - "pulseaudio-libs-devel"
+        - "libsamplerate-devel"
+        #- "go"
+        - "lutris"
+        - "winetricks"
+        - "gnome-shell-extension-hotedge"
+        - "gnome-shell-extension-bazzite-menu"
+        - "gnome-shell-extension-just-perfection"
+        - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
+        - "gnome-shell-extension-compiz-windows-effect"
+        - "gnome-shell-extension-desktop-cube"
+        #- "gnome-shell-extension-caffeine"
+        - "gnome-shell-extension-window-list"
+        - "gnome-shell-extension-restart-to"
+        - "gnome-shell-extension-burn-my-windows"
+        - "gnome-shell-extension-places-menu"
+        - "gnome-shell-extension-launch-new-instance"
+        #- "gnome-shell-extension-coverflow-alt-tab"
+        - "rom-properties"
+        - "rom-properties-utils"
+        - "rom-properties-gtk3"
+        - "rom-properties-common"
+        - "rom-properties-thumbnailer-dbus"
+        - "discover-overlay"
+        #- "gnome-tweaks"
+        #- "firefox"
+        #- "firefox-langpacks"
+        #- "steamdeck-backgrounds"
+        #- mediawriter
+        - "webapp-manager"
+
+  - type: script
+    scripts:
+      - 50-cleanup.sh
+
+  # Signing.
+  - type: signing
