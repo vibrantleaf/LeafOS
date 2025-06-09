@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Stop Waydroid
-Comment=Stop Waydroid
+Name=Force Stop Waydroid
+Comment=Force Stop Waydroid
 Exec='/usr/bin/just --justfile /usr/share/bluebuild/justfiles/81-sharkfin-stop-waydroid.just stop-waydroid'
 Terminal=true
 Icon=waydroid
