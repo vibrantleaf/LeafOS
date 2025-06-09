@@ -1,7 +1,7 @@
 # Sharkfin 🦈
  &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/sharkfin/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/sharkfin/actions/workflows/build.yml)
 
-Just my personal fork of [Bazzite](https://bazzite.gg/).
+Just my personal fork of [Bluefin](https://projectbluefin.io/).
 
 Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://universal-blue.org/).
 
