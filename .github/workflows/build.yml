@@ -27,7 +27,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - sharkfin.recipe.yamlz
+          - sharkfin.recipe.yaml
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
           - sharkfin-dx-nvidia.recipe.yaml
