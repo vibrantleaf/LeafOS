@@ -2,7 +2,7 @@
 Type=Application
 Name=Vibrant Updater
 Comment=A Vibrant Universel Updater Made For Modern Linux Systems. Writen in go.
-Exec=/usr/bin/vibrant-updater
+Exec="/usr/bin/bash -c '/usr/bin/vibrant-updater --user --no-menu --no-notification && /usr/bin/pkexec /usr/bin/vibrant-updater --sys'"
 Terminal=true
 Icon=org.codeberg.vibrantleaf.vibrant-updater
 Categories=System
