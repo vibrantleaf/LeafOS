@@ -1,0 +1,11 @@
+modules:
+    - type: script
+      scripts:
+       - 41-get-looking-glass.sh
+       - 42-get-vibrant-updater.sh
+       - 40-branding.sh
+       - 45-get-bazzite-repos.sh
+       - 44-get-bazzite-kernel.sh
+       - 43-get-bazzite-firmware.sh
+       - 49-extras.sh
+

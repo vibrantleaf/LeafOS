@@ -1,0 +1,9 @@
+modules:
+    - type: justfiles
+      validate: true
+      include:
+        - "80-sharkfin-generic-hostname.just"
+        - "81-sharkfin-stop-waydroid.just"
+        - "82-sharkfin-setup-waydroid.just"
+        - "83-sharkfin-reset-waydroid.just"
+        - "84-sharkfin-extract-fonts-from-windows-iso.just"

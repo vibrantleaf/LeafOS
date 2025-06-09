@@ -1,0 +1,25 @@
+modules:
+    ## Get Bazzite Wallpapers.
+    #- type: copy
+    #  from: "ghcr.io/ublue-os/bazzite:stable"
+    #  src: "/usr/share/backgrounds/convergence"
+    #  dest: "/usr/share/backgrounds/convergence"
+    #- type: copy
+    #  from: "ghcr.io/ublue-os/bazzite:stable"
+    #  src: "/usr/share/backgrounds/steamdeck"
+    #  dest: "/usr/share/backgrounds/steamdeck"
+    #- type: copy
+    #  from: "ghcr.io/ublue-os/bazzite:stable"
+    #  src: "/usr/share/gnome-background-properties"
+    #  dest: "/usr/share/gnome-background-properties"
+
+    # Get Aruroa Wallpapers.
+    - type: copy
+      from: "ghcr.io/ublue-os/aurora:stable"
+      src: "/usr/share/backgrounds/aurora"
+      dest: "/usr/share/backgrounds/aurora"
+
+    - type: copy
+      from: "ghcr.io/ublue-os/aurora:stable"
+      src: "/usr/share/gnome-background-properties"
+      dest: "/usr/share/gnome-background-properties"

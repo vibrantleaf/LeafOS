@@ -1,0 +1,11 @@
+modules:
+    - type: gnome-extensions
+      install:
+        - 4655 # Date Menu Formatter
+        - 6784 # Wiggle
+        #- 7867 # App Grid Wizard
+        - 4691 # PiP on top
+        - 5940 # Quick Settings Audio Panel
+        - 4269 # Alphabetical App Grid
+        - 3733 # Tiling Assistant
+        #- 1007 # Window Is Ready - Notification Remover

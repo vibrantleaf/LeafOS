@@ -1,0 +1,4 @@
+modules:
+    - type: gschema-overrides
+      include:
+        - "gnome_settings.gschema.override"

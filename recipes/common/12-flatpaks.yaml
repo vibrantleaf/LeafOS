@@ -1,0 +1,21 @@
+modules:
+    - type: default-flatpaks
+      notify: true
+      user: {}
+      system:
+        install:
+          - "org.mozilla.firefox"
+          - "org.libreoffice.LibreOffice"
+          - "org.localsend.localsend_app"
+          - "dev.geopjr.Collision"
+          - "org.gnome.World.Secrets"
+          - "com.belmoussaoui.Authenticator"
+          - "com.github.tchx84.Flatseal"
+          - "io.gitlab.adhami3310.Impression"
+          - "ca.edestcroix.Recordbox"
+          - "page.tesk.Refine"
+          - "com.github.marhkb.Pods"
+          - "io.github.dvlv.boxbuddyrs"
+          - "net.nokyan.Resources"
+        remove:
+          - "io.missioncenter.MissionCenter"
