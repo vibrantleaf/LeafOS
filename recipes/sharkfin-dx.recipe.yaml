@@ -2,18 +2,18 @@
 name: sharkfin-dx
 description: This is just my persoanl fork of bluefin.
 base-image: ghcr.io/ublue-os/bluefin-dx
-image-version: latest
+image-version: stable
 modules:
-    - from-file: common/10-files.yaml
-    - from-file: common/11-justfiles.yaml
-    - from-file: common/12-flatpaks.yaml
-    - from-file: common/13-bling.yaml
-    - from-file: common/14-dnf.yaml
-    - from-file: common/15-bluebuild-cli.yaml
-    - from-file: common/16-gnome-extensions.yaml
-    - from-file: common/17-gschema-overrides.yaml
-    - from-file: common/18-wallpapers.yaml
-    - from-file: common/19-common.yaml
-    - from-file: common/20-cleanup.yaml
+    - from-file: shared/10-files.yaml
+    - from-file: shared/11-justfiles.yaml
+    - from-file: shared/12-flatpaks.yaml
+    - from-file: shared/13-bling.yaml
+    - from-file: shared/14-dnf.yaml
+    - from-file: shared/15-bluebuild-cli.yaml
+    - from-file: shared/16-gnome-extensions.yaml
+    - from-file: shared/17-gschema-overrides.yaml
+    #- from-file: shared/18-wallpapers.yaml
+    - from-file: shared/19-common.yaml
+    - from-file: shared/20-cleanup.yaml
     # Signing.
     - type: signing

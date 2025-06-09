@@ -2,8 +2,8 @@ name: bluebuild
 on:
   schedule:
     - cron:
-        "00 06 * * *" # build at 06:00 UTC every day
-        # (20 minutes after last ublue images start building)
+        "0 8 * * Sunday" # build at 0800 UTC every week on Sunday
+        # (3 hours & 10 minute's after the lasted stable bluefin build starts building)
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
@@ -27,7 +27,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - sharkfin.recipe.yaml
+          - sharkfin.recipe.yamlz
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
           - sharkfin-dx-nvidia.recipe.yaml
