@@ -30,7 +30,7 @@ jobs:
           - sharkfin.recipe.yaml
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
-          - sharkfin-dx-nvidia.yaml
+          - sharkfin-dx-nvidia.recipe.yaml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
