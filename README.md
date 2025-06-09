@@ -5,6 +5,8 @@ Just my personal fork of [Bluefin](https://projectbluefin.io/).
 
 Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://universal-blue.org/).
 
+I'm aiming for sharkfin to be a sort of half way point bettween Bluefin & Bazzite.
+
 ## Installation
 
 > [!WARNING]  
