@@ -3,4 +3,10 @@ cosign.private
 /Containerfile
 sharkfin-latest.iso
 sharkfin-latest.iso-CHECKSUM
+sharkfin-dx-latest.iso
+sharkfin-dx-latest.iso-CHECKSUM
+sharkfin-nvidia-latest.iso
+sharkfin-nvidia-latest.iso-CHECKSUM
+sharkfin-dx-nvidia-latest.iso
+sharkfin-dx-nvidia-latest.iso-CHECKSUM
 unsaved\ file\ *
