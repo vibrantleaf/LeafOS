@@ -2,7 +2,7 @@ name: bluebuild
 on:
   schedule:
     - cron:
-        "0 8 * * Sunday" # build at 0800 UTC every week on Sunday
+        "0 8 * * 0" # build at 0800 UTC every week on Sunday
         # (3 hours & 10 minute's after the lasted stable bluefin build starts building)
   push:
     paths-ignore: # don't rebuild if only documentation has changed
