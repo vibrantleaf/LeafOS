@@ -22,3 +22,14 @@ chmod 644 /usr/share/applications/toggle-automatic-system-updates.desktop
 bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild
 chmod 644 /usr/bin/bluebuild
 chmod +x /usr/bin/bluebuild
+
+
+git clone https://codeberg.org/vibrantleaf/brew-gui.git /opt/org.codeberg.vibrantleaf.brew-gui
+mkdir -p /usr/share/org.codeberg.vibrantleaf.brew-gui/
+install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/brew-gui.sh /usr/bin/brew-gui
+install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/README.en_UK.md /usr/share/org.codeberg.vibrantleaf.brew-gui/README.en_UK.md
+install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/LICENSE.en_UK.txt /usr/share/org.codeberg.vibrantleaf.brew-gui/LICENSE.en_UK.txt
+chmod +x /usr/bin/brew-gui
+
+
+
