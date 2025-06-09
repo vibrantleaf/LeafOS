@@ -29,6 +29,7 @@ mkdir -p /usr/share/org.codeberg.vibrantleaf.brew-gui/
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/brew-gui.sh /usr/bin/brew-gui
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/README.en_UK.md /usr/share/org.codeberg.vibrantleaf.brew-gui/README.en_UK.md
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/LICENSE.en_UK.txt /usr/share/org.codeberg.vibrantleaf.brew-gui/LICENSE.en_UK.txt
+install -Dm 644 /opt/org.codeberg.vibrantleaff.brew-gui/assets/org.codeberg.vibrantleaf.brew-gui.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.brew-gui.svg
 chmod +x /usr/bin/brew-gui
 
 
