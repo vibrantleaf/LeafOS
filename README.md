@@ -18,14 +18,23 @@ To switch an existing atomic Fedora installation to the latest build:
 
 - First switch to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
   ```bash
-  bootc switch --apply /ghcr.io/vibrantleaf/sharkfin:latest
+  bootc switch --apply ghcr.io/vibrantleaf/sharkfin:latest
   ```
 - Then switch to the signed image, like so:
   ```bash
   bootc switch --enforce-container-sigpolicy --apply ghcr.io/vibrantleaf/sharkfin:latest
   ```
-  
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
+### nvidia supported variant
+ - First switch to the unsigned image, to get the proper signing keys and policies installed: *(Not needed if your already using any of or any of which that is derived from any of Universal Blue's images.)*
+  ```bash
+  bootc switch --apply ghcr.io/vibrantleaf/sharkfin-nvidia:latest
+  ```
+- Then switch to the signed image, like so:
+  ```bash
+  bootc switch --enforce-container-sigpolicy --apply ghcr.io/vibrantleaf/sharkfin-nvidia:latest
+  ```
 
 ## ISO
 
