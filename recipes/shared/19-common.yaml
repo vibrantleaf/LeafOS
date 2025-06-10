@@ -8,4 +8,5 @@ modules:
        - 44-get-bazzite-kernel.sh
        - 43-get-bazzite-firmware.sh
        - 49-extras.sh
+       - 47-get-bluebuild-cli.sh
 

@@ -1,5 +1,0 @@
-modules:
-    - type: copy
-      from: "ghcr.io/blue-build/cli:latest"
-      src: "/usr/bin/bluebuild"
-      dest: "/usr/bin/bluebuild"
