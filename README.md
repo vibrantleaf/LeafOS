@@ -7,7 +7,7 @@ Built using [Blue Build](https://blue-build.org/) and [Universal Blue](https://u
 
 I'm aiming for sharkfin to be a sort of half way point bettween being a nice workstation system like Bluefin while still having the ablitey to run games as well as Bazzite, with some of my own custom modifications.
 
-Sharkfin is currently only intended for usage on Desktop & Laptop systems not Handheld & Living Room system.
+Sharkfin is currently only intended for usage on Desktop & Laptop systems not a Handheld or Living Room environment.
 
 ## Installation
 
