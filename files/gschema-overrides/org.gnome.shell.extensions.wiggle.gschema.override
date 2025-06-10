@@ -1,0 +1,11 @@
+[org.gnome.shell.extensions.wiggle]
+check-interval=200
+cursor-size=30
+distance-threshold=180
+draw-interval=8
+hide-cursor=true
+magnify-duration=100
+radians-threshold=15
+sample-size=25
+unmagnify-delay=100
+unmagnify-duration=100

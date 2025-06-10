@@ -1,0 +1,2 @@
+[org.gnome.nautilus.compression]
+default-compression-format='tar.xz'

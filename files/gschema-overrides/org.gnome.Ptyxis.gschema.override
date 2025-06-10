@@ -1,0 +1,9 @@
+[org.gnome.Ptyxis]
+font-name='Adwaita Mono 16'
+interface-style='light'
+new-tab-position='last'
+cursor-shape='block'
+cursor-blink-mode='system'
+audible-bell=false
+scrollbar-policy='system'
+toast-on-copy-clipboard=true
