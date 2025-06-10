@@ -9,6 +9,7 @@ modules:
     - from-file: shared/12-flatpaks.yaml
     - from-file: shared/13-bling.yaml
     - from-file: shared/14-dnf.yaml
+    - from-file: shared/15-bluebuild-cli.yaml
     - from-file: shared/16-gnome-extensions.yaml
     - from-file: shared/17-gschema-overrides.yaml
     #- from-file: shared/18-wallpapers.yaml
