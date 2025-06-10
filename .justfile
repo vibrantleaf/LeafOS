@@ -30,15 +30,15 @@ build-iso-from-image:
     echo "Press 2 for sharkfin in dev mode"
     echo "Press 3 for sharkfin with nvidia support"
     echo "Press 4 for sharkfin in dev mode with nvidia support"
-    echo "Press 0 for to build all isos"
+    echo "Press 9 for to build all isos"
     read -n 1 -p "Your choice: " choice
     echo
     case $choice in
-      0) sharkfin_all_iso ;;
       1) sharkfin_iso ;;
       2) sharkfin_dx_iso ;;
       3) sharkfin_nvidia_iso ;;
       4) sharkfin_dx_nvidia_iso ;;
+      9) sharkfin_all_iso ;;
       *) echo "Invalid choice. Exiting." ;;
     esac
 
@@ -72,14 +72,14 @@ build-iso-from-recipe:
     echo "Press 2 for sharkfin in dev mode"
     echo "Press 3 for sharkfin with nvidia support"
     echo "Press 4 for sharkfin in dev mode with nvidia support"
-    echo "Press 0 for to build all isos"
+    echo "Press 9 for to build all isos"
     read -n 1 -p "Your choice: " choice
     echo
     case $choice in
-      0) sharkfin_all_iso ;;
       1) sharkfin_iso ;;
       2) sharkfin_dx_iso;;
       3) sharkfin_nvidia_iso ;;
       4) sharkfin_dx_nvidia_iso ;;
+      9) sharkfin_all_iso ;;
       *) echo "Invalid choice. Exiting." ;;
     esac
