@@ -1,0 +1,17 @@
+modules:
+  - type: chezmoi
+    #repository: ""
+    #all-users: false
+    file-conflict-policy: replace
+    #branch: chezmoi
+    run-every: 1d
+    wait-after-boot: 5m
+    disable-update: false
+    disable-init: false
+    install: true
+  
+  - type: systemd
+    user:
+      enabled:
+         - chesmoi-init.service
+         - chezmoi-update.timer
