@@ -8,9 +8,3 @@ modules:
     disable-update: false
     disable-init: false
     all-users: false
-  
-  - type: systemd
-    user:
-      enabled:
-         - chesmoi-init.service
-         - chezmoi-update.timer
