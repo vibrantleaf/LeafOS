@@ -1,13 +1,13 @@
 modules:
   - type: chezmoi
-    #repository: ""
-    #all-users: false
+    repository: "https://codeberg.org/vibrantleaf/dots.git"
     file-conflict-policy: replace
-    #branch: chezmoi
+    branch: main
     run-every: 1d
     wait-after-boot: 5m
     disable-update: false
     disable-init: false
+    all-users: false
   
   - type: systemd
     user:
