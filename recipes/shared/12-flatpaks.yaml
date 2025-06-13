@@ -4,7 +4,8 @@ modules:
       user: {}
       system:
         install:
-          - "org.mozilla.firefox"
+          #- "org.mozilla.firefox"
+          - "app.zen_browser.zen"
           - "org.libreoffice.LibreOffice"
           - "org.localsend.localsend_app"
           - "dev.geopjr.Collision"
