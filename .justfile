@@ -1,4 +1,5 @@
 #!/usr/bin/env -S just --justfile
+# vim: set ft=make :
 
 # Build iso file from the image
 build-iso-from-image:
