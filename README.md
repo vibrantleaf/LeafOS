@@ -71,7 +71,7 @@ just --justfile .justfile build-iso-from-image
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-curl -L -o /var/tmp/com.vibrantleaf.morgi-gwyrdd.cosign.pub https://raw.githubusercontent.com/vibrantleaf/sharkfin/refs/heads/main/cosign.pub
+curl -L -o /var/tmp/com.vibrantleaf.sharkfin.cosign.pub https://raw.githubusercontent.com/vibrantleaf/sharkfin/refs/heads/main/cosign.pub
 
 cosign verify --key /var/tmp/com.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:latest
 ```
