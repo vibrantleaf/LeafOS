@@ -126,4 +126,5 @@ modules:
             - "cosign"
             - "waydroid"
             - "fuse3"
+            - "borgbackup"
 
