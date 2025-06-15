@@ -44,7 +44,7 @@ modules:
           - "rom-properties-common"
           - "rom-properties-thumbnailer-dbus"
           - "discover-overlay"
-          #- "gnome-tweaks"
+          - "gnome-tweaks"
           #- "firefox"
           #- "firefox-langpacks"
           #- "steamdeck-backgrounds"
