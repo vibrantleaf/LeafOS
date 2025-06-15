@@ -4,6 +4,9 @@ modules:
           files:
             remove:
               - "updates-archive"
+      remove:
+        packages:
+           - "fuse"
       install:
           install-weak-deps: false
           packages:
@@ -122,4 +125,5 @@ modules:
             - "skopeo"
             - "cosign"
             - "waydroid"
+            - "fuse3"
 
