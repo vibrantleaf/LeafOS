@@ -3,5 +3,5 @@ modules:
       validate: true
       include:
         - "80-sharkfin-generic-hostname.just"
-        - "81-sharkfin-stop-waydroid.just"
+        - "81-sharkfin-waydroid-utils.just"
         - "82-sharkfin-extract-fonts-from-windows-iso.just"
