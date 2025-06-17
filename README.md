@@ -9,4 +9,4 @@ I'm aiming for sharkfin to be a sort of half way point bettween being a nice wor
 
 Sharkfin is currently only intended for usage on Desktop & Laptop systems not a Handheld or Living Room environment.
 
-Please read the sharkfin Wiki [Before](https://github.com/vibrantleaf/sharkfin/wiki) use. 
+Please read the [sharkfin wiki](https://github.com/vibrantleaf/sharkfin/wiki) Before use. 
