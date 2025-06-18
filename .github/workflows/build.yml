@@ -10,6 +10,7 @@ on:
       - ".gitignore"
       - ".justfile"
       - ".woodpecker/*"
+      - ".forgejo/*"
       - ".Conatinerfile/*"
   
   pull_request:
