@@ -10,7 +10,8 @@ on:
       - ".gitignore"
       - ".justfile"
       - ".woodpecker/*"
-
+      - ".Conatinerfile/*"
+  
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 concurrency:
