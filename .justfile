@@ -5,19 +5,19 @@ build-iso-from-image:
     #!/usr/bin/env bash
     function sharkfin_iso {
       echo "Building sharkfin-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name sharkfin-latest.iso image ghcr.io/vibrantleaf/sharkfin:latest
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-latest.iso image ghcr.io/vibrantleaf/sharkfin:latest
     }
     function sharkfin_dx_iso {
       echo "Building sharkfin-dx-latest.iso file"
-     pkexec bluebuild generate-iso --iso-name sharkfin-dx-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx:latest
+     pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx:latest
     }
     function sharkfin_nvidia_iso {
       echo "Building sharkfin-nvidia-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name sharkfin-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-nvidia:latest
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-nvidia:latest
     }
     function sharkfin_dx_nvidia_iso {
        echo "Building sharkfin-dx-nvidia-latest.iso file"
-       pkexec bluebuild generate-iso --iso-name sharkfin-dx-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx-nvidia:latest
+       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx-nvidia:latest
     }
     function sharkfin_all_iso {
       echo "Building all isos, this will take a long time"
@@ -47,19 +47,19 @@ build-iso-from-recipe:
     #!/usr/bin/env bash
     function sharkfin_iso {
       echo "Building sharkfin-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name sharkfin-latest.iso recipe recipe/sharkfin.recipe.yaml
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-latest.iso recipe recipe/sharkfin.recipe.yaml
     }
     function sharkfin_dx_iso {
       echo "Building sharkfin-dx-latest.iso file"
-     pkexec bluebuild generate-iso --iso-name sharkfin-dx-latest.iso recipe recipe/sharkfin-dx.recipe.yaml
+     pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-latest.iso recipe recipe/sharkfin-dx.recipe.yaml
     }
     function sharkfin_nvidia_iso {
       echo "Building sharkfin-nvidia-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name sharkfin-nvidia-latest.iso recipe recipe/sharkfin-nvidia.recipe.yaml
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-latest.iso recipe recipe/sharkfin-nvidia.recipe.yaml
     }
     function sharkfin_dx_nvidia_iso {
        echo "Building sharkfin-dx-nvidia-latest.iso file"
-       pkexec bluebuild generate-iso --iso-name sharkfin-dx-nvidia-latest.iso recipe recipe/sharkfin-dx-nvidia.recipe.yaml
+       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-latest.iso recipe recipe/sharkfin-dx-nvidia.recipe.yaml
     }
     function sharkfin_all_iso {
       echo "Building all isos, this will take a long time"
@@ -89,19 +89,19 @@ gpg-sign-iso:
     #!/usr/bin/env bash
     function sharkfin_iso {
       echo "Signing sharkfin-latest.iso file"
-      gpg --sign sharkfin-latest.iso 
+      gpg --sign iso/sharkfin-latest.iso 
     }
     function sharkfin_dx_iso {
       echo "Signing sharkfin-dx-latest.iso file"
-      gpg --sign sharkfin-dx-latest.iso 
+      gpg --sign iso/sharkfin-dx-latest.iso 
     }
     function sharkfin_nvidia_iso {
       echo "Signing sharkfin-nvidia-latest.iso file"
-      gpg --sign sharkfin-nvidia-latest.iso
+      gpg --sign iso/sharkfin-nvidia-latest.iso
     }
     function sharkfin_dx_nvidia_iso {
        echo "Signing sharkfin-dx-nvidia-latest.iso file"
-       gpg --sign sharkfin-dx-nvidia-latest.iso
+       gpg --sign iso/sharkfin-dx-nvidia-latest.iso
     }
     function sharkfin_all_iso {
       echo "Signing all isos, this will take a long time"
@@ -131,19 +131,19 @@ recipe-to-containerfile:
     #!/usr/bin/env bash
     function sharkfin_containerfile {
       echo "Converting shakrfin Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfiles/Sharkfin.Containerfile recipe/sharkfin.recipe.yaml
+      bluebuild generate --output Conatinerfile/Sharkfin.Containerfile recipe/sharkfin.recipe.yaml
     }
     function sharkfin_dx_containerfile {
       echo "Converting shakrfin-dx Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfiles/sharkfin-dx.Containerfile recipe/sharkfin.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin-dx.Containerfile recipe/sharkfin.recipe.yaml
     }
     function sharkfin_nvidia_containerfile {
       echo "Converting shakrfin-nvidia Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfiles/sharkfin-nvidia.Containerfile recipe/sharkfin.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin-nvidia.Containerfile recipe/sharkfin.recipe.yaml
     }
     function sharkfin_dx_nvidia_containerfile {
        echo "Converting shakrfin-dx-nvidia Recipe file to Containerfile"
-       bluebuild generate --output Conatinerfiles/sharkfin-dx-nvidia.Containerfile recipe/sharkfin.recipe.yaml
+       bluebuild generate --output Conatinerfile/sharkfin-dx-nvidia.Containerfile recipe/sharkfin.recipe.yaml
     }
     function sharkfin_all_containerfile {
       echo "Converting all Recipe files to Containerfiles, this will take a long time"
