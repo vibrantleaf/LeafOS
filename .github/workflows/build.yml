@@ -11,7 +11,8 @@ on:
       - ".justfile"
       - ".woodpecker/*"
       - ".forgejo/*"
-      - ".Conatinerfile/*"
+      - "Conatinerfile/*"
+      - ".devcontainer/*"
   
   pull_request:
   workflow_dispatch: # allow manually triggering builds
