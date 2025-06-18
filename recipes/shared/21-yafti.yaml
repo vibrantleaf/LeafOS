@@ -1,6 +1,6 @@
 modules:
   - type: yafti
-    custon-flatpaks:
+    custom-flatpaks:
       - Alpaca: com.jeffser.Alpaca
       - Bottles: com.usebottles.bottles
       - Lutris: net.lutris.Lutris
