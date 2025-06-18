@@ -36,3 +36,14 @@ chmod +x /usr/bin/brew-gui
 
 chmod +x /usr/libexec/sharkfin-waydroid-utils-reset
 chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
+
+if [ "$(sha256sum /usr/share/icons/hicolor/scalable/apps/io.github.kolunmi.bazaar.svg | awk '{print $1}')" = "0d6b3b3715e43f2dae016f88c544a3131a7191a5410b86c7a196b0d33513f4b5" ]
+then
+  echo "Bazaar's tempory Icon hash matched, giving bazaar a generic symbolic Icon ..."
+  sed -i 's/Icon=io.github.kolunmi.bazaar/Icon=shop-symbolic/g' /usr/share/applications/io.github.kolunmi.bazaar.desktop
+else
+  echo "bazar has a icon now this section can be removed now Yay!"
+fi
+
+
+
