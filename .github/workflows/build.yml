@@ -9,6 +9,7 @@ on:
       - "**.md"
       - ".gitignore"
       - ".justfile"
+      - ".woodpecker/*"
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
