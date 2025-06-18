@@ -2,6 +2,6 @@
 Type=Application
 Name=Brew GUI
 Comment=A very basic GUI wrapper for Brew, Built using Zenity & Bash.
-Exec="/usr/bin/brew-gui"
-Icon="org.codeberg.vibrantleaf.brew-gui"
+Exec=/usr/bin/brew-gui
+Icon=org.codeberg.vibrantleaf.brew-gui
 Categories=System
