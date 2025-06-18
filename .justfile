@@ -83,3 +83,45 @@ build-iso-from-recipe:
       9) sharkfin_all_iso ;;
       *) echo "Invalid choice. Exiting." ;;
     esac
+
+# gpg sign iso file
+gpg-sign-iso:
+    #!/usr/bin/env bash
+    function sharkfin_iso {
+      echo "Signing sharkfin-latest.iso file"
+      gpg --sign sharkfin-latest.iso 
+    }
+    function sharkfin_dx_iso {
+      echo "Signing sharkfin-dx-latest.iso file"
+      gpg --sign sharkfin-dx-latest.iso 
+    }
+    function sharkfin_nvidia_iso {
+      echo "Signing sharkfin-nvidia-latest.iso file"
+      gpg --sign sharkfin-nvidia-latest.iso
+    }
+    function sharkfin_dx_nvidia_iso {
+       echo "Signing sharkfin-dx-nvidia-latest.iso file"
+       gpg --sign sharkfin-dx-nvidia-latest.iso
+    }
+    function sharkfin_all_iso {
+      echo "Signing all isos, this will take a long time"
+      sharkfin_iso
+      sharkfin_dx_iso
+      sharkfin_nvidia_iso
+      sharkfin_dx_nvidia_iso
+    }
+    echo "Press 1 for base sharkfin"
+    echo "Press 2 for sharkfin in dev mode"
+    echo "Press 3 for sharkfin with nvidia support"
+    echo "Press 4 for sharkfin in dev mode with nvidia support"
+    echo "Press 9 for to build all isos"
+    read -n 1 -p "Your choice: " choice
+    echo
+    case $choice in
+      1) sharkfin_iso ;;
+      2) sharkfin_dx_iso;;
+      3) sharkfin_nvidia_iso ;;
+      4) sharkfin_dx_nvidia_iso ;;
+      9) sharkfin_all_iso ;;
+      *) echo "Invalid choice. Exiting." ;;
+    esac
