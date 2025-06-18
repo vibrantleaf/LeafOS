@@ -1,11 +1,11 @@
 cosign.key
 cosign.private
-sharkfin-latest.iso
-sharkfin-latest.iso-CHECKSUM
-sharkfin-dx-latest.iso
-sharkfin-dx-latest.iso-CHECKSUM
-sharkfin-nvidia-latest.iso
-sharkfin-nvidia-latest.iso-CHECKSUM
-sharkfin-dx-nvidia-latest.iso
-sharkfin-dx-nvidia-latest.iso-CHECKSUM
+iso/sharkfin-latest.iso
+iso/sharkfin-latest.iso-CHECKSUM
+iso/sharkfin-dx-latest.iso
+iso/sharkfin-dx-latest.iso-CHECKSUM
+iso/sharkfin-nvidia-latest.iso
+iso/sharkfin-nvidia-latest.iso-CHECKSUM
+iso/sharkfin-dx-nvidia-latest.iso
+iso/sharkfin-dx-nvidia-latest.iso-CHECKSUM
 unsaved\ file\ *
