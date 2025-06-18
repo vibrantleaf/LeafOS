@@ -125,3 +125,45 @@ gpg-sign-iso:
       9) sharkfin_all_iso ;;
       *) echo "Invalid choice. Exiting." ;;
     esac
+
+# Convert Recipe file to Containerfile
+recipe-to-containerfile:
+    #!/usr/bin/env bash
+    function sharkfin_containerfile {
+      echo "Converting shakrfin Recipe file to Containerfile"
+      bluebuild generate --output Conatinerfiles/Sharkfin.Containerfile recipe/sharkfin.recipe.yaml
+    }
+    function sharkfin_dx_containerfile {
+      echo "Converting shakrfin-dx Recipe file to Containerfile"
+      bluebuild generate --output Conatinerfiles/sharkfin-dx.Containerfile recipe/sharkfin.recipe.yaml
+    }
+    function sharkfin_nvidia_containerfile {
+      echo "Converting shakrfin-nvidia Recipe file to Containerfile"
+      bluebuild generate --output Conatinerfiles/sharkfin-nvidia.Containerfile recipe/sharkfin.recipe.yaml
+    }
+    function sharkfin_dx_nvidia_containerfile {
+       echo "Converting shakrfin-dx-nvidia Recipe file to Containerfile"
+       bluebuild generate --output Conatinerfiles/sharkfin-dx-nvidia.Containerfile recipe/sharkfin.recipe.yaml
+    }
+    function sharkfin_all_containerfile {
+      echo "Converting all Recipe files to Containerfiles, this will take a long time"
+      sharkfin_containerfile
+      sharkfin_dx_containerfile
+      sharkfin_nvidia_containerfile
+      sharkfin_dx_nvidia_containerfile
+    }
+    echo "Press 1 for base sharkfin"
+    echo "Press 2 for sharkfin in dev mode"
+    echo "Press 3 for sharkfin with nvidia support"
+    echo "Press 4 for sharkfin in dev mode with nvidia support"
+    echo "Press 9 for to generate all Containerfiles"
+    read -n 1 -p "Your choice: " choice
+    echo
+    case $choice in
+      1) sharkfin_containerfile ;;
+      2) sharkfin_dx_containerfile ;;
+      3) sharkfin_nvidia_containerfile ;;
+      4) sharkfin_dx_nvidia_containerfile ;;
+      9) sharkfin_all_containerfile ;;
+      *) echo "Invalid choice. Exiting." ;;
+    esac
