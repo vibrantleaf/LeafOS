@@ -7,3 +7,8 @@ then
 fi
 pkexec waydroid session stop
 pkexec waydroid container stop
+
+for file in ~/.local/share/applications/waydroid.*.desktop
+do
+  echo NoDisplay=true |  tee -a  "$file"
+done
