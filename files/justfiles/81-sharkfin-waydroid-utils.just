@@ -1,9 +1,11 @@
 # Stop Waydroid
 stop-waydroid:
+    #!/usr/bin/env bash
     /usr/libexec/sharkfin-waydroid-utils-stop
 
 # Initialise waydroid using the vanilla system type
 setup-waydroid-vanilla:
+    #!/usr/bin/env bash
     pkexec waydroid init --force \
         --system_channel https://ota.waydro.id/system \
         --vendor_channel https://ota.waydro.id/vendor \
@@ -18,6 +20,7 @@ setup-waydroid-vanilla:
 
 # Initialise waydroid using the gapps system type
 setup-waydroid-gapps:
+    #!/usr/bin/env bash
     pkexec waydroid init --force \
         --system_channel https://ota.waydro.id/system \
         --vendor_channel https://ota.waydro.id/vendor \
@@ -31,4 +34,5 @@ setup-waydroid-gapps:
 
 # 'factory reset' waydroid
 reset-waydroid:
+    #!/usr/bin/env bash
     /usr/libexec/sharkfin-waydroid-utils-reset
