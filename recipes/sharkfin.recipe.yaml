@@ -3,6 +3,8 @@ name: sharkfin
 description: This is just my persoanl fork of bluefin.
 base-image: ghcr.io/ublue-os/bluefin
 image-version: stable
+alt-tags:
+    - stable
 modules:
     - from-file: shared/10-files.yaml
     - from-file: shared/11-justfiles.yaml
