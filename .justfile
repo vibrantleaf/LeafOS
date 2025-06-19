@@ -3,21 +3,26 @@
 # Build iso file from the image
 build-iso-from-image:
     #!/usr/bin/env bash
+    curl -L -o ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub https://raw.githubusercontent.com/vibrantleaf/sharkfin/refs/heads/main/cosign.pub
     function sharkfin_iso {
-      echo "Building sharkfin-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name iso/sharkfin-latest.iso image ghcr.io/vibrantleaf/sharkfin:latest
+      echo "Building sharkfin-stable.iso file"
+      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-stable.iso image ghcr.io/vibrantleaf/sharkfin:stable
     }
     function sharkfin_dx_iso {
-      echo "Building sharkfin-dx-latest.iso file"
-     pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx:latest
+      echo "Building sharkfin-dx-stable.iso file"
+      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-stable.iso image ghcr.io/vibrantleaf/sharkfin-dx:stable
     }
     function sharkfin_nvidia_iso {
-      echo "Building sharkfin-nvidia-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-nvidia:latest
+      echo "Building sharkfin-nvidia-stable.iso file"
+      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-stable.iso image ghcr.io/vibrantleaf/sharkfin-nvidia:stable
     }
     function sharkfin_dx_nvidia_iso {
-       echo "Building sharkfin-dx-nvidia-latest.iso file"
-       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-latest.iso image ghcr.io/vibrantleaf/sharkfin-dx-nvidia:latest
+       echo "Building sharkfin-dx-nvidia-stable.iso file"
+       cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-stable.iso image ghcr.io/vibrantleaf/sharkfin-dx-nvidia:stable
     }
     function sharkfin_all_iso {
       echo "Building all isos, this will take a long time"
@@ -46,20 +51,20 @@ build-iso-from-image:
 build-iso-from-recipe:
     #!/usr/bin/env bash
     function sharkfin_iso {
-      echo "Building sharkfin-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name iso/sharkfin-latest.iso recipe recipes/sharkfin.recipe.yaml
+      echo "Building sharkfin-stable.iso file"
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-stable.iso recipe recipes/sharkfin.recipe.yaml
     }
     function sharkfin_dx_iso {
-      echo "Building sharkfin-dx-latest.iso file"
-     pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-latest.iso recipe recipes/sharkfin-dx.recipe.yaml
+      echo "Building sharkfin-dx-stable.iso file"
+     pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-stable.iso recipe recipes/sharkfin-dx.recipe.yaml
     }
     function sharkfin_nvidia_iso {
-      echo "Building sharkfin-nvidia-latest.iso file"
-      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-latest.iso recipe recipes/sharkfin-nvidia.recipe.yaml
+      echo "Building sharkfin-nvidia-stable.iso file"
+      pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-stable.iso recipe recipes/sharkfin-nvidia.recipe.yaml
     }
     function sharkfin_dx_nvidia_iso {
-       echo "Building sharkfin-dx-nvidia-latest.iso file"
-       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-latest.iso recipe recipes/sharkfin-dx-nvidia.recipe.yaml
+       echo "Building sharkfin-dx-nvidia-stable.iso file"
+       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-stable.iso recipe recipes/sharkfin-dx-nvidia.recipe.yaml
     }
     function sharkfin_all_iso {
       echo "Building all isos, this will take a long time"
@@ -88,20 +93,20 @@ build-iso-from-recipe:
 gpg-sign-iso:
     #!/usr/bin/env bash
     function sharkfin_iso {
-      echo "Signing sharkfin-latest.iso file"
-      gpg --sign iso/sharkfin-latest.iso 
+      echo "Signing sharkfin-stable.iso file"
+      gpg --sign iso/sharkfin-stable.iso 
     }
     function sharkfin_dx_iso {
-      echo "Signing sharkfin-dx-latest.iso file"
-      gpg --sign iso/sharkfin-dx-latest.iso 
+      echo "Signing sharkfin-dx-stable.iso file"
+      gpg --sign iso/sharkfin-dx-stable.iso 
     }
     function sharkfin_nvidia_iso {
-      echo "Signing sharkfin-nvidia-latest.iso file"
-      gpg --sign iso/sharkfin-nvidia-latest.iso
+      echo "Signing sharkfin-nvidia-stable.iso file"
+      gpg --sign iso/sharkfin-nvidia-stable.iso
     }
     function sharkfin_dx_nvidia_iso {
-       echo "Signing sharkfin-dx-nvidia-latest.iso file"
-       gpg --sign iso/sharkfin-dx-nvidia-latest.iso
+       echo "Signing sharkfin-dx-nvidia-stable.iso file"
+       gpg --sign iso/sharkfin-dx-nvidia-stable.iso
     }
     function sharkfin_all_iso {
       echo "Signing all isos, this will take a long time"
