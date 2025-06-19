@@ -171,3 +171,13 @@ recipe-to-containerfile:
       9) sharkfin_all_containerfile ;;
       *) echo "Invalid choice. Exiting." ;;
     esac
+
+# git pull
+git-pull:
+    git pull origin main
+
+# git force push
+git-force-push:
+    git add .
+    git commit -s -m 'Force Pushed Commit'
+    git push --force origin main 
