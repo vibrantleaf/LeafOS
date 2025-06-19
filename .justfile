@@ -3,25 +3,24 @@
 # Build iso file from the image
 build-iso-from-image:
     #!/usr/bin/env bash
-    curl -L -o ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub https://raw.githubusercontent.com/vibrantleaf/sharkfin/refs/heads/main/cosign.pub
     function sharkfin_iso {
       echo "Building sharkfin-stable.iso file"
-      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      cosign verify --key cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
       pkexec bluebuild generate-iso --iso-name iso/sharkfin-stable.iso image ghcr.io/vibrantleaf/sharkfin:stable
     }
     function sharkfin_dx_iso {
       echo "Building sharkfin-dx-stable.iso file"
-      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      cosign verify --key cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
       pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-stable.iso image ghcr.io/vibrantleaf/sharkfin-dx:stable
     }
     function sharkfin_nvidia_iso {
       echo "Building sharkfin-nvidia-stable.iso file"
-      cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+      cosign verify --key cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
       pkexec bluebuild generate-iso --iso-name iso/sharkfin-nvidia-stable.iso image ghcr.io/vibrantleaf/sharkfin-nvidia:stable
     }
     function sharkfin_dx_nvidia_iso {
        echo "Building sharkfin-dx-nvidia-stable.iso file"
-       cosign verify --key ~/.cache/com.github.vibrantleaf.sharkfin.cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
+       cosign verify --key cosign.pub ghcr.io/vibrantleaf/sharkfin:stable
        pkexec bluebuild generate-iso --iso-name iso/sharkfin-dx-nvidia-stable.iso image ghcr.io/vibrantleaf/sharkfin-dx-nvidia:stable
     }
     function sharkfin_all_iso {
