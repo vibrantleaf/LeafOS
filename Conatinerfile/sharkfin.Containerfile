@@ -169,11 +169,11 @@ RUN --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05
   /scripts/post_build.sh
 
 # Labels are added last since they cause cache misses with buildah
-LABEL org.blue-build.build-id="becd4c2e-2675-4184-bb93-69591092e92a"
+LABEL org.blue-build.build-id="26e4614c-89a5-4359-aa67-47a6cb1b1c60"
 LABEL org.opencontainers.image.title="sharkfin"
 LABEL org.opencontainers.image.description="This is just my persoanl fork of bluefin."
 LABEL org.opencontainers.image.source=""
 LABEL org.opencontainers.image.base.digest="sha256:e17c57ae416e3a5d23dc0681be2997ef2dfe7c99f6d06104085f69182b94b58a"
 LABEL org.opencontainers.image.base.name="ghcr.io/ublue-os/bluefin:stable"
-LABEL org.opencontainers.image.created="2025-06-18T23:13:43.126973018+00:00"
+LABEL org.opencontainers.image.created="2025-06-19T02:48:11.915561844+00:00"
 LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/blue-build/cli/main/README.md

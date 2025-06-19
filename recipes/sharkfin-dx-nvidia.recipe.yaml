@@ -5,6 +5,7 @@ base-image: ghcr.io/ublue-os/bluefin-dx-nvidia
 image-version: stable
 alt-tags:
     - stable
+    - latest
 modules:
     - from-file: shared/10-files.yaml
     - from-file: shared/11-justfiles.yaml
