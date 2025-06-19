@@ -174,10 +174,12 @@ recipe-to-containerfile:
 
 # git pull
 git-pull:
+    #!/usr/bin/env bash
     git pull origin main
 
 # git force push
 git-force-push:
+    #!/usr/bin/env bash
     git add .
     git commit -s -m 'Force Pushed Commit'
     git push --force origin main 
