@@ -131,7 +131,7 @@ recipe-to-containerfile:
     #!/usr/bin/env bash
     function sharkfin_containerfile {
       echo "Converting shakrfin Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfile/Sharkfin.Containerfile recipes/sharkfin.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin.Containerfile recipes/sharkfin.recipe.yaml
     }
     function sharkfin_dx_containerfile {
       echo "Converting shakrfin-dx Recipe file to Containerfile"
