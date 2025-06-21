@@ -16,6 +16,8 @@ chmod 644 /usr/share/applications/looking-glass.desktop
 chmod 644 /usr/share/applications/vibrant-updater.desktop
 
 bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild
+bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish
+chmod 644 /usr/share/fish/completions/bluebuild.fish
 chmod 644 /usr/bin/bluebuild
 chmod +x /usr/bin/bluebuild
 
