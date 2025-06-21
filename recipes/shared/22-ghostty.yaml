@@ -1,0 +1,13 @@
+modules:
+    - type: dnf
+      repos:
+        copr:
+          - "pgdev/ghostty"
+      remove:
+        packages:
+          - "ncurses-term"
+      install:
+          install-weak-deps: false
+          allow-erasing: true
+          packages:
+            - "ghostty"
