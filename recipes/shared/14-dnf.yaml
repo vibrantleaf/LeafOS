@@ -126,3 +126,4 @@ modules:
             - "cosign"
             - "waydroid"
             - "fuse3"
+            - "dash"
