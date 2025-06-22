@@ -27,17 +27,17 @@ COPY --from=ghcr.io/blue-build/cli:latest-installer \
 # Currently only holds the current image's
 # public key.
 FROM scratch AS stage-keys
-COPY cosign.pub /keys/sharkfin.pub
+COPY cosign.pub /keys/sharkfin-dx.pub
 
 
 # Main image
-FROM ghcr.io/ublue-os/bluefin@sha256:e17c57ae416e3a5d23dc0681be2997ef2dfe7c99f6d06104085f69182b94b58a AS sharkfin
-ARG RECIPE=recipes/sharkfin.recipe.yaml
+FROM ghcr.io/ublue-os/bluefin-dx:stable AS sharkfin-dx
+ARG RECIPE=recipes/sharkfin-dx.recipe.yaml
 ARG IMAGE_REGISTRY=localhost
 ARG CONFIG_DIRECTORY="/tmp/files"
 ARG MODULE_DIRECTORY="/tmp/modules"
-ARG IMAGE_NAME="sharkfin"
-ARG BASE_IMAGE="ghcr.io/ublue-os/bluefin"
+ARG IMAGE_NAME="sharkfin-dx"
+ARG BASE_IMAGE="ghcr.io/ublue-os/bluefin-dx"
 ARG FORCE_COLOR=1
 ARG CLICOLOR_FORCE=1
 ARG RUST_LOG_STYLE=always
@@ -61,36 +61,36 @@ RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/files:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'files' '{"type":"files","files":[{"source":"system/shared","destination":"/"}]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/justfiles:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'justfiles' '{"type":"justfiles","validate":true,"include":["80-sharkfin-generic-hostname.just","81-sharkfin-waydroid-utils.just","82-sharkfin-extract-fonts-from-windows-iso.just"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/default-flatpaks:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'default-flatpaks' '{"type":"default-flatpaks","notify":true,"user":{},"system":{"install":["app.zen_browser.zen","org.libreoffice.LibreOffice","org.localsend.localsend_app","dev.geopjr.Collision","org.gnome.World.Secrets","com.belmoussaoui.Authenticator","com.github.tchx84.Flatseal","io.gitlab.adhami3310.Impression","ca.edestcroix.Recordbox","page.tesk.Refine","com.github.marhkb.Pods","io.github.dvlv.boxbuddyrs","net.nokyan.Resources"],"remove":["io.missioncenter.MissionCenter"]}}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/bling:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'bling' '{"type":"bling","install":["rpmfusion","dconf-update-service"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/dnf:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'dnf' '{"type":"dnf","repos":{"files":{"remove":["updates-archive"]}},"remove":{"packages":["fuse"]},"install":{"install-weak-deps":false,"packages":["virt-install","libvirt-daemon-config-network","libvirt-daemon-kvm","edk2-ovmf","virt-manager","virt-viewer","libguestfs-tools","python3-libguestfs","virt-top","swtpm","bridge-utils","gnome-boxes","cmake","gcc","gcc-c++","libglvnd-devel","fontconfig-devel","spice-protocol","make","nettle-devel","pkgconf-pkg-config","binutils-devel","libXi-devel","libXinerama-devel","libXcursor-devel","libXpresent-devel","libxkbcommon-x11-devel","wayland-devel","wayland-protocols-devel","libXScrnSaver-devel","libXrandr-devel","dejavu-sans-mono-fonts","libdecor-devel","pulseaudio-libs-devel","libsamplerate-devel","go","gnome-shell-extension-dash-to-dock","gstreamer1-plugin-libav","gstreamer1-plugins-bad-free-extras","gstreamer1-vaapi","libaacs","libbdplus","libbluray","libdvdcss","steam","steam-devices","gamemode","mangohud","gamescope","vkbasalt","crun","podman","podman-compose","skopeo","cosign","waydroid","fuse3"]}}'
 COPY --from=ghcr.io/blue-build/cli:latest /usr/bin/bluebuild /usr/bin/bluebuild
 
@@ -98,82 +98,89 @@ RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/gnome-extensions:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'gnome-extensions' '{"type":"gnome-extensions","install":[4655,6784,4691,5940,4269,3733]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/gschema-overrides:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'gschema-overrides' '{"type":"gschema-overrides","include":["org.gnome.desktop.gschema.override","org.gnome.mutter.gschema.override","org.gnome.nautilus.gschema.override","org.gnome.Ptyxis.gschema.override","org.gnome.shell.extensions.blur-my-shell.gschema.override","org.gnome.shell.extensions.dash-to-dock.gschema.override","org.gnome.shell.extensions.tiling-assistant.gschema.override","org.gnome.shell.extensions.wiggle.gschema.override"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/script:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'script' '{"type":"script","scripts":["41-get-looking-glass.sh","42-get-vibrant-updater.sh","40-branding.sh","45-get-bazzite-repos.sh","44-get-bazzite-kernel.sh","43-get-bazzite-firmware.sh","47-get-udev-rules.sh","49-extras.sh"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/chezmoi:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'chezmoi' '{"type":"chezmoi","repository":"https://codeberg.org/vibrantleaf/dots.git","file-conflict-policy":"replace","branch":"main","run-every":"1d","wait-after-boot":"5m","disable-update":false,"disable-init":false,"all-users":false}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/yafti:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'yafti' '{"type":"yafti","custom-flatpaks":[{"Alpaca":"com.jeffser.Alpaca"},{"Bottles":"com.usebottles.bottles"},{"Lutris":"net.lutris.Lutris"},{"ProtonPlus":"com.vysp3r.ProtonPlus"}]}'
+RUN \
+--mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
+--mount=type=bind,from=ghcr.io/blue-build/modules/dnf:latest,src=/modules,dst=/tmp/modules,rw \
+--mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
+  /tmp/scripts/run_module.sh 'dnf' '{"type":"dnf","repos":{"copr":["pgdev/ghostty"]},"remove":{"packages":["ncurses-term"]},"install":{"install-weak-deps":false,"allow-erasing":true,"packages":["ghostty"]}}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/kargs:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'kargs' '{"type":"kargs","arch":"x86_64","kargs":["vm.max_map_count=1677721","vm.swappiness=180","vm.watermark_boost_factor=0","vm.watermark_scale_factor=125","vm.page-cluster=0"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/initramfs:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'initramfs' '{"type":"initramfs"}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/dnf:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'dnf' '{"type":"dnf","remove":{"packages":["cmake","gcc-c++","libglvnd-devel","cmake-data","spice-protocol","nettle-devel","binutils-devel","libXi-devel","libXinerama-devel","libXcursor-devel","libXpresent-devel","libxkbcommon-x11-devel","wayland-devel","wayland-protocols-devel","libXScrnSaver-devel","libXrandr-devel","libdecor-devel","pulseaudio-libs-devel","libsamplerate-devel","lutris","winetricks","gnome-shell-extension-hotedge","gnome-shell-extension-logo-menu","gnome-shell-extension-just-perfection","gnome-shell-extension-compiz-alike-magic-lamp-effect","gnome-shell-extension-compiz-windows-effect","gnome-shell-extension-desktop-cube","gnome-shell-extension-window-list","gnome-shell-extension-restart-to","gnome-shell-extension-burn-my-windows","gnome-shell-extension-places-menu","gnome-shell-extension-launch-new-instance","rom-properties","rom-properties-utils","rom-properties-gtk3","rom-properties-common","rom-properties-thumbnailer-dbus","discover-overlay","gnome-tweaks","webapp-manager"]}}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/script:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'script' '{"type":"script","scripts":["50-cleanup.sh"]}'
 RUN \
 --mount=type=bind,from=stage-files,src=/files,dst=/tmp/files,rw \
 --mount=type=bind,from=ghcr.io/blue-build/modules/signing:latest,src=/modules,dst=/tmp/modules,rw \
 --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/tmp/scripts/ \
-  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-stable,sharing=locked \
-  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-sharkfin-dx-stable,sharing=locked \
+  --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-sharkfin-dx-stable,sharing=locked \
   /tmp/scripts/run_module.sh 'signing' '{"type":"signing"}'
 
 RUN --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:7828e7872b342d05302417db1bd94bf93d347383,src=/scripts/,dst=/scripts/ \
   /scripts/post_build.sh
 
 # Labels are added last since they cause cache misses with buildah
-LABEL org.blue-build.build-id="26e4614c-89a5-4359-aa67-47a6cb1b1c60"
-LABEL org.opencontainers.image.title="sharkfin"
+LABEL org.blue-build.build-id="a6e0abd9-e912-4b41-a7ce-d6723b54167b"
+LABEL org.opencontainers.image.title="sharkfin-dx"
 LABEL org.opencontainers.image.description="This is just my persoanl fork of bluefin."
 LABEL org.opencontainers.image.source=""
-LABEL org.opencontainers.image.base.digest="sha256:e17c57ae416e3a5d23dc0681be2997ef2dfe7c99f6d06104085f69182b94b58a"
-LABEL org.opencontainers.image.base.name="ghcr.io/ublue-os/bluefin:stable"
-LABEL org.opencontainers.image.created="2025-06-19T02:48:11.915561844+00:00"
+LABEL org.opencontainers.image.base.digest="sha256:01ec596d2477b2b1c4bd0af2db3a3de561f5dc9452ad98656c1efbd6a00d3ce1"
+LABEL org.opencontainers.image.base.name="ghcr.io/ublue-os/bluefin-dx:stable"
+LABEL org.opencontainers.image.created="2025-06-22T00:01:24.053534716+00:00"
 LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/blue-build/cli/main/README.md

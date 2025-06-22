@@ -135,19 +135,19 @@ recipe-to-containerfile:
     #!/usr/bin/env bash
     function sharkfin_containerfile {
       echo "Converting shakrfin Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfile/sharkfin.Containerfile recipes/sharkfin.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin/Containerfile recipes/sharkfin.recipe.yaml
     }
     function sharkfin_dx_containerfile {
       echo "Converting shakrfin-dx Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfile/sharkfin-dx.Containerfile recipes/sharkfin-dx.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin-dx/Containerfile recipes/sharkfin-dx.recipe.yaml
     }
     function sharkfin_nvidia_containerfile {
       echo "Converting shakrfin-nvidia Recipe file to Containerfile"
-      bluebuild generate --output Conatinerfile/sharkfin-nvidia.Containerfile recipes/sharkfin-nvidia.recipe.yaml
+      bluebuild generate --output Conatinerfile/sharkfin-nvidia/Containerfile recipes/sharkfin-nvidia.recipe.yaml
     }
     function sharkfin_dx_nvidia_containerfile {
        echo "Converting shakrfin-dx-nvidia Recipe file to Containerfile"
-       bluebuild generate --output Conatinerfile/sharkfin-dx-nvidia.Containerfile recipes/sharkfin-dx-nvidia.recipe.yaml
+       bluebuild generate --output Conatinerfile/sharkfin-dx-nvidia/Containerfile recipes/sharkfin-dx-nvidia.recipe.yaml
     }
     function sharkfin_all_containerfile {
       echo "Converting all Recipe files to Containerfiles, this will take a long time"
