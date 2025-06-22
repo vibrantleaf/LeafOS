@@ -11,3 +11,4 @@ modules:
           allow-erasing: true
           packages:
             - "ghostty"
+            - "fish"
