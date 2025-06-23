@@ -1,4 +1,4 @@
-modules:
+vmodules:
     - type: dnf
       repos:
           files:
@@ -7,6 +7,10 @@ modules:
       remove:
         packages:
            - "fuse"
+           - "virt-manager"
+           - "virt-viewer"
+           - "vim"
+           - "nano"
       install:
           install-weak-deps: false
           packages:
@@ -69,3 +73,4 @@ modules:
             - "waydroid"
             - "fuse3"
             - "dash"
+            - "helix"
