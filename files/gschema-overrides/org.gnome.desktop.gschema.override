@@ -5,6 +5,8 @@ monospace-font-name='Adwaita Mono 16'
 font-antialiasing='rgba'
 font-hinting='slight'
 font-rgba-order='rgb'
+show-battery-percentage=true
+locate-pointer=true
 
 [org.gnome.desktop.search-providers]
 disable-external=false
@@ -26,3 +28,9 @@ resize-with-right-button=true
 
 [org.gnome.desktop.sound]
 theme-name='Default'
+
+[org.gnome.desktop.a11y]
+always-show-universal-access-status=true
+
+[org.gnome.desktop.peripherals.mouse]
+natural-scroll=true
