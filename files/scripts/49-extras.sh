@@ -15,6 +15,8 @@ chmod 644 /usr/share/applications/brew-gui.desktop
 chmod 644 /usr/share/applications/looking-glass.desktop
 chmod 644 /usr/share/applications/vibrant-updater.desktop
 
+mkdir -p /usr/share/bash-completion/completions/
+mkdir -p /usr/share/fish/completions/
 bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild
 bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish
 chmod 644 /usr/share/fish/completions/bluebuild.fish
@@ -38,7 +40,7 @@ ln -sfT /usr/bin/dash /usr/bin/sh
 if [ "$(sha256sum /usr/share/icons/hicolor/scalable/apps/io.github.kolunmi.bazaar.svg | awk '{print $1}')" = "0d6b3b3715e43f2dae016f88c544a3131a7191a5410b86c7a196b0d33513f4b5" ]
 then
   echo "Bazaar's tempory Icon hash matched, giving bazaar a generic symbolic Icon ..."
-  sed -i 's@Icon=io.github.kolunmi.bazaar@Icon=/usr/share/icons/Adwaita/symbolic/devices/media-floppy-symbolic.svg@g' /usr/share/applications/io.github.kolunmi.bazaar.desktop
+  sed -i 's@Icon=io.github.kolunmi.bazaar@Icon=org.gnome.Software-symbolic@g' /usr/share/applications/io.github.kolunmi.bazaar.desktop
 else
   echo "bazar has a icon now this section can be removed now Yay!"
 fi
