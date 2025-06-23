@@ -8,4 +8,5 @@ modules:
        - 44-get-bazzite-kernel.sh
        - 43-get-bazzite-firmware.sh
        - 47-get-udev-rules.sh
+       - 39-sane-mimetypes.sh
        - 49-extras.sh
