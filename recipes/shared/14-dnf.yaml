@@ -1,4 +1,4 @@
-vmodules:
+modules:
     - type: dnf
       repos:
           files:
