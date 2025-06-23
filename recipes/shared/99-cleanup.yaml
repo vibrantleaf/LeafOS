@@ -3,7 +3,7 @@ modules:
       remove:
         packages:
           - "cmake"
-          - "gcc-c++"
+          #- "gcc-c++"
           - "libglvnd-devel"
           - "cmake-data"
           - "spice-protocol"

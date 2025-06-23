@@ -45,5 +45,6 @@ else
   echo "bazar has a icon now this section can be removed now Yay!"
 fi
 
-
-
+echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
+ln -sfT /usr/bin/hx /usr/bin/helix
+chmod +x /usr/bin/helix
