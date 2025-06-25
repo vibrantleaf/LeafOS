@@ -9,7 +9,7 @@ modules:
            - "fuse"
            - "virt-manager"
            - "virt-viewer"
-           - "vim"
+           - "vim-enhanced"
            - "nano"
       install:
           install-weak-deps: false
