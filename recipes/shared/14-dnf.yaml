@@ -7,10 +7,6 @@ modules:
       remove:
         packages:
            - "fuse"
-           - "virt-manager"
-           - "virt-viewer"
-           - "vim-enhanced"
-           - "nano"
       install:
           install-weak-deps: false
           packages:
