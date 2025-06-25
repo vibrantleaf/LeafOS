@@ -8,6 +8,10 @@ alt-tags:
     - latest
 modules:
     - from-file: shared/10-files.yaml
+    - type: files
+      files:
+        - source: system/nvidia
+          destination: /
     - from-file: shared/11-justfiles.yaml
     - from-file: shared/12-flatpaks.yaml
     - from-file: shared/13-bling.yaml
