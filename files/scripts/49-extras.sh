@@ -37,7 +37,7 @@ chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
 
 ln -sfT /usr/bin/dash /usr/bin/sh
 
-#echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
+echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor
 chmod +x /usr/bin/helix
