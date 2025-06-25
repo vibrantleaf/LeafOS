@@ -37,14 +37,6 @@ chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
 
 ln -sfT /usr/bin/dash /usr/bin/sh
 
-if [ "$(sha256sum /usr/share/icons/hicolor/scalable/apps/io.github.kolunmi.bazaar.svg | awk '{print $1}')" = "0d6b3b3715e43f2dae016f88c544a3131a7191a5410b86c7a196b0d33513f4b5" ]
-then
-  echo "Bazaar's tempory Icon hash matched, giving bazaar a generic symbolic Icon ..."
-  sed -i 's@Icon=io.github.kolunmi.bazaar@Icon=org.gnome.Software-symbolic@g' /usr/share/applications/io.github.kolunmi.bazaar.desktop
-else
-  echo "bazar has a icon now this section can be removed now Yay!"
-fi
-
-echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
+#echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
 ln -sfT /usr/bin/hx /usr/bin/helix
 chmod +x /usr/bin/helix
