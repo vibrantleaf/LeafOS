@@ -20,8 +20,8 @@ modules:
     - from-file: shared/20-chezmoi.yaml
     #- from-file: shared/21-yafti.yaml
     #- from-file: shared/22-ghostty.yaml
-    - from-file: shared/97-kargs.yaml
-    - from-file: shared/98-initramfs.yaml
+    #- from-file: shared/97-kargs.yaml
+    #- from-file: shared/98-initramfs.yaml
     - from-file: shared/99-cleanup.yaml
     # Signing.
     - type: signing
