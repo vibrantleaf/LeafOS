@@ -5,4 +5,4 @@ modules:
         - "80-sharkfin-generic-hostname.just"
         - "81-sharkfin-waydroid-utils.just"
         - "82-sharkfin-extract-fonts-from-windows-iso.just"
-        - "00-oobs.just"
+        #- "00-oobs.just"
