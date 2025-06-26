@@ -12,3 +12,7 @@ modules:
       - Bottles: com.usebottles.bottles
       - Lutris: net.lutris.Lutris
       - ProtonPlus: com.vysp3r.ProtonPlus
+  - type: script
+    snippets:
+      - "sed -i 's@/usr/bin/gnome-software@/usr/bin/bazaar window@g /usr/share/ublue-os/firstboot/yafti.yml"
+       
