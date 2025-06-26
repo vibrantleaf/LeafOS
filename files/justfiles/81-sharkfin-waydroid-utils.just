@@ -57,7 +57,6 @@ setup-waydroid-gapps:
     rm -rfv ~/.cache/waydroid
     echo "Done"
 
-
 # 'factory reset' waydroid
 reset-waydroid:
     #!/usr/bin/env bash
