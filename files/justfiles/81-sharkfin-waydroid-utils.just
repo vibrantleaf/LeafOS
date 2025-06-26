@@ -55,7 +55,8 @@ setup-waydroid-gapps:
     echo "Cleaning up"
     gpg --delete-secret-key 37D2C98789D8311948394E3E41E7044E1DBA2E89    
     rm -rfv ~/.cache/waydroid
-    echo "Done"
+    echo "READ THE WAYDROID FAQ FOR HOW TO GET GOOGLE PLAY CERTIFICATION WORKING"
+    xdg-open "https://docs.waydro.id/faq/google-play-certification"
 
 # 'factory reset' waydroid
 reset-waydroid:
