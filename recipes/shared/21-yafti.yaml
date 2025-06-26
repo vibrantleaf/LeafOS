@@ -1,7 +1,7 @@
 modules:
   - type: script
     snippets:
-      - "dnf copr enable renner/staging"
+      - "dnf copr enable -y renner/staging"
       - "dnf install -y python3-pip libadwaita yafti"
   - type: yafti
     custom-flatpaks:
@@ -15,5 +15,5 @@ modules:
   - type: script
     snippets:
       - "sed -i 's@/usr/bin/gnome-software@/usr/bin/bazaar window@g /usr/share/ublue-os/firstboot/yafti.yml"
-      - "dnf copr disable renner/staging"
+      - "dnf copr disable-y  renner/staging"
 
