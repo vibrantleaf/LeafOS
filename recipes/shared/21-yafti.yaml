@@ -14,6 +14,6 @@ modules:
       - Ruffle - A Modern Flash Player Reimplementation: rs.ruffle.Ruffle
   - type: script
     snippets:
-      - "sed -i 's@/usr/bin/gnome-software@/usr/bin/bazaar window@g /usr/share/ublue-os/firstboot/yafti.yml"
+      - "sed -i 's@/usr/bin/gnome-software@/usr/bin/bazaar window@g' /usr/share/ublue-os/firstboot/yafti.yml"
       - "dnf copr disable-y  renner/staging"
 
