@@ -70,3 +70,4 @@ modules:
             - "fuse3"
             - "dash"
             - "helix"
+            - "corectrl"
