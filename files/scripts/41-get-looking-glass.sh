@@ -2,7 +2,7 @@
 
 git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client
 
-(cd /opt/io.looking-glass.client/;git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))
+(cd /opt/io.looking-glass.client/;git fetch --tags && git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))
 
 mkdir -p /opt/io.looking-glass.client/client/build
 (cd /opt/io.looking-glass.client/client/build;cmake -DENABLE_PIPEWIRE=no -DENABLE_LIBDECOR=ON -DCMAKE_INSTALL_PREFIX=/usr ../)
