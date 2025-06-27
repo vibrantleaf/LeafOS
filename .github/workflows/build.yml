@@ -7,17 +7,20 @@ on:
   push:
     paths-ignore:
       - "**.md"
+      - ".forgejo/*"
+      - ".devcontainer/*"
+      - ".github/*"
+      - ".github/workflows/build.yml"
+      - ".github/CODEOWNERS"
+      - ".github/dependabot.yml"
       - ".gitignore"
       - ".justfile"
       - ".woodpecker/*"
-      - ".forgejo/*"
       - "Conatinerfile/*"
       - "Conatinerfile/sharkfin/*"
       - "Conatinerfile/sharkfin-dx/*"
       - "Conatinerfile/sharkfin-nvidia/*"
       - "Conatinerfile/sharkfin-dx-nvidia/*"
-      - ".devcontainer/*"
-      - ".github/workflows/build.yml"
   pull_request:
   workflow_dispatch:
 concurrency:
