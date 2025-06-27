@@ -12,6 +12,10 @@ on:
       - ".woodpecker/*"
       - ".forgejo/*"
       - "Conatinerfile/*"
+      - "Conatinerfile/sharkfin/*"
+      - "Conatinerfile/sharkfin-dx/*"
+      - "Conatinerfile/sharkfin-nvidia/*"
+      - "Conatinerfile/sharkfin-dx-nvidia/*"
       - ".devcontainer/*"
       - ".github/workflows/build.yml"
       
