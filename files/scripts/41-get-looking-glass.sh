@@ -3,7 +3,7 @@
 git clone --recursive https://github.com/gnif/LookingGlass.git /opt/io.looking-glass.client
 
 (cd /opt/io.looking-glass.client/;git fetch --tags)
-(cd /opt/io.looking-glass.client/;latestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)")
+(cd /opt/io.looking-glass.client/;latestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)"))
 (cd /opt/io.looking-glass.client/;git checkout $latestTag )
 
 mkdir -p /opt/io.looking-glass.client/client/build
