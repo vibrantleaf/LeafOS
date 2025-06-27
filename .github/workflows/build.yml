@@ -5,7 +5,7 @@ on:
         "0 8 * * 0" # build at 0800 UTC every week on Sunday
         # (3 hours & 10 minute's after the lasted stable bluefin build starts building)
   push:
-    paths-ignore: # don't rebuild if only documentation has changed
+    paths-ignore:
       - "**.md"
       - ".gitignore"
       - ".justfile"
@@ -18,11 +18,9 @@ on:
       - "Conatinerfile/sharkfin-dx-nvidia/*"
       - ".devcontainer/*"
       - ".github/workflows/build.yml"
-      
   pull_request:
-  workflow_dispatch: # allow manually triggering builds
+  workflow_dispatch:
 concurrency:
-  # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 jobs:
@@ -34,16 +32,14 @@ jobs:
       packages: write
       id-token: write
     strategy:
-      fail-fast: false # stop GH from cancelling all matrix builds if one fails
+      fail-fast: false
       matrix:
         recipe:
-          # !! Add your recipes here
           - sharkfin.recipe.yaml
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
           - sharkfin-dx-nvidia.recipe.yaml
     steps:
-      # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:
@@ -51,7 +47,6 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
-          
           maximize_build_space: true
           use_cache: true
           rechunk: true
