@@ -2,8 +2,11 @@
 
 git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /opt/org.codeberg.vibrantleaf.vibrant-updater
 
-(cd /opt/org.codeberg.vibrantleaf.vibrant-updater;git fetch --tags && git checkout $(git describe --tags '$(git rev-list --tags --max-count=1)'))
-go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go
+(cd /opt/org.codeberg.vibrantleaf.vibrant-updater/;git fetch --tags)
+(cd /opt/org.codeberg.vibrantleaf.vibrant-updater/;latestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)"))
+(cd /opt/org.codeberg.vibrantleaf.vibrant-updater/;git checkout $latestTag)
+
+(cd /opt/org.codeberg.vibrantleaf.vibrant-updater/;go build -o /usr/bin/vibrant-updater /opt/org.codeberg.vibrantleaf.vibrant-updater/src/vibrant_updater.go)
 
 mkdir -p /usr/share/vibrant-updater/
 install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/LICENSE.txt /usr/share/vibrant-updater/LICENSE.en.txt
