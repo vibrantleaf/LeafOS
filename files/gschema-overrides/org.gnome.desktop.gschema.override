@@ -7,7 +7,7 @@ font-hinting='slight'
 font-rgba-order='rgb'
 show-battery-percentage=true
 locate-pointer=true
-color-scheme='prefer-light'
+color-scheme='Default'
 accent-color='pink'
 
 [org.gnome.desktop.search-providers]
