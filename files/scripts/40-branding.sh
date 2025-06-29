@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 sed -i 's@bluefin@sharkfin@g' /usr/share/ublue-os/image-info.json
 sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json
 sed -i 's@Bluefin@sharkfin@g' /usr/lib/os-release

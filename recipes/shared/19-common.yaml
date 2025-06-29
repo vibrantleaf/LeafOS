@@ -1,12 +1,18 @@
 modules:
     - type: script
       scripts:
-       - 41-get-looking-glass.sh
-       - 42-get-vibrant-updater.sh
-       - 40-branding.sh
-       #- 45-get-bazzite-repos.sh
-       #- 44-get-bazzite-kernel.sh
-       #- 43-get-bazzite-firmware.sh
-       - 47-get-udev-rules.sh
+       - 20-org.codeberg.vibrantleaf.brew-gui.sh
+       - 21-org.codeberg.vibrantleaf.vibrant-updater.sh
+       - 22-org.codeberg.vibrantleaf.waydroid-wizard.sh
+       - 23-com.github.notthebee.autoaspm.sh
+       - 24-com.github.hattedsquirrel.ryzen_monitor.sh
+       - 25-io.looking-glass.client.sh
+       - 26-com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso.sh
        - 39-sane-mimetypes.sh
+       - 40-branding.sh
+       #- 45-bazzite-repos.sh
+       #- 44-bazzite-kernel-mods.sh
+       #- 43-bazzite-firmware.sh
+       #- 46-remove-bazzite-repos.sh
+       - 47-udev-rules.sh
        - 49-extras.sh

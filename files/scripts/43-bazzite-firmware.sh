@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-
 dnf5 -y copr enable bazzite-org:bazzite
 dnf5 -y copr enable bazzite-org:bazzite-multilib
-
 declare -A toswap=( \
    ["copr:copr.fedorainfracloud.org:bazzite-org:bazzite"]="wireplumber" \
    ["copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib"]="pipewire bluez xorg-x11-server-Xwayland" \
@@ -10,7 +8,6 @@ declare -A toswap=( \
    ["terra-mesa"]="mesa-filesystem" \
    ["copr:copr.fedorainfracloud.org:ublue-os:staging"]="fwupd" \
    )
-
 for repo in "${!toswap[@]}"
 do
   for package in ${toswap[$repo]}
@@ -19,7 +16,6 @@ do
   done
 done
 unset -v toswap repo package
-
 dnf5 versionlock add \
    pipewire \
    pipewire-alsa \
@@ -49,7 +45,6 @@ dnf5 versionlock add \
    fwupd-plugin-flashrom \
    fwupd-plugin-modem-manager \
    fwupd-plugin-uefi-capsule-data
-
 dnf5 -y install \
    mesa-va-drivers.i686
 dnf5 -y install --enable-repo="*rpmfusion*" --disable-repo="*fedora-multimedia*" \

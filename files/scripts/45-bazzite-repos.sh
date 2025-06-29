@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 dnf5 -y install dnf5-plugins
-
 for copr in \
    bazzite-org/bazzite \
    bazzite-org/bazzite-multilib \

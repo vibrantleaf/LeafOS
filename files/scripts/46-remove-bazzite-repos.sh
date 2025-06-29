@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-
 for copr in \
    bazzite-org/bazzite \
    bazzite-org/bazzite-multilib \
@@ -17,7 +15,6 @@ for copr in \
    mavit/discover-overlay \
    rok/cdemu \
    lizardbyte/beta; \
-
 do
   echo "Enabling copr: $copr"
   dnf5 -y copr enable $copr
