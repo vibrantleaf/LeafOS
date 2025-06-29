@@ -89,17 +89,17 @@ if ! [ "$fdroid" = "no"" ]
 then
   echo "20" ; sleep 1
   echo "Downloading F-Droid ..." ; sleep 1
-  mkdir -p ~/.cache/waydroid/
-  curl -Lo ~/.cache/waydroid/F-Droid.apk.asc https://f-droid.org/F-Droid.apk.asc
-  curl -Lo ~/.cache/waydroid/F-Droid.apk https://f-droid.org/F-Droid.apk
+  mkdir -p ~/.cache/waydroid-setup-wizard/
+  curl -Lo ~/.cache/waydroid-setup-wizard/F-Droid.apk.asc https://f-droid.org/F-Droid.apk.asc
+  curl -Lo ~/.cache/waydroid-setup-wizard/F-Droid.apk https://f-droid.org/F-Droid.apk
   echo "30" ; sleep 1
   echo "Verifying F-Droid Download ..." ; sleep 1
   gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89
-  gpg --verify ~/.cache/waydroid/F-Droid.apk.asc ~/.cache/waydroid/F-Droid.apk
+  gpg --verify ~/.cache/waydroid-setup-wizard/F-Droid.apk.asc ~/.cache/waydroid-setup-wizard/F-Droid.apk
   echo "40" ; sleep 1
   echo "Installing F-Droid into Waydroid ..." ; sleep 1
   pkexec waydroid container start & > /dev/null 2>&1
-  waydroid app install  ~/.cache/waydroid/F-Droid.apk
+  waydroid app install  ~/.cache/waydroid-setup-wizard/F-Droid.apk
   echo "50" ; sleep 1
   echo "Fininshed Installing F-Droid into Waydroid"
   echo "60" ; sleep 1
