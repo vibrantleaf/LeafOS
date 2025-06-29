@@ -14,7 +14,7 @@ waydroid-setup-wizard-gapps:
     system_type="GAPPS" /usr/libexec/sharkfin-waydroid-utils-setup-wizard
 
 # Run the Sharkfin Waydroid Setup Wizard using the FOSS system type (Advanced)
-waydroid-setup-wizard-gapps:
+waydroid-setup-wizard-foss:
     #!/usr/bin/env bash
     system_type="FOSS" /usr/libexec/sharkfin-waydroid-utils-setup-wizard
 
