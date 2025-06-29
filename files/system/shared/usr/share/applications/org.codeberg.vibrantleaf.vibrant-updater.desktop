@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Vibrant Updater
-Comment=A Vibrant Universel Updater Made For Modern Linux Systems. Writen in go.
-Exec="/usr/libexec/exec-vibrant-updater"
-Terminal=true
-Icon=org.codeberg.vibrantleaf.vibrant-updater
-Categories=System
