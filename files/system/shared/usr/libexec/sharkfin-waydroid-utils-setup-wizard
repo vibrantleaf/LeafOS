@@ -98,18 +98,12 @@ then
   zenity --info  --title="Waydroid Setup Wizard" --text="Read The Waydroid FAQ For How TO Get Google Play Certifcation Working Press OK After You Have Completed these step."
   xdg-open "https://docs.waydro.id/faq/google-play-certification"
   pkexec waydroid container restart & > /dev/null 2>&1
-  if [ -f  /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ]
-    cp -f /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ~/.local/share/applications
-    echo "NoDisplay=true" | tee -a ~/.local/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop
-  fi
-  zenity --info  --title="Waydroid Setup Wizard" --text="Waydroid Setup Done!"
-else
-  if [ -f  /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ]
-    cp -f /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ~/.local/share/applications
-    echo "NoDisplay=true" | tee -a ~/.local/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop
-  fi
-  zenity --info  --title="Waydroid Setup Wizard" --text="Waydroid Setup Done!"
- fi
+fi
+if [ -f  /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ]
+  cp -f /usr/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop ~/.local/share/applications
+  echo "NoDisplay=true" | tee -a ~/.local/share/applications/sharkfin-waydroid-utils-setup-wizard.desktop
+fi
+zenity --info  --title="Waydroid Setup Wizard" --text="Waydroid Setup Done!"
 if [ "$?" = -1 ]
 then
 zenity --error --text="Waydroid Setup Canceled."
