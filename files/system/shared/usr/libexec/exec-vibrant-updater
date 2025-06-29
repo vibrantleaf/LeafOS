@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+/usr/bin/vibrant-updater --user --no-menu --no-notification
+/usr/bin/pkexec /usr/bin/vibrant-updater --sys

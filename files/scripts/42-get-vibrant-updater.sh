@@ -17,3 +17,5 @@ install -Dm 644 /opt/org.codeberg.vibrantleaf.vibrant-updater/assets/Logo_Circle
 
 chmod 644 /usr/share/applications/vibrant-updater.desktop
 chmod +x /usr/bin/vibrant-updater
+chmod 644 /usr/libexec/exec-vibrant-updater
+chmod +x /usr/libexec/exec-vibrant-updater
