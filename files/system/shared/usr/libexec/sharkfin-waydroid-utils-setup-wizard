@@ -93,10 +93,6 @@ fi
 echo "100" ; sleep 1
 ) |
 zenity --progress --title="Waydroid Setup Wizard" --text="Initalising Waydroid ..." --percentage=0
-if [ "$?" = -1 ]
-then
-zenity --error --text="Waydroid Setup Canceled."
-fi
 if [ "$system_type" = "GAPPS" ]
 then
   zenity --info  --title="Waydroid Setup Wizard" --text="Read The Waydroid FAQ For How TO Get Google Play Certifcation Working Press OK After You Have Completed these step."
@@ -114,3 +110,7 @@ else
   fi
   zenity --info  --title="Waydroid Setup Wizard" --text="Waydroid Setup Done!"
  fi
+if [ "$?" = -1 ]
+then
+zenity --error --text="Waydroid Setup Canceled."
+fi
