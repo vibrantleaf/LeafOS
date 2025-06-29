@@ -1,4 +1,4 @@
-# Run the Sharkfin Waydroid Setup Wizard 
+# Run the Sharkfin Waydroid Setup Wizard
 waydroid-setup-wizard:
     #!/usr/bin/env bash
     /usr/libexec/sharkfin-waydroid-utils-setup-wizard
@@ -27,4 +27,3 @@ waydroid-factory-reset:
 waydroid-force-stop:
     #!/usr/bin/env bash
     /usr/libexec/sharkfin-waydroid-utils-stop
-
