@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 set -euxo pipefail
-if ! command -v waydroid &> /dev/null; then
+if ! command -v waydroid &> /dev/null
+then
     echo "Error: waydroid is not installed." >&2
     exit 1
 fi
-if ! command -v zenity &> /dev/null; then
+if ! command -v zenity &> /dev/null
+then
     echo "Error: zenity is not installed." >&2
     exit 1
 fi
-if ! command -v curl &> /dev/null; then
+if ! command -v curl &> /dev/null
+then
     echo "Error: zenity is not installed." >&2
     exit 1
 fi
-if ! command -v pkexec &> /dev/null; then
+if ! command -v pkexec &> /dev/null
+then
     echo "Error: zenity is not installed." >&2
     exit 1
 fi
