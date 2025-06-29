@@ -41,8 +41,22 @@ install -Dm 644 /opt/org.codeberg.vibrantleaf.waydroid-wizard/src/org.codeberg.v
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/assets/org.codeberg.vibrantleaf.waydroid-wizard.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.waydroid-wizard.svg
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/assets/org.codeberg.vibrantleaf.waydroid-wizard.png /usr/share/icons/hicolor/256x256/apps/org.codeberg.vibrantleaf.waydroid-wizard.png
 
+git clone https://github.com/notthebee/autoaspm.git /opt/com.github.notthebee.autoaspm
+mkdir -p /usr/share/com.github.notthebee.autoaspm
+install -Dm 644 /opt/com.github.notthebee.autoaspm/autoaspm.py /usr/bin/autoaspm
+install -Dm 644 /opt/com.github.notthebee.autoaspm/README.md /usr/share/com.github.notthebee.autoaspm/README.md
+
+git clone git clone https://github.com/hattedsquirrel/ryzen_monitor.git /opt/com.github.hattedsquirrel.ryzen_monitor
+(cd /opt/com.github.hattedsquirrel.ryzen_monitor;make)
+mkdir -p /usr/share/com.github.hattedsquirrel.ryzen_monitor
+install -Dm 644 /opt/com.github.hattedsquirrel.ryzen_monitor/src/ryzen_monitor /usr/bin/ryzen-monitor
+install -Dm 644 /opt/com.github.hattedsquirrel.ryzen_monitor/LICENSE /usr/share/com.github.hattedsquirrel.ryzen_monitor/LICENSE.txt
+install -Dm 644 /opt/com.github.hattedsquirrel.ryzen_monitor/README.md /usr/share/com.github.hattedsquirrel.ryzen_monitor/README.md
+
 chmod +x /usr/bin/brew-gui
 chmod +x /usr/bin/waydroid-wizard
+chmod +x /usr/bin/autoaspm
+chmod +x /usr/bin/ryzen-monitor
 chmod +x /usr/libexec/sharkfin-waydroid-utils-reset
 chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
 

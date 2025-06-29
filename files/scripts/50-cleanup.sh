@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-rm -rf /opt/org.codeberg.vibrantleaf.vibrant-updater
-rm -rf /opt/io.looking-glass.client
+rm -rf /opt/org.codeberg.vibrantleaf.vibrant-updater/
+rm -rf /opt/io.looking-glass.client/
 rm -rf /opt/com.github.vibrantleaf.sharkfin/
-rm -rf /opt/org.codeberg.vibrantleaf.brew-gui
+rm -rf /opt/org.codeberg.vibrantleaf.brew-gui/
 rm -rf /opt/org.codeberg.vibrantleaf.waydroid-wizard/
+rm -rf /opt/com.github.notthebee.autoaspm/
+rm -rf /opt/com.github.hattedsquirrel.ryzen_monitor/
 rm -rf /opt/org.bluebuild.cli/
 rm -rf /opt/com.github.gist.AggamR.get_ms_fonts_from_a_windows_10_iso
 rm -rf /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com

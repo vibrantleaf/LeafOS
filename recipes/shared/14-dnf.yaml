@@ -71,3 +71,4 @@ modules:
             - "dash"
             - "helix"
             - "corectrl"
+            - "pciutils"
