@@ -31,15 +31,15 @@ install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/LICENSE.en_UK.txt /usr/sh
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/assets/org.codeberg.vibrantleaf.brew-gui.svg /usr/share/icons/hicolor/scalable/apps/org.codeberg.vibrantleaf.brew-gui.svg
 install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/assets/org.codeberg.vibrantleaf.brew-gui.png /usr/share/icons/hicolor/256x256/apps/org.codeberg.vibrantleaf.brew-gui.png
 
-
 git clone https://codeberg.org/vibrantleaf/waydroid-wizard.git /opt/org.codeberg.vibrantleaf.waydroid-wizard
 mkdir -p /usr/share/org.codeberg.vibrantleaf.waydroid-wizard
 install -Dm 644 /opt/org.codeberg.vibrantleaf.waydroid-wizard/waydroid-wizard.sh /usr/bin/waydroid-wizard
 install -Dm 644 /opt/org.codeberg.vibrantleaf.waydroid-wizard/LICENSE.en_UK.txt /usr/share/org.codeberg.vibrantleaf.waydroid-wizard/LICENSE.en_UK.txt
 install -Dm 644 /opt/org.codeberg.vibrantleaf.waydroid-wizard/README.en_UK.md /usr/share/org.codeberg.vibrantleaf.waydroid-wizard/README.en_UK.md
-
+install -Dm 644 /opt/org.codeberg.vibrantleaf.waydroid-wizard/org.codeberg.vibrantleaf.waydroid-wizard.desktop /usr/share/applications/org.codeberg.vibrantleaf.waydroid-wizard.desktop
 
 chmod +x /usr/bin/brew-gui
+chmod +x /usr/bin/waydroid-wizard
 chmod +x /usr/libexec/sharkfin-waydroid-utils-reset
 chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
 
