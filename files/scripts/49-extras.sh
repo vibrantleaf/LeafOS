@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-set -x
-set -e
-set -u
-set -o pipefail
 mkdir -p /sources
 mkdir -p /usr/share/bash-completion/completions/
 mkdir -p /usr/share/fish/completions/
