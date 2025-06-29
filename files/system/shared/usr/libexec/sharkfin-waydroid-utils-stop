@@ -5,10 +5,10 @@ then
    echo "Exiting."
     exit 0
 fi
-pkexec waydroid session stop
+waydroid session stop
 pkexec waydroid container stop
 
-for file in ~/.local/share/applications/waydroid.*.desktop
-do
-  echo NoDisplay=true |  tee -a  "$file"
-done
+#for file in ~/.local/share/applications/waydroid.*.desktop
+#do
+#  echo NoDisplay=true |  tee -a  "$file"
+#done
