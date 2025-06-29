@@ -13,7 +13,7 @@ ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.stop-waydroid.desktop
-chmod 644 /usr/share/applications/com.github.vibrantleag.sharkfin.reset-waydroid.desktop
+chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.reset-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.toggle-automatic-system-updates.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.steam-big-picture-mode.desktop
 chmod 644 /usr/share/bash-completions/bluebuild
