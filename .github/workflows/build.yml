@@ -15,6 +15,7 @@ on:
       - ".github/dependabot.yml"
       - ".gitignore"
       - ".justfile"
+      - "Justfile"
       - ".woodpecker/*"
       - "Conatinerfile/*"
       - "Conatinerfile/sharkfin/*"
