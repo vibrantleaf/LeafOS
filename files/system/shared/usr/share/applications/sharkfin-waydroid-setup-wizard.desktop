@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Waydroid Setup Wizard
+Comment=Sharkfin's Waydroid Setup Wizard
+Exec='/usr/libexec/sharkfin-waydroid-utils-setup-wizard'
+Icon=waydroid
+Categories=X-WayDroid-App;

@@ -34,6 +34,7 @@ install -Dm 644 /opt/org.codeberg.vibrantleaf.brew-gui/assets/org.codeberg.vibra
 chmod +x /usr/bin/brew-gui
 chmod +x /usr/libexec/sharkfin-waydroid-utils-reset
 chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
+chmod +x /usr/libexec/sharkfin-waydroid-utils-setup-wizard
 
 ln -sfT /usr/bin/dash /usr/bin/sh
 
