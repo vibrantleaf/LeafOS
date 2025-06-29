@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone https://codeberg.org/vibrantleaf/brew-gui.git /sources/org.codeberg.vibrantleaf.brew-gui
 mkdir -p /usr/share/org.codeberg.vibrantleaf.brew-gui/

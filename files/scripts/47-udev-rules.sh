@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone https://github.com/fabiscafe/game-devices-udev.git /sources/game-devices-udev
 git clone https://github.com/wget/realtek-r8152-linux.git /sources/realtek-r8152-udev

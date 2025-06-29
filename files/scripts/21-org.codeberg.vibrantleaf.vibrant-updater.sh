@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone https://codeberg.org/vibrantleaf/vibrant-updater.git /sources/org.codeberg.vibrantleaf.vibrant-updater
 (cd /sources/org.codeberg.vibrantleaf.vibrant-updater/;git fetch --tags)

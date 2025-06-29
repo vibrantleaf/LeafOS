@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 sed -i 's@bluefin@sharkfin@g' /usr/share/ublue-os/image-info.json
 sed -i 's@ublue-os@vibrantleaf@g' /usr/share/ublue-os/image-info.json
 sed -i 's@Bluefin@sharkfin@g' /usr/lib/os-release

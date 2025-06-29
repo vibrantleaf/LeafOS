@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 dnf5 -y install dnf5-plugins
 for copr in \
    bazzite-org/bazzite \

@@ -1,4 +1,8 @@
-#!/usr/bin/env 
+#!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone https://codeberg.org/vibrantleaf/waydroid-wizard.git /sources/org.codeberg.vibrantleaf.waydroid-wizard
 mkdir -p /usr/share/org.codeberg.vibrantleaf.waydroid-wizard

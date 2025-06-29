@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 dnf5 -y copr enable bazzite-org:bazzite
 dnf5 -y copr enable bazzite-org:bazzite-multilib
 declare -A toswap=( \

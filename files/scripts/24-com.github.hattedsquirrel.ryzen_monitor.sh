@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone git clone https://github.com/hattedsquirrel/ryzen_monitor.git /sources/com.github.hattedsquirrel.ryzen_monitor
 (cd /sources/com.github.hattedsquirrel.ryzen_monitor;make)

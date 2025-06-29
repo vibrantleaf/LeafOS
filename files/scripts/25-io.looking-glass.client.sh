@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone --recursive https://github.com/gnif/LookingGlass.git /sources/io.looking-glass.client
 (cd /sources/io.looking-glass.client/;git fetch --tags)

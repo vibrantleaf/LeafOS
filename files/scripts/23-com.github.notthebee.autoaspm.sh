@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 mkdir -p /sources
 git clone https://github.com/notthebee/autoaspm.git /sources/com.github.notthebee.autoaspm
 mkdir -p /usr/share/com.github.notthebee.autoaspm

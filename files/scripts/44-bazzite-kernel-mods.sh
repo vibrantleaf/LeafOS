@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -e
+set -u
+set -o pipefail
 dnf5 -y config-manager setopt "*rpmfusion*".enabled=0
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y install scx-scheds
