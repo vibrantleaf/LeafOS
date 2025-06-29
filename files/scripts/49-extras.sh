@@ -6,9 +6,9 @@ set -o pipefail
 mkdir -p /sources
 mkdir -p /usr/share/bash-completion/completions/
 mkdir -p /usr/share/fish/completions/
-bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
-bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
-echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf > /dev/null
+bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild
+bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish
+echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor
