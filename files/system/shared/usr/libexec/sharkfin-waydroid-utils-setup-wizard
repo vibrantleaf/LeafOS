@@ -8,6 +8,14 @@ if ! command -v zenity &> /dev/null; then
     echo "Error: zenity is not installed." >&2
     exit 1
 fi
+if ! command -v curl &> /dev/null; then
+    echo "Error: zenity is not installed." >&2
+    exit 1
+fi
+if ! command -v pkexec &> /dev/null; then
+    echo "Error: zenity is not installed." >&2
+    exit 1
+fi
 if [ -n "$system_type" ]
 then
   echo "DEBUG: Using the $system_type system type. "
