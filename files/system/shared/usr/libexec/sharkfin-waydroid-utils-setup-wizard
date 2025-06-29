@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-set -euxo pipefail
+set -x
+set -u
+set -o pipefail
+: "${system_type:=}"
+: "${fdroid:=}"
+: "${custom_system_channel:=}"
+: "${custom_vendor_channel:=}"
+: "${advanced_options_check:=}"
 if ! command -v waydroid &> /dev/null
 then
     echo "Error: waydroid is not installed." >&2
@@ -12,55 +19,53 @@ then
 fi
 if ! command -v curl &> /dev/null
 then
-    echo "Error: zenity is not installed." >&2
+    echo "Error: curl is not installed." >&2
     exit 1
 fi
 if ! command -v pkexec &> /dev/null
 then
-    echo "Error: zenity is not installed." >&2
+    echo "Error: pkexec is not installed." >&2
     exit 1
 fi
 if [ -n "$system_type" ]
 then
   echo "DEBUG: Using the $system_type system type. "
 else
+ while true; do
   advanced_options_check=$(zenity --info --title "Waydroid Setup Wizard" \
     --text 'Set up Waydroid.' \
-    --ok-label Start \
-    --extra-button "Advanced Options")
-  if [ "$advanced_options_check" = "Advanced Options" ]
-  then
-    choice=$(zenity --list \
-      --title="Waydroid Setup Wizard" \
-      --text="Advanced Options" \
-      --column="Option" --height=400 \
-      "Do not automaticly install F-Droid" "Set a custom system channel" "Set a custom vendor vhannel")
+    --ok-label="Continue" \
+    --extra-button="Advanced Options")
+  echo "DEBUG: $advanced_options_check"
+  if [ "$advanced_options_check" = "Advanced Options" ]; then
+    choice=$(zenity --list --title="Waydroid Setup Wizard" --text="Advanced Options" --column="Option" --height=400 \
+      "Do not automaticly install F-Droid" "Set a custom system channel" "Set a custom vendor channel")
     case "$choice" in
-    "Do not automaticly install F-Droid") fdroid="no" ;;
-    "Set a custom system channel") custom_system_channel="yes" ;;
-    "Set a custom vendor channel") custom_vendor_channel="yes" ;;
-    *) echo "No valid selection made." ;;
+      "Do not automaticly install F-Droid") fdroid="no" ;;
+      "Set a custom system channel") custom_system_channel="yes" ;;
+      "Set a custom vendor channel") custom_vendor_channel="yes" ;;
+      *) echo "No valid selection made." ;;
     esac
+  else
+    custom_system_channel="no"
+    custom_vendor_channel="no"
+    fdroid=yes
+    break
   fi
-  if [$ custom_system_channel = "yes"]
+done
+  if [ $custom_system_channel = "yes" ]
   then
-    system_channel=$(zenity --entry \
-      --title="Waydroid Setup Wizard \
-      --text="Enter Your Custom System Channel" \
-      --entry-text="https://ota.waydro.id/system")
+    system_channel=$(zenity --entry --title="Waydroid Setup Wizard" --text="Enter Your Custom System Channel" --entry-text="https://ota.waydro.id/system")
   else
     system_channel="https://ota.waydro.id/system"
   fi
-  if [$ custom_vendor_channel = "yes"]
+  if [ $custom_vendor_channel = "yes" ]
   then
-  vendor_channel=$(zenity --entry \
-      --title="Waydroid Setup Wizard \
-      --text="Enter Your Custom Vendor Channel" \
-      --entry-text="https://ota.waydro.id/vendor")
+  vendor_channel=$(zenity --entry --title="Waydroid Setup Wizard" --text="Enter Your Custom Vendor Channel" --entry-text="https://ota.waydro.id/vendor")
   else
     vendor_channel="https://ota.waydro.id/vendor"
   fi
-  zenity --info  --title="Waydroid Setup Wizard" --text="Set up Waydroid." --ok-label="Start."
+ zenity --info  --title="Waydroid Setup Wizard" --text="Set up Waydroid." --ok-label="Start."
     choice=$(zenity --list \
       --title="Waydroid Setup Wizard" \
       --text="Select a System type" \
@@ -79,7 +84,7 @@ echo "Initalising Waydroid ..."
 pkexec waydroid init --force \
   --system_channel $system_channel \
   --vendor_channel $vendor_channel \
---system_type $system_type
+  --system_type $system_type
 if ! [ "$fdroid" = "no"" ]
 then
   echo "20" ; sleep 1
