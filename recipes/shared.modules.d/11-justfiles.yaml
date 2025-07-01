@@ -2,7 +2,7 @@ modules:
     - type: justfiles
       validate: true
       include:
-        - "80-generic-hostname.just"
-        - "81-waydroid-utils.just"
-        - "82-extract-fonts-from-windows-iso.just"
-        - "00-oobs.just"
+        - "shared/80-generic-hostname.just"
+        - "shared/81-waydroid-utils.just"
+        - "shared/82-extract-fonts-from-windows-iso.just"
+        - "shared/00-oobs.just"
