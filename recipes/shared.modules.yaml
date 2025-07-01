@@ -8,7 +8,7 @@ modules:
     - from-file: shared.modules.d/16-gnome-extensions.yaml
     - from-file: shared.modules.d/17-gschema-overrides.yaml
     #- from-file: shared.modules.d/18-wallpapers.yaml
-    - from-file: shared.modules.d.modules.d/19-common.yaml
+    - from-file: shared.modules.d/19-common.yaml
     - from-file: shared.modules.d/20-chezmoi.yaml
     - from-file: shared.modules.d/21-yafti.yaml
     #- from-file: shared.modules.d/22-ghostty.yaml
