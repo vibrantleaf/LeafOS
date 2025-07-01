@@ -7,25 +7,8 @@ alt-tags:
     - stable
     - latest
 modules:
-    - from-file: shared/10-files.yaml
-    - from-file: shared/11-justfiles.yaml
-    - from-file: shared/12-flatpaks.yaml
-    - from-file: shared/13-bling.yaml
-    - from-file: shared/14-dnf.yaml
-    - from-file: shared/15-bluebuild-cli.yaml
-    - from-file: shared/16-gnome-extensions.yaml
-    - from-file: shared/17-gschema-overrides.yaml
-    #- from-file: shared/18-wallpapers.yaml
-    - from-file: shared/19-common.yaml
-    - from-file: shared/20-chezmoi.yaml
-    - from-file: shared/21-yafti.yaml
-    #- from-file: shared/22-ghostty.yaml
-    #- from-file: shared/97-kargs.yaml
-    #- from-file: shared/98-initramfs.yaml
-    - from-file: shared/99-cleanup.yaml
-    # dx
-    - from-file: dx/10-files.yaml
-    - from-file: dx/20-dnf.yaml
-    - from-file: dx-99-cleanup.yaml
+    - from-file: sharkfin.recipe.yaml
+    - from-file: shared.modules.yaml
+    - from-file: dx.modules.yaml
     # Signing.
     - type: signing

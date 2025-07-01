@@ -1,0 +1,2 @@
+modules:
+  - from-file: nvidia.modules.d/10-files.yaml
