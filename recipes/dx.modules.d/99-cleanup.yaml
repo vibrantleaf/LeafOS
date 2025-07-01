@@ -4,4 +4,4 @@ modules:
       - "ccache -C"
       - "ccache -z"
     scripts:
-        - 50-cleanup.sh
+      - 50-cleanup.sh

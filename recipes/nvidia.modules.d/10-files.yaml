@@ -1,4 +1,5 @@
-- type: files
-      files:
-        - source: system/nvidia
-          destination: /
+modules:
+  - type: files
+    files:
+     - source: system/nvidia
+       destination: /

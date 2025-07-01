@@ -1,5 +1,5 @@
 modules:
-    - type: files
-      files:
-        - source: system/dx
-          destination: /
+  - type: files
+    files:
+      - source: system/dx
+        destination: /
