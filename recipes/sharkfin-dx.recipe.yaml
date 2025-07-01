@@ -23,5 +23,9 @@ modules:
     #- from-file: shared/97-kargs.yaml
     #- from-file: shared/98-initramfs.yaml
     - from-file: shared/99-cleanup.yaml
+    # dx
+    - from-file: dx/10-files.yaml
+    - from-file: dx/20-dnf.yaml
+    - from-file: dx-99-cleanup.yaml
     # Signing.
     - type: signing

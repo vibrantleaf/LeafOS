@@ -7,11 +7,8 @@ alt-tags:
     - stable
     - latest
 modules:
+    # shared
     - from-file: shared/10-files.yaml
-    - type: files
-      files:
-        - source: system/nvidia
-          destination: /
     - from-file: shared/11-justfiles.yaml
     - from-file: shared/12-flatpaks.yaml
     - from-file: shared/13-bling.yaml
@@ -27,5 +24,11 @@ modules:
     #- from-file: shared/97-kargs.yaml
     #- from-file: shared/98-initramfs.yaml
     - from-file: shared/99-cleanup.yaml
+    # nvidia
+    - from-file: nvidia/10-files.yaml
+    # dx
+    - from-file: dx/10-files.yaml
+    - from-file: dx/20-dnf.yaml
+    - from-file: dx-99-cleanup.yaml
     # Signing.
     - type: signing

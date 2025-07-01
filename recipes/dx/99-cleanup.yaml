@@ -1,0 +1,7 @@
+modules:
+  - type: script
+    snippets:
+      - "ccache -C"
+      - "ccache -z"
+    scripts:
+        - 50-cleanup.sh
