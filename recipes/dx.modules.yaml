@@ -1,4 +1,4 @@
 modules:
    - from-file: dx.modules.d/10-files.yaml
    - from-file: dx.modules.d/20-dnf.yaml
-   - from-file: dx.modules.d/-99-cleanup.yaml
+   - from-file: dx.modules.d/99-cleanup.yaml

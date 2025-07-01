@@ -7,7 +7,7 @@ alt-tags:
     - stable
     - latest
 modules:
-    - from-file: shared.modules.yaml
+    - from-file: sharkfin.modules.yaml
     - from-file: dx.modules.yaml
     - from-file: nvidia.modules.yaml
     # Signing.

@@ -1,0 +1,16 @@
+modules:
+    - from-file: shared.modules.d/10-files.yaml
+    - from-file: shared.modules.d/11-justfiles.yaml
+    - from-file: shared.modules.d/12-flatpaks.yaml
+    - from-file: shared.modules.d/13-bling.yaml
+    - from-file: shared.modules.d/14-dnf.yaml
+    - from-file: shared.modules.d/15-bluebuild-cli.yaml
+    - from-file: shared.modules.d/16-gnome-extensions.yaml
+    #- from-file: shared.modules.d/18-wallpapers.yaml
+    - from-file: shared.modules.d/19-common.yaml
+    - from-file: shared.modules.d/20-chezmoi.yaml
+    - from-file: shared.modules.d/21-yafti.yaml
+    #- from-file: shared.modules.d/22-ghostty.yaml
+    #- from-file: shared.modules.d/97-kargs.yaml
+    #- from-file: shared.modules.d/98-initramfs.yaml
+    - from-file: shared.modules.d/99-cleanup.yaml

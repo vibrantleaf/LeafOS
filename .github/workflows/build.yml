@@ -43,6 +43,10 @@ jobs:
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
           - sharkfin-dx-nvidia.recipe.yaml
+          - borealis.recipe.yaml
+          - borealis-nvidia.recipe.yaml
+          - borealis-dx.recipe.yaml
+          - borealis-dx-nvidia.recipe.yaml
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8

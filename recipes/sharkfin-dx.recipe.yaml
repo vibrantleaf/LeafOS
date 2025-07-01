@@ -8,7 +8,7 @@ alt-tags:
     - latest
 modules:
     - from-file: sharkfin.recipe.yaml
-    - from-file: shared.modules.yaml
+    - from-file: sharkfin.modules.yaml
     - from-file: dx.modules.yaml
     # Signing.
     - type: signing

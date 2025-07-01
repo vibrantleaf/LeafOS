@@ -1,0 +1,13 @@
+---
+name: borealis-dx
+description: This is just my Highly Expiremental personal fork of Aurora.
+base-image: ghcr.io/ublue-os/aurora-dx
+image-version: stable
+alt-tags:
+    - stable
+    - latest
+modules:
+    - from-file: borealis.modules.yaml
+    - from-file: dx.modules.yaml
+    # Signing.
+    - type: signing

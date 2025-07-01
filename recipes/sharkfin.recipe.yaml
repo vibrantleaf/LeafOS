@@ -7,6 +7,6 @@ alt-tags:
     - stable
     - latest
 modules:
-    - from-file: shared.modules.yaml
+    - from-file: sharkfin.modules.yaml
     # Signing.
     - type: signing
