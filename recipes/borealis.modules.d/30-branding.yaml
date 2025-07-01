@@ -1,0 +1,4 @@
+modules:
+    - type: script
+      scripts:
+       - borealis/40-branding.sh

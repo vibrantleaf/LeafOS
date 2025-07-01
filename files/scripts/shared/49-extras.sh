@@ -16,7 +16,7 @@ chmod 644 /usr/share/bash-completions/bluebuild
 chmod 644 /usr/share/fish/completions/bluebuild.fish
 chmod 644 /usr/bin/bluebuild
 chmod +x /usr/bin/bluebuild
-chmod +x /usr/libexec/sharkfin-waydroid-utils-reset
-chmod +x /usr/libexec/sharkfin-waydroid-utils-stop
+chmod +x /usr/libexec/waydroid-utils-reset
+chmod +x /usr/libexec/waydroid-utils-stop
 chmod +x /usr/bin/helix
 chmod +x /usr/bin/editor

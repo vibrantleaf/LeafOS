@@ -21,9 +21,9 @@ waydroid-setup-wizard-foss:
 # Factory Reset Waydroid
 waydroid-factory-reset:
     #!/usr/bin/env bash
-    /usr/libexec/sharkfin-waydroid-utils-reset
+    /usr/libexec/waydroid-utils-reset
 
 # Force Stop Waydroid
 waydroid-force-stop:
     #!/usr/bin/env bash
-    /usr/libexec/sharkfin-waydroid-utils-stop
+    /usr/libexec/waydroid-utils-stop

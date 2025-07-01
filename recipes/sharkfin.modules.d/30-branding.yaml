@@ -1,0 +1,4 @@
+modules:
+    - type: script
+      scripts:
+       - sharkfin/40-branding.sh
