@@ -1,0 +1,4 @@
+modules:
+  - type: script
+    scripts:
+      - "shared/24-amdvlk-driver.sh"
