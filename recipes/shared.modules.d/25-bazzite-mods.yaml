@@ -1,0 +1,6 @@
+modules:
+  - type: script
+    scripts:
+      - "shared/45-bazzite-repos.sh"
+      - "shared/43-bazzite-firmware.sh"
+      - "shared/44-bazzite-kernel-mods.sh"
