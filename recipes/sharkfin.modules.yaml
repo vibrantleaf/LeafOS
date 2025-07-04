@@ -13,7 +13,6 @@ modules:
     - from-file: shared.modules.d/21-yafti.yaml
     #- from-file: shared.modules.d/18-wallpapers.yaml
     #- from-file: shared.modules.d/22-ghostty.yaml
-    - from-file: shared.modules.d/25-bazzite-mods.yaml
     #- from-file: shared.modules.d/97-kargs.yaml
     - from-file: shared.modules.d/98-initramfs.yaml
     - from-file: shared.modules.d/99-cleanup.yaml
