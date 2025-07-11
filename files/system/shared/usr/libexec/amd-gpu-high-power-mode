@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo performance > /sys/class/drm/card0/device/power_dpm_state
+echo high > /sys/class/drm/card0/device/power_dpm_force_performance_level
+echo 1 > /sys/class/drm/card0/device/pp_power_profile_mode
+
+#yoinked from: https://www.reddit.com/r/linux_gaming/comments/zp5prc/fix_for_low_fps_and_stutteringjittering_on_amdgpus/
