@@ -1,6 +1,8 @@
 [Unit]
 Description=Set amd gpu governor to performance
 [Service]
-ExecStart=/usr/libexec/amd-gpu-high-power
+ExecStart=/usr/libexec/amd-gpu-high-power-mode
 [Install]
 WantedBy=multi-user.target
+
+#yoinked from: https://www.reddit.com/r/linux_gaming/comments/zp5prc/fix_for_low_fps_and_stutteringjittering_on_amdgpus/
