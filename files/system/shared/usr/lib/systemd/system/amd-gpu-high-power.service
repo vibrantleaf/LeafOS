@@ -1,0 +1,6 @@
+[Unit]
+Description=Set amd gpu governor to performance
+[Service]
+ExecStart=/usr/libexec/amd-gpu-high-power
+[Install]
+WantedBy=multi-user.target
