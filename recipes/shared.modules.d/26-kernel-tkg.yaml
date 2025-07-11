@@ -9,6 +9,6 @@ modules:
           - "kernel-core"            
           - "kernel-modules"
           - "kernel-devel"
-          - "kernel-modules-core*
+          - "kernel-modules-core"
           - "kernel-modulss-internel"
           - "kernel-modules-extra"
