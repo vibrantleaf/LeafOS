@@ -18,5 +18,6 @@ chmod 644 /usr/bin/bluebuild
 chmod +x /usr/bin/bluebuild
 chmod +x /usr/libexec/waydroid-utils-reset
 chmod +x /usr/libexec/waydroid-utils-stop
+chmos +x /usr/libexec/amd-gpu-high-power-mode
 chmod +x /usr/bin/helix
 chmod +x /usr/bin/editor
