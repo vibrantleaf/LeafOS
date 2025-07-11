@@ -6,17 +6,9 @@ modules:
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
         packages:
-          - old: kernel-core
-            new: kernel-core
-          - old: kernel-modules
-            new: kernel-modules
-          - old: kernel-devel
-            new: kernel-devel
-
-
-        # - old: kernel-modules-internal
-        #   new:kernel-modules-internal
-        # - old: kernel-modules-extra
-        #   new: kernel-modules-extra
-
-       
+          - "kernel-core"            
+          - "kernel-modules"
+          - "kernel-devel"
+          - "kernel-modules-core*
+          - "kernel-modulss-internel"
+          - "kernel-modules-extra"
