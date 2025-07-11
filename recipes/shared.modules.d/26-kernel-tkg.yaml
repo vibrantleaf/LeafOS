@@ -6,9 +6,10 @@ modules:
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
         packages:
+          - "kernel"
           - "kernel-core"            
           - "kernel-modules"
           - "kernel-devel"
           - "kernel-modules-core"
-          - "kernel-modules-internel"
+          - "kernel-modules-internal"
           - "kernel-modules-extra"
