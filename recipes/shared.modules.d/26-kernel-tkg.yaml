@@ -11,5 +11,5 @@ modules:
           - "kernel-modules"
           - "kernel-devel"
           - "kernel-modules-core"
-          - "kernel-modules-internal"
+          #- "kernel-modules-internal"
           - "kernel-modules-extra"
