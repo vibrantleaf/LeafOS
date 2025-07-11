@@ -3,6 +3,11 @@ modules:
     repos:
       copr:
         - whitehara/kernel-tkg
+ - type: script
+   snippets:
+     - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
+     - "dnf5 update -y --refresh"
+ - type: dnf
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
         packages:
