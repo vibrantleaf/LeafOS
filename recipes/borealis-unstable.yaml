@@ -1,0 +1,12 @@
+---
+name: borealis
+description: This is just my Highly Expiremental personal fork of Aurora.
+base-image: ghcr.io/ublue-os/aurora
+image-version: stable
+alt-tags:
+    - unstable
+modules:
+    - from-file: borealis.modules.yaml
+    - from-file: unstable.modules.yaml
+    # Signing.
+    - type: signing

@@ -1,0 +1,5 @@
+modules:
+  - from-file: shared.modules.d/26-kernel-tkg.yaml
+  - from-file: shared.modules.d/24-amdvlk-driver.yaml
+  - from-file: shared.modules.d/23-akmods.yaml
+  #- from-file: shared.modules.d/98-initramfs.yaml
