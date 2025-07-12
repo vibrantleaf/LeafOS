@@ -14,5 +14,5 @@ modules:
     #- from-file: shared.modules.d/22-ghostty.yaml
     #- from-file: shared.modules.d/97-kargs.yaml
     - from-file: shared.modules.d/26-kernel-tkg.yaml
-    - from-file: shared.modules.d/98-initramfs.yaml
+    #- from-file: shared.modules.d/98-initramfs.yaml
     - from-file: shared.modules.d/99-cleanup.yaml
