@@ -8,13 +8,13 @@ modules:
       - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
       - "dnf5 update -y --refresh"
   - type: dnf
-     replace:
-       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
-         packages:
-           - "kernel"
-           - "kernel-core"            
-           - "kernel-modules"
-           - "kernel-devel"
-           - "kernel-modules-core"
-           #- "kernel-modules-internal"
-           - "kernel-modules-extra"
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
+        packages:
+          - "kernel"
+          - "kernel-core"            
+          - "kernel-modules"
+          - "kernel-devel"
+          - "kernel-modules-core"
+          #- "kernel-modules-internal"
+          - "kernel-modules-extra"
