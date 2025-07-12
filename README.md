@@ -1,5 +1,5 @@
 # Sharkfin 🦈
- &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/sharkfin/actions/workflows/build.yml/badge.svg)](https://github.com/vibrantleaf/sharkfin/actions/workflows/build-stable-images.yml)
+ &nbsp; [![bluebuild build badge](https://github.com/vibrantleaf/sharkfin/actions/workflows/build-stable-images.yml/badge.svg)](https://github.com/vibrantleaf/sharkfin/actions/workflows/build-stable-images.yml)
 
 Just my personal fork of [Bluefin](https://projectbluefin.io/).
 
