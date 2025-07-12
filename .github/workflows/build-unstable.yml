@@ -1,0 +1,55 @@
+name: bluebuild
+on:
+  schedule:
+    - cron:
+        "0 8 * * 0" # build at 0800 UTC every week on Sunday
+        # (3 hours & 10 minute's after the lasted stable bluefin build starts building)
+  push:
+    paths-ignore:
+      - "**.md"
+      - ".forgejo/*"
+      - ".devcontainer/*"
+      - ".github/*"
+      - ".github/workflows/build.yml"
+      - ".github/CODEOWNERS"
+      - ".github/dependabot.yml"
+      - ".gitignore"
+      - "**.gitkeep"
+      - ".justfile"
+      - "Justfile"
+      - ".woodpecker/*"
+      - "Conatinerfile/*"
+      - "Conatinerfile/sharkfin/*"
+      - "Conatinerfile/sharkfin-dx/*"
+      - "Conatinerfile/sharkfin-nvidia/*"
+      - "Conatinerfile/sharkfin-dx-nvidia/*"
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  bluebuild:
+    name: Build Custom Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    strategy:
+      fail-fast: false
+      matrix:
+        recipe:
+          - sharkfin-unstable.recipe.yaml
+          - borealis-unstable.recipe.yaml
+    steps:
+      - name: Build Custom Image
+        uses: blue-build/github-action@v1.8
+        with:
+          recipe: ${{ matrix.recipe }}
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          registry_token: ${{ github.token }}
+          pr_event_number: ${{ github.event.number }}
+          maximize_build_space: true
+          use_cache: true
+          rechunk: true
