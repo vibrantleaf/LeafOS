@@ -6,7 +6,6 @@ modules:
   - type: script
     snippets:
       - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
-      - "dnf5 update -y --refresh"
       - "dnf5 -y versionlock delete kernel"
       - "dnf5 -y versionlock delete kernel-core"
       - "dnf5 -y versionlock delete kernel-modules"
@@ -14,6 +13,7 @@ modules:
       - "dnf5 -y versionlock delete kernel-modules-core"
       #- "dnf5 -y versionlock delete kernel-modules-internal"
       - "dnf5 -y versionlock delete kernel-modules-extra"
+      - "dnf5 update -y --refresh"
   - type: dnf
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
