@@ -24,6 +24,9 @@ on:
       - "Conatinerfile/sharkfin-dx/*"
       - "Conatinerfile/sharkfin-nvidia/*"
       - "Conatinerfile/sharkfin-dx-nvidia/*"
+      - "recipes/unstable.modules.yaml"
+      - "recipes/sharkfin-unstable.recipe.yaml"
+      - "recipes/borealis-unstable.yaml"
   pull_request:
   workflow_dispatch:
 concurrency:
