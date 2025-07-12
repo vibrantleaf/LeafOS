@@ -5,7 +5,7 @@ modules:
         - whitehara/kernel-tkg
   - type: script
     snippets:
-      #- "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
+      - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
       - "dnf5 update -y --refresh"
   - type: dnf
      replace:
