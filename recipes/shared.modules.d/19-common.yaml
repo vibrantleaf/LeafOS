@@ -1,6 +1,7 @@
 modules:
     - type: script
       scripts:
+       - shared/19-com.github.dpejoh.adwata-colors.sh
        - shared/20-org.codeberg.vibrantleaf.brew-gui.sh
        - shared/21-org.codeberg.vibrantleaf.vibrant-updater.sh
        - shared/22-org.codeberg.vibrantleaf.waydroid-wizard.sh
