@@ -1,0 +1,2 @@
+[org.gnome.shell]
+favorite-apps=['app.zen_browser.zen.desktop', 'app.org.mozilla.Thunderbird.desktop', 'io.github.kolunmi.bazaar.desktop', 'org.gnome.Nautilus.desktop', 'app.ca.edestcroix.Recordbox.desktop', 'app.org.gnome.World.Secrets.desktop', 'steam.desktop']
