@@ -8,6 +8,6 @@ alt-tags:
     - stable
     - latest
 modules:
-    - "shetland.modules.d/10-shetland.yaml"
+    - from-file: "shetland.modules.d/10-shetland.yaml"
     # Signing.
     - type: signing
