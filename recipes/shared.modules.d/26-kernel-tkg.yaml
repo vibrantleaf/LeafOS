@@ -4,7 +4,7 @@ modules:
       copr:
         - whitehara/kernel-tkg
     remove:
-      - auto-remove: true
+      auto-remove: true
       packages:
         - kmod-openrazer
         - kmod-v4l2loopback 
