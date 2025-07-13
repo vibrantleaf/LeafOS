@@ -35,7 +35,6 @@ on:
       - "recipes/sharkbox.recipe.d/sharkbox.recipe.yaml"
       - "recipes/shetland.recipe.d/shetland.recipe.yaml"
       - "recipes/shared.modules.d/17-gschema-overrides.yaml"
-      - "files/gschema-overrides/*"
       - "recipes/sharkfin.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
       - "recipes/borealis.modules.d/*"
