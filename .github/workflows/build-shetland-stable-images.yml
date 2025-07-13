@@ -21,7 +21,7 @@ on:
       - "Conatinerfile/*"
       - "Conatinerfile/sharkfin/*"
       - "Conatinerfile/sharkfin-dx/*"
-      - "Conatinerfile/sharkfin-nvidia/*"sharkfin
+      - "Conatinerfile/sharkfin-nvidia/*"
       - "Conatinerfile/sharkfin-dx-nvidia/*"
       - "recipes/sharkfin.recipe.d/sharkfin.recipe.yaml"
       - "recipes/sharkfin.recipe.d/sharkfin-nvidia.recipe.yaml"
@@ -36,6 +36,7 @@ on:
       - "recipes/shetland.recipe.d/shetland.recipe.yaml"
       - "recipes/sharkfin.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
+      - "recipes/borealis.modules.d/*"
   pull_request:
   workflow_dispatch:
 concurrency:
