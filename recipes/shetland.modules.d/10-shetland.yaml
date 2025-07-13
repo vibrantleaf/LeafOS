@@ -8,3 +8,11 @@ modules:
     install:
       packages:
         - helix
+        - screen
+  - type: systemd
+    system:
+      disabled:
+        - podman.socket
+    user:
+      disabled:
+        - podman.socket
