@@ -2,7 +2,7 @@
 name: sharkbox
 description: This is just my persoanl fork of ublue-os/fedora-toolbox.
 base-image: ghcr.io/ublue-os/fedora-toolbox
-image-version: stable
+image-version: latest
 alt-tags:
     - main
     - stable
