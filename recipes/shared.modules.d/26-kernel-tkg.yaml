@@ -15,15 +15,10 @@ modules:
       - "dnf5 -y versionlock delete kernel-modules-extra"
       - "dnf5 update -y --refresh"
   - type: dnf
-    remove:
-      packages:
-        - kmod-framework-laptop
-        - kmod-v4l2loopback
-        - kmod-openrazer
-        - kmod-xone
-  - type: dnf
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
+      - allow-erasing: true
+      - install-weak-deps: false
         packages:
           - "kernel"
           - "kernel-core"            
@@ -33,10 +28,3 @@ modules:
           - "kernel-devel-matched"
           #- "kernel-modules-internal"
           - "kernel-modules-extra"
-  - type: dnf
-    install:
-      packages:
-        - kmod-framework-laptop
-        - kmod-v4l2loopback
-        - kmod-openrazer
-        - kmod-xone
