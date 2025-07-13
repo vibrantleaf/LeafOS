@@ -1,4 +1,4 @@
-name: build stable images
+name: Build Stable Images
 on:
   schedule:
     - cron:
