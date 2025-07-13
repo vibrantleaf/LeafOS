@@ -37,6 +37,7 @@ on:
       - "recipes/sharkfin.modules.d/*"
       - "recipes/borelis.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
+      - "files/gschema-overrides/*"
       - "files/scripts/sharkfin/*"
       - "files/scripts/shetland/*"
       - "files/scripts/borealis/*"
