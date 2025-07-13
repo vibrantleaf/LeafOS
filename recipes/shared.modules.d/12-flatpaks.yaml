@@ -4,7 +4,6 @@ modules:
       user: {}
       system:
         install:
-          #- "org.mozilla.firefox"
           - "app.zen_browser.zen"
           - "org.libreoffice.LibreOffice"
           - "org.localsend.localsend_app"
@@ -13,10 +12,13 @@ modules:
           - "com.belmoussaoui.Authenticator"
           - "com.github.tchx84.Flatseal"
           - "io.gitlab.adhami3310.Impression"
-          - "ca.edestcroix.Recordbox"
+          - "io.bassi.Amberol"
           - "page.tesk.Refine"
           - "com.github.marhkb.Pods"
           - "io.github.dvlv.boxbuddyrs"
           - "net.nokyan.Resources"
+          - "io.github.mrvladus.List"
+          - "org.gnome.Decibels"
+          - "org.gnome.World.Iotas"
         remove:
           - "io.missioncenter.MissionCenter"
