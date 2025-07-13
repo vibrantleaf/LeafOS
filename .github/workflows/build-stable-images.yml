@@ -24,9 +24,10 @@ on:
       - "Conatinerfile/sharkfin-dx/*"
       - "Conatinerfile/sharkfin-nvidia/*"
       - "Conatinerfile/sharkfin-dx-nvidia/*"
-      - "recipes/unstable.modules.yaml"
-      - "recipes/sharkfin-unstable.recipe.yaml"
-      - "recipes/borealis-unstable.yaml"
+      - "recipes/sharkfin/*"
+      - "recipes/borealis/*"
+      - "recipes/sharkbox/*"
+      - "recipes/shetland/*"
   pull_request:
   workflow_dispatch:
 concurrency:
@@ -53,7 +54,8 @@ jobs:
           - borealis/borealis-nvidia.recipe.yaml
           - borealis/borealis-dx.recipe.yaml
           - borealis/borealis-dx-nvidia.recipe.yaml
-    steps:
+          #- sharkbox/sharkbox.recipe.yaml
+          #- shetland/shetland.recipe.yaml
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:

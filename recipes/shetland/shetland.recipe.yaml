@@ -1,0 +1,12 @@
+---
+name: shetland
+description: This is just my persoanl fork of bluefin.
+base-image: ghcr.io/ublue-os/ucore
+image-version: stable
+alt-tags:
+    - main
+    - stable
+    - latest
+modules:
+    # Signing.
+    - type: signing
