@@ -1,2 +1,2 @@
 modules:
-  - from-file: sharkfin.modules.d/10-sharkfin.yaml
+  - from-file: sharkbox.modules.d/10-sharkbox.yaml
