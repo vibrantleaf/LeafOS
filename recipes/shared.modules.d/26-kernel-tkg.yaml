@@ -16,7 +16,7 @@ modules:
         - framework-laptop-kmod-common
   - type: script
     snippets:
-      - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=1"
+      - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=0"
       - "dnf5 -y versionlock delete kernel"
       - "dnf5 -y versionlock delete kernel-core"
       - "dnf5 -y versionlock delete kernel-modules"
