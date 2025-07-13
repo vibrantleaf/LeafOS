@@ -16,9 +16,9 @@ modules:
       - "dnf5 update -y --refresh"
   - type: dnf
     replace:
-      - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
       - allow-erasing: true
       - install-weak-deps: false
+      - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
         packages:
           - "kernel"
           - "kernel-core"            
