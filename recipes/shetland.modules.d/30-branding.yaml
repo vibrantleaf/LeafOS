@@ -1,0 +1,4 @@
+modules:
+    - type: script
+      scripts:
+       - shetland/40-branding.sh

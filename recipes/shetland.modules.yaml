@@ -1,2 +1,3 @@
 modules:
   - from-file: shetland.modules.d/10-shetland.yaml
+  - from-file: shetland.modules.d/30-branding.yaml

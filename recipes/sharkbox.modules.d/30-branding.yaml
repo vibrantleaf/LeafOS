@@ -1,0 +1,4 @@
+modules:
+    - type: script
+      scripts:
+       - sharkbox/40-branding.sh
