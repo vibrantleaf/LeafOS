@@ -1,4 +1,4 @@
-name: Build Unstable Images
+name: Build LeafOS Unstable Images
 on:
   workflow_dispatch:
 concurrency:

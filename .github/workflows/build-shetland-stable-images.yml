@@ -1,4 +1,4 @@
-name: Build Sharkfin Stable Images
+name: Build Shetland Stable Images
 on:
   schedule:
     - cron:
@@ -21,7 +21,7 @@ on:
       - "Conatinerfile/*"
       - "Conatinerfile/sharkfin/*"
       - "Conatinerfile/sharkfin-dx/*"
-      - "Conatinerfile/sharkfin-nvidia/*"
+      - "Conatinerfile/sharkfin-nvidia/*"sharkfin
       - "Conatinerfile/sharkfin-dx-nvidia/*"
       - "recipes/sharkfin.recipe.d/sharkfin.recipe.yaml"
       - "recipes/sharkfin.recipe.d/sharkfin-nvidia.recipe.yaml"

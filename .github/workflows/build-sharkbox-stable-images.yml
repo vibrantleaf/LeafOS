@@ -1,4 +1,4 @@
-name: Build Sharkfin Stable Images
+name: Build SharkBox Stable Images
 on:
   schedule:
     - cron:
