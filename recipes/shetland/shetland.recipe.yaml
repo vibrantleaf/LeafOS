@@ -1,6 +1,6 @@
 ---
 name: shetland
-description: This is just my persoanl fork of bluefin.
+description: This is just my persoanl fork of ucore.
 base-image: ghcr.io/ublue-os/ucore
 image-version: stable
 alt-tags:

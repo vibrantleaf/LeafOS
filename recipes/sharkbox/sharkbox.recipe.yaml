@@ -1,6 +1,6 @@
 ---
 name: sharkbox
-description: This is just my persoanl fork of bluefin.
+description: This is just my persoanl fork of fedora-toolbox.
 base-image: ghcr.io/ublue-os/fedora-toolbox
 image-version: stable
 alt-tags:
