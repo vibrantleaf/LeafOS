@@ -13,18 +13,5 @@ modules:
       - "dnf5 -y versionlock delete kernel-modules-core"
       #- "dnf5 -y versionlock delete kernel-modules-internal"
       - "dnf5 -y versionlock delete kernel-modules-extra"
-      - "dnf5 update -y --refresh"
-  - type: dnf
-    replace:
-      - allow-erasing: true
-      - install-weak-deps: false
-      - from-repo: copr:copr.fedorainfracloud.org:whitehara:kernel-tkg
-        packages:
-          - "kernel"
-          - "kernel-core"            
-          - "kernel-modules"
-          - "kernel-devel"
-          - "kernel-modules-core"
-          - "kernel-devel-matched"
-          #- "kernel-modules-internal"
-          - "kernel-modules-extra"
+      #- "dnf5 update -y --refresh"
+      - "rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:whitehara:kernel-tkg' kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra"
