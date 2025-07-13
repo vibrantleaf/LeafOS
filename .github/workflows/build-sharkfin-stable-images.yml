@@ -37,6 +37,10 @@ on:
       - "recipes/borelis.modules.d/*"
       - "recipes/shetland.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
+      - "files/scripts/sharkfin/*"
+      - "files/scripts/sharkbox/*"
+      - "files/scripts/borealis/*"
+      - "files/system/borealis/*"
   pull_request:
   workflow_dispatch:
 concurrency:

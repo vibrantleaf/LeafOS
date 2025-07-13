@@ -37,6 +37,10 @@ on:
       - "recipes/sharkfin.modules.d/*"
       - "recipes/shetland.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
+      - "files/scripts/sharkfin/*"
+      - "files/scripts/shetland/*"
+      - "files/scripts/sharkbox/*"
+      - "files/system/sharkfin/*"
   pull_request:
   workflow_dispatch:
 concurrency:
