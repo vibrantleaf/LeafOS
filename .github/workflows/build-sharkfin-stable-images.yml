@@ -37,7 +37,7 @@ on:
       - "recipes/borelis.modules.d/*"
       - "recipes/shetland.modules.d/*"
       - "recipes/sharkbox.modules.d/*"
-      - "files/scripts/sharkfin/*"
+      - "files/scripts/shetland/*"
       - "files/scripts/sharkbox/*"
       - "files/scripts/borealis/*"
       - "files/system/borealis/*"
