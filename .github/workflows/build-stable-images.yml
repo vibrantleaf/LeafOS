@@ -24,17 +24,17 @@ on:
       - "Conatinerfile/sharkfin-dx/*"
       - "Conatinerfile/sharkfin-nvidia/*"
       - "Conatinerfile/sharkfin-dx-nvidia/*"
-      - "recipes/sharkfin/sharkfin.recipe.yaml"
-      - "recipes/sharkfin/sharkfin-nvidia.recipe.yaml"
-      - "recipes/sharkfin/sharkfin-dx.recipe.yaml"
-      - "recipes/sharkfin/sharkfin-dx-nvidia.recipe.yaml"
-      - "recipes/sharkfin/sharkfin-tkg.recipe.yaml"
-      - "recipes/borealis/borealis.recipe.yaml"
-      - "recipes/borealis/borealis-nvidia.recipe.yaml"
-      - "recipes/borealis/borealis-dx.recipe.yaml"
-      - "recipes/borealis/borealis-dx-nvidia.recipe.yaml"
-      - "recipes/sharkbox/sharkbox.recipe.yaml"
-      - "recipes/shetland/shetland.recipe.yaml"
+      - "recipes/sharkfin.recipe.d/sharkfin.recipe.yaml"
+      - "recipes/sharkfin.recipe.d/sharkfin-nvidia.recipe.yaml"
+      - "recipes/sharkfin.recipe.d/sharkfin-dx.recipe.yaml"
+      - "recipes/sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
+      - "recipes/sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
+      - "recipes/borealis.recipe.d/borealis.recipe.yaml"
+      - "recipes/borealis.recipe.d/borealis-nvidia.recipe.yaml"
+      - "recipes/borealis.recipe.d/borealis-dx.recipe.yaml"
+      - "recipes/borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
+      - "recipes/sharkbox.recipe.d/sharkbox.recipe.yaml"
+      - "recipes/shetland.recipe.d/shetland.recipe.yaml"
   pull_request:
   workflow_dispatch:
 concurrency:
@@ -52,17 +52,17 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - "sharkfin/sharkfin.recipe.yaml"
-          - "sharkfin/sharkfin-nvidia.recipe.yaml"
-          - "sharkfin/sharkfin-dx.recipe.yaml"
-          - "sharkfin/sharkfin-dx-nvidia.recipe.yaml"
-          - "sharkfin/sharkfin-tkg.recipe.yaml"
-          - "borealis/borealis.recipe.yaml"
-          - "borealis/borealis-nvidia.recipe.yaml"
-          - "borealis/borealis-dx.recipe.yaml"
-          - "borealis/borealis-dx-nvidia.recipe.yaml"
-          - "sharkbox/sharkbox.recipe.yaml"
-          - "shetland/shetland.recipe.yaml"
+          - "sharkfin.recipe.d/sharkfin.recipe.yaml"
+          - "sharkfin.recipe.d/sharkfin-nvidia.recipe.yaml"
+          - "sharkfin.recipe.d/sharkfin-dx.recipe.yaml"
+          - "sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
+          - "sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
+          - "borealis.recipe.d/borealis.recipe.yaml"
+          - "borealis.recipe.d/borealis-nvidia.recipe.yaml"
+          - "borealis.recipe.d/borealis-dx.recipe.yaml"
+          - "borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
+          - "sharkbox.recipe.d/sharkbox.recipe.yaml"
+          - "shetland.recipe.d/shetland.recipe.yaml"
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8

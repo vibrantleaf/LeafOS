@@ -16,8 +16,8 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - sharkfin/sharkfin-unstable.recipe.yaml
-          - borealis/borealis-unstable.recipe.yaml
+          - sharkfin.recipe.d/sharkfin-unstable.recipe.yaml
+          - borealis.recipe.d/borealis-unstable.recipe.yaml
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
