@@ -1,4 +1,4 @@
-name: build unstable
+name: Build Unstable Images
 on:
   workflow_dispatch:
 concurrency:
@@ -16,8 +16,8 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - sharkfin-unstable.recipe.yaml
-          - borealis-unstable.recipe.yaml
+          - sharkfin/sharkfin-unstable.recipe.yaml
+          - borealis/borealis-unstable.recipe.yaml
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
