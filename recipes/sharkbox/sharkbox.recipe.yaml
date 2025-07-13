@@ -8,5 +8,6 @@ alt-tags:
     - stable
     - latest
 modules:
+    - from-file: "sharkbox.modules.d/10-sharkbox.yaml"
     # Signing.
     - type: signing
