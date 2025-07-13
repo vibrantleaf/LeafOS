@@ -1,4 +1,4 @@
-name: Build Stable Images
+name: Build Sharkfin Stable Images
 on:
   schedule:
     - cron:
@@ -10,8 +10,7 @@ on:
       - ".forgejo/*"
       - ".devcontainer/*"
       - ".github/*"
-      - ".github/workflows/build-stable-images.yml"
-      - ".github/workflows/build-unstable-images.yml"
+      - ".github/workflows/*"
       - ".github/CODEOWNERS"
       - ".github/dependabot.yml"
       - ".gitignore"
@@ -35,6 +34,9 @@ on:
       - "recipes/borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
       - "recipes/sharkbox.recipe.d/sharkbox.recipe.yaml"
       - "recipes/shetland.recipe.d/shetland.recipe.yaml"
+      - "recipes/borelis.modules.d/*"
+      - "recipes/shetland.modules.d/*"
+      - "recipes/sharkbox.modules.d/*"
   pull_request:
   workflow_dispatch:
 concurrency:
@@ -57,12 +59,6 @@ jobs:
           - "sharkfin.recipe.d/sharkfin-dx.recipe.yaml"
           - "sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
           - "sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
-          - "borealis.recipe.d/borealis.recipe.yaml"
-          - "borealis.recipe.d/borealis-nvidia.recipe.yaml"
-          - "borealis.recipe.d/borealis-dx.recipe.yaml"
-          - "borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
-          - "sharkbox.recipe.d/sharkbox.recipe.yaml"
-          - "shetland.recipe.d/shetland.recipe.yaml"
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
