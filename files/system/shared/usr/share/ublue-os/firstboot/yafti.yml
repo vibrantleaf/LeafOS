@@ -1,0 +1,165 @@
+title: Welcome to LeafOS Powered By Universal Blue
+properties:
+  mode: "run-on-change"
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "Welcome to Your LeafOS"
+      icon: "/path/to/icon"
+      description: |
+        This guided installer will help you get started with your new system.
+  applications:
+    source: yafti.screen.package
+    values:
+      title: Application Installer
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: false
+        system: true
+      groups:
+        GNOME Core Apps:
+          description: Core system applications for the GNOME desktop environment.
+          default: true
+          packages:
+            - Calculator: org.gnome.Calculator
+            - Calendar: org.gnome.Calendar
+            - Camera: org.gnome.Snapshot
+            - Characters: org.gnome.Characters
+            - Clocks: org.gnome.clocks
+            - Connections: org.gnome.Connections
+            - Contacts: org.gnome.Contacts
+            - Disk Usage Analyzer: org.gnome.baobab
+            - Document Scanner: org.gnome.SimpleScan
+            - Document Viewer: org.gnome.Evince
+            - Font Viewer: org.gnome.font-viewer
+            - Image Viewer: org.gnome.Loupe
+            - Logs: org.gnome.Logs
+            - Maps: org.gnome.Maps
+            - Photos (Organizer): org.gnome.Photos
+            - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
+            - Text Editor: org.gnome.TextEditor
+            - Weather: org.gnome.Weather
+        GNOME Circle Apps:
+          description: Applications extending the GNOME ecosystem.
+          default: false
+          packages:
+            - Amberol: io.bassi.Amberol
+            - Apostophe: org.gnome.gitlab.somas.Apostrophe
+            - Audio Sharing: de.haeckerfelix.AudioSharing
+            - Authenticator: com.belmoussaoui.Authenticator
+            - Biblioteca: app.drey.Biblioteca
+            - Binary: io.github.fizzyizzy05.binary
+            - Blanket: com.rafaelmardojai.Blanket
+            - Boatswain: com.feaneron.Boatswain
+            - Bustle: org.freedesktop.Bustle
+            - Cartridges: page.kramo.Cartridges
+            - Chess Clock: eu.fortysixandtwo.chessclock
+            - Citations: org.gnome.World.Citations
+            - Clairvoyant: com.cassidyjames.clairvoyant
+            - Collision: dev.geopjr.Collision
+            - Commit: re.sonny.Commit
+            - Curtail: com.github.huluti.Curtail
+            - Decoder: com.belmoussaoui.Decoder
+            - Deja Dup Backups: org.gnome.DejaDup
+            - Dialect: app.drey.Dialect
+            - Drum Machine: io.github.revisto.drum-machine
+            - Ear Tag: app.drey.EarTag
+            - Elastic: app.drey.Elastic
+            - Emblem: org.gnome.design.Emblem
+            - Errands: io.github.mrvladus.List
+            - Exercise Timer: xyz.safeworlds.hiit
+            - Eyedropper: com.github.finefindus.eyedropper
+            - File Shredder: com.github.ADBeveridge.Raider
+            - Forge Sparks: com.mardojai.ForgeSparks
+            - Fragments: de.haeckerfelix.Fragments
+            - Fretboard: dev.bragefuglseth.Fretboard
+            - Gaphor: org.gaphor.Gaphor
+            - Graphs: se.sjoerd.Graphs
+            - Heath: dev.Cogitri.Health
+            - Hieroglyphic: io.github.finefindus.Hieroglyphic
+            - Identity: org.gnome.gitlab.YaLTeR.Identity
+            - Impression: io.gitlab.adhami3310.Impression
+            - Iotas: org.gnome.World.Iotas
+            - Junction: re.sonny.Junction
+            - Keypunch: dev.bragefuglseth.Keypunch
+            - Komikku: info.febvre.Komikku
+            - Letterpress: io.gitlab.gregorni.Letterpress
+            - Lorem: org.gnome.design.Lorem
+            - Mousai: io.github.seadve.Mousai
+            - Newsflash: io.gitlab.news_flash.NewsFlash
+            - Obfuscate: com.belmoussaoui.Obfuscate
+            - Paper Clip: io.github.diegoivan.pdf_metadata_editor
+            - Pika Backup: org.gnome.World.PikaBackup
+            - Podcasts: org.gnome.Podcasts
+            - Polari: org.gnome.Polari
+            - Railway: de.schmidhuberj.DieBahn
+            - Resources: net.nokyan.Resources
+            - Secrets: org.gnome.World.Secrets
+            - Share Preview: com.rafaelmardojai.SharePreview
+            - Shortwave: de.haeckerfelix.Shortwave
+            - Solanum: org.gnome.Solanum
+            - Switcheroo: io.gitlab.adhami3310.Converter
+            - Tangram: re.sonny.Tangram
+            - Text Pieces: io.gitlab.liferooter.TextPieces
+            - Tuba: dev.geopjr.Tuba
+            - Valuta: io.github.idevecore.Valuta
+            - Video Trimmer: org.gnome.gitlab.YaLTeR.VideoTrimmer
+            - Warp: app.drey.Warp
+            - Webfont Kit Generator: com.rafaelmardojai.WebfontKitGenerator
+            - Wike: com.github.hugolabe.Wike
+            - Workbench: re.sonny.Workbench
+        GNOME Circle Apps:
+          description: Applications extending the GNOME ecosystem.
+          default: false
+          packages:
+            - Builder: org.gnome.Builder
+            - D-Spy: org.gnome.dspy
+            - Dconf Editor: ca.desrt.dconf-editor
+            - Devhelp: org.gnome.Devhelp
+        System Apps:
+          description: System applications for all desktop environments.
+          default: true
+          packages:
+            - Flatseal (Permission Manager): com.github.tchx84.Flatseal
+            - Ruffle: rs.ruffle.Ruffle
+        Gaming:
+          description: "Rock and Stone!"
+          default: false
+          packages:
+            - ProtonPlus: com.vysp3r.ProtonPlus
+            - Bottles: com.usebottles.bottles
+            - Discord: com.discordapp.Discord
+            - Bottles: com.usebottles.bottles
+            - Heroic Games Launcher: com.heroicgameslauncher.hgl
+            - Lutris: net.lutris.Lutris
+        Office:
+          description: Boost your productivity.
+          default: false
+          packages:
+            - Morphosis: garden.jamie.Morphosis
+            - Obsidian: md.obsidian.Obsidian
+            - Slack: com.slack.Slack
+            - Zoom: us.zoom.Zoom
+        AI and Mechine Learning:
+          description: AI and Mechine Learning
+          default: false
+          packages:
+            - Alpaca - Chat with Local AI models: com.jeffser.Alpaca
+            - Alpaca Ollama Plugin: com.jeffser.Alpaca.Ollama
+            - Alpaca AMD Support Plugin: com.jeffser.Alpaca.AMD
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done!"
+      icon: "/path/to/icon"
+      links:
+        - "Install More Applications":
+            run: /usr/bin/bazaar window
+        - "Website":
+            run: /usr/bin/xdg-open https://github.com/vibrantleaf/LeafOS
+        - "Setup Automatic Backups of Your users Home folder":
+           run:  /usr/bin/flatpak run org.gnome.World.PikaBackup
+      description: |
+        Thank You for installing a LeafOS Image Powered by Universal Blue, Hope you enjoy.

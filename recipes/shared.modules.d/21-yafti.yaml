@@ -2,18 +2,4 @@ modules:
   - type: script
     snippets:
       - "dnf copr enable -y renner/staging"
-      - "dnf install -y python3-pip libadwaita yafti"
-  - type: yafti
-    custom-flatpaks:
-      - Alpaca - Chat with Local AI models: com.jeffser.Alpaca
-      - Alpaca Ollama Plugin: com.jeffser.Alpaca.Ollama
-      - Alpaca AMD Support Plugin: com.jeffser.Alpaca.AMD
-      - Bottles - Easily run Windows software on Linux: com.usebottles.bottles
-      - Lutris - A Video game preservation platform: net.lutris.Lutris
-      - ProtonPlus - A Modern Compatibility Tools Manager: com.vysp3r.ProtonPlus
-      - Ruffle - A Modern Flash Player Reimplementation: rs.ruffle.Ruffle
-  - type: script
-    snippets:
-      - "sed -i 's@/usr/bin/gnome-software@/usr/bin/bazaar window@g' /usr/share/ublue-os/firstboot/yafti.yml"
-      - "dnf copr disable -y renner/staging"
-
+      - "dnf install -y python3-pip libadwaita yafti" 
