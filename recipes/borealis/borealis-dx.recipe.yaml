@@ -1,13 +1,14 @@
 ---
-name: borealis-nvidia
+name: borealis
 description: This is just my Highly Expiremental personal fork of Aurora.
-base-image: ghcr.io/ublue-os/aurora-nvidia
+base-image: ghcr.io/ublue-os/aurora
 image-version: stable
 alt-tags:
-    - stable
-    - latest
+    - dx
+    - dx-stable
+    - dx-latest
 modules:
     - from-file: borealis.modules.yaml
-    - from-file: nvidia.modules.yaml
+    - from-file: dx.modules.yaml
     # Signing.
     - type: signing

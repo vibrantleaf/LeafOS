@@ -44,15 +44,15 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - sharkfin.recipe.yaml
-          - sharkfin-nvidia.recipe.yaml
-          - sharkfin-dx.recipe.yaml
-          - sharkfin-dx-nvidia.recipe.yaml
-          - sharkfin-tkg.recipe.yaml
-          - borealis.recipe.yaml
-          - borealis-nvidia.recipe.yaml
-          - borealis-dx.recipe.yaml
-          - borealis-dx-nvidia.recipe.yaml
+          - sharkfin/sharkfin.recipe.yaml
+          - sharkfin/sharkfin-nvidia.recipe.yaml
+          - sharkfin/sharkfin-dx.recipe.yaml
+          - sharkfin/sharkfin-dx-nvidia.recipe.yaml
+          - sharkfin/sharkfin-tkg.recipe.yaml
+          - borealis/borealis.recipe.yaml
+          - borealis/borealis-nvidia.recipe.yaml
+          - borealis/borealis-dx.recipe.yaml
+          - borealis/borealis-dx-nvidia.recipe.yaml
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8

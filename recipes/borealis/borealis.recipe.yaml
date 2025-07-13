@@ -4,6 +4,7 @@ description: This is just my Highly Expiremental personal fork of Aurora.
 base-image: ghcr.io/ublue-os/aurora
 image-version: stable
 alt-tags:
+    - main
     - stable
     - latest
 modules:

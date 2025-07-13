@@ -1,13 +1,14 @@
 ---
 name: sharkfin
 description: This is just my persoanl fork of bluefin.
-base-image: ghcr.io/ublue-os/bluefin
+base-image: ghcr.io/ublue-os/bluefin-nvidia
 image-version: stable
 alt-tags:
-    - tkg-stable
+    - nvidia
+    - nvidia-stable
+    - nvidia-latest
 modules:
     - from-file: sharkfin.modules.yaml
-    - from-file: shared.modules.d/26-kernel-tkg.yaml
-    - from-file: shared.modules.d/99-cleanup.yaml
+    - from-file: nvidia.modules.yaml
     # Signing.
     - type: signing

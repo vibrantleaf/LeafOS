@@ -1,11 +1,12 @@
 ---
-name: sharkfin-dx-nvidia
+name: sharkfin
 description: This is just my persoanl fork of bluefin.
 base-image: ghcr.io/ublue-os/bluefin-dx-nvidia
 image-version: stable
 alt-tags:
-    - stable
-    - latest
+    - dx-nvidia
+    - dx-nvidia-stable
+    - dx-nvidia-latest
 modules:
     - from-file: sharkfin.modules.yaml
     - from-file: dx.modules.yaml
