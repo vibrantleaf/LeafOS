@@ -48,6 +48,7 @@ jobs:
           - sharkfin-nvidia.recipe.yaml
           - sharkfin-dx.recipe.yaml
           - sharkfin-dx-nvidia.recipe.yaml
+          - sharkfin-tkg.recipe.yaml
           - borealis.recipe.yaml
           - borealis-nvidia.recipe.yaml
           - borealis-dx.recipe.yaml

@@ -1,30 +1,5 @@
 name: build unstable
 on:
-  schedule:
-    - cron:
-        "0 8 * * 0" # build at 0800 UTC every week on Sunday
-        # (3 hours & 10 minute's after the lasted stable bluefin build starts building)
-  push:
-    paths-ignore:
-      - "**.md"
-      - ".forgejo/*"
-      - ".devcontainer/*"
-      - ".github/*"
-      - ".github/workflows/build-stable-images.yml"
-      - ".github/workflows/build-unstable-images.yml"
-      - ".github/CODEOWNERS"
-      - ".github/dependabot.yml"
-      - ".gitignore"
-      - "**.gitkeep"
-      - ".justfile"
-      - "Justfile"
-      - ".woodpecker/*"
-      - "Conatinerfile/*"
-      - "Conatinerfile/sharkfin/*"
-      - "Conatinerfile/sharkfin-dx/*"
-      - "Conatinerfile/sharkfin-nvidia/*"
-      - "Conatinerfile/sharkfin-dx-nvidia/*"
-  pull_request:
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
