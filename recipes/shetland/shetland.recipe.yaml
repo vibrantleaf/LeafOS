@@ -2,11 +2,12 @@
 name: shetland
 description: This is just my persoanl fork of ucore.
 base-image: ghcr.io/ublue-os/ucore
-image-version: stable
+image-version:  stable-zfs
 alt-tags:
     - main
     - stable
     - latest
 modules:
+    - "shetland.modules.d/10-shetland.yaml"
     # Signing.
     - type: signing
