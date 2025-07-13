@@ -1,0 +1,2 @@
+modules:
+  - from-file: sharkfin.modules.d/10-sharkfin.yaml

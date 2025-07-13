@@ -1,6 +1,6 @@
 ---
 name: sharkbox
-description: This is just my persoanl fork of fedora-toolbox.
+description: This is just my persoanl fork of ublue-os/fedora-toolbox.
 base-image: ghcr.io/ublue-os/fedora-toolbox
 image-version: stable
 alt-tags:
@@ -8,6 +8,6 @@ alt-tags:
     - stable
     - latest
 modules:
-    - from-file: "sharkbox.modules.d/10-sharkbox.yaml"
+    - from-file: "sharkbox.modules.yaml"
     # Signing.
     - type: signing

@@ -1,0 +1,10 @@
+modules:
+  - type: dnf
+    remove:
+      packages:
+         - vim-miminal
+         - vim-data
+         - nano
+    install:
+      packages:
+        - helix

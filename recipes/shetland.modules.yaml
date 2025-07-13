@@ -1,0 +1,2 @@
+modules:
+  - from-file: shetland.modules.d/10-shetland.yaml
