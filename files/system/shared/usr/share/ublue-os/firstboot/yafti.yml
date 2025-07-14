@@ -125,19 +125,32 @@ screens:
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Inspector - Hardware Information Viewer: io.github.nokse22.inspector
             - Ruffle for Adobe Flash Player: rs.ruffle.Ruffle
+            - EasyEffects: com.github.wwmm.easyeffects
+            - pwvucontrol: com.saivert.pwvucontrol
+            - Helvum: org.pipewire.Helvum
         Gaming:
           description: "Rock and Stone!"
           default: false
           packages:
+            - Cartridges: page.kramo.Cartridges
             - ProtonPlus: com.vysp3r.ProtonPlus
             - Bottles: com.usebottles.bottles
-            - Discord: com.discordapp.Discord
-            - Bottles: com.usebottles.bottles
-            - Heroic Games Launcher: com.heroicgameslauncher.hgl
+           - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Lutris: net.lutris.Lutris
             - Modrith App: com.modrinth.ModrinthApp
             - Sober for Robox: org.vinegarhq.Sober
             - Vinegar for Robox Studio: org.vinegarhq.Vinegar
+        Multimedia:
+          description: Applications for your Music, Movies & TV Shows.
+          default: false
+          packages:
+            - Ticketbooth: me.iepure.Ticketbooth
+            - Cozy: com.github.geigi.cozy
+            - Fotema: app.fotema.Fotema
+            - Turntable: dev.geopjr.Turntable
+            - Chronograph: io.github.dzheremi2.lrcmake-gtk
+            - Cavasik: io.github.TheWisker.Cavasik
+            - Delfin: cafe.avery.Delfin
         Office:
           description: Boost your productivity.
           default: false
