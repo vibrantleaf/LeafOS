@@ -1,0 +1,4 @@
+modules:
+    - type: script
+      scripts:
+       - unstable/33-com.PancakeTAS.lsfg-vk.sh
