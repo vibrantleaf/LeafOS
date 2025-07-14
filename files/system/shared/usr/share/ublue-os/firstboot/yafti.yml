@@ -38,6 +38,7 @@ screens:
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
             - Photos (Organizer): org.gnome.Photos
+            - Sound Recorder: org.gnome.SoundRecorder
             - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
