@@ -153,6 +153,7 @@ screens:
             - Alpaca - Chat with Local AI models: com.jeffser.Alpaca
             - Alpaca Ollama Plugin: com.jeffser.Alpaca.Ollama
             - Alpaca AMD Support Plugin: com.jeffser.Alpaca.AMD
+            - Upscaler: io.gitlab.theevilskeleton.Upscaler
   final-screen:
     source: yafti.screen.title
     values:
