@@ -2,4 +2,4 @@ modules:
     - type: bling
       install:
         - "rpmfusion"
-        - "dconf-update-service"
+        #- "dconf-update-service"
