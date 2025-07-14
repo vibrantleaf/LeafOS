@@ -111,20 +111,24 @@ screens:
             - Webfont Kit Generator: com.rafaelmardojai.WebfontKitGenerator
             - Wike: com.github.hugolabe.Wike
             - Workbench: re.sonny.Workbench
-        GNOME Circle Apps:
+        GNOME Development Tools:
           description: Applications extending the GNOME ecosystem.
           default: false
           packages:
+            - Boxes: org.gnome.Boxes
             - Builder: org.gnome.Builder
             - D-Spy: org.gnome.dspy
             - Dconf Editor: ca.desrt.dconf-editor
             - Devhelp: org.gnome.Devhelp
+            - TextPieces: io.gitlab.liferooter.TextPieces
         System Apps:
           description: System applications for all desktop environments.
           default: true
           packages:
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Inspector - Hardware Information Viewer: io.github.nokse22.inspector
+            - Pods: com.github.marhkb.Pods
+            - Box Buddy: io.github.dvlv.boxbuddyrs
             - Ruffle for Adobe Flash Player: rs.ruffle.Ruffle
             - EasyEffects: com.github.wwmm.easyeffects
             - pwvucontrol: com.saivert.pwvucontrol
@@ -136,7 +140,7 @@ screens:
             - Cartridges: page.kramo.Cartridges
             - ProtonPlus: com.vysp3r.ProtonPlus
             - Bottles: com.usebottles.bottles
-           - Heroic Games Launcher: com.heroicgameslauncher.hgl
+            - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Lutris: net.lutris.Lutris
             - Modrith App: com.modrinth.ModrinthApp
             - Sober for Robox: org.vinegarhq.Sober
