@@ -61,6 +61,7 @@ modules:
             - "mangohud"
             - "gamescope"
             - "vkbasalt"
+            - "vulkan-tools"
             - "crun"
             - "podman"
             - "podman-compose"
