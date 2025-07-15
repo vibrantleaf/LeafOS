@@ -2,17 +2,54 @@ modules:
   - type: dnf
     remove:
       packages:
-         - vim-miminal
-         - vim-data
-         - nano
+         - "vim-miminal"
+         - "vim-data"
+         - "nano"
+         - "vim-enhanced"
+         - "vim-minimal"
+         - "vim-data"
+         - "nano"
+         - "fuse"
     install:
+      install-weak-deps: false
       packages:
-        - helix
-        - screen
+         - "crun"
+         - "podman"
+         - "podman-compose"
+         - "skopeo"
+         - "cosign"
+         - "waydroid"
+         - "fuse3"
+         - "dash"
+         - "moby-engine"
+         - "docker-cli"
+         - "moby-filesystem"
+         - "docker-compose"
+         - "dash"
+         - "helix"
+         - "pciutils"
+         - "screen"
+         - "cockpit"
+         - "cockpit-podman"
+         - "cockpit-ostree"
+         - "cockpit-machines"
+         - "cockpit-files"
   - type: systemd
     system:
-      disabled:
-        - podman.socket
+      enabled:
+        - "cockpit.socket"
+        - "cockpit.service'
+        - "podman.socket"
+        - "docker.socket"
     user:
-      disabled:
-        - podman.socket
+      enabled:
+        - "podman.socket"   
+  - type: script
+    snippets:
+      - "echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf"
+      - "echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop"
+      - "ln -sfT /usr/bin/hx /usr/bin/helix"
+      - "ln -sfT /usr/bin/hx /usr/bin/editor"
+      - "ln -sfT /usr/bin/dash /usr/bin/sh"
+      #- "curl -sfL https://get.k3s.io | sh -"
+  
