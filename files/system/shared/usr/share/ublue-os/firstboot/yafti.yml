@@ -176,6 +176,7 @@ screens:
             - Obsidian - Notes App : md.obsidian.Obsidian
             - Slack : com.slack.Slack
             - Zoom: us.zoom.Zoom
+            - Portal for Teams 3rd Party Microsoft Teams Client: com.github.IsmaelMartinez.teams_for_linux
             - Jitsi Meet: org.jitsi.jitsi-meet
         AI and Mechine Learning:
           description: AI and Mechine Learning
