@@ -133,6 +133,7 @@ screens:
             - EasyEffects: com.github.wwmm.easyeffects
             - pwvucontrol: com.saivert.pwvucontrol
             - Helvum: org.pipewire.Helvum
+            - GTKStressTesting - Hardware Stress Testing suite : com.leinardi.gst
         Gaming:
           description: "Rock and Stone!"
           default: false
@@ -146,6 +147,16 @@ screens:
             - Modrith App for Minecraft: com.modrinth.ModrinthApp
             - Sober for Robox: org.vinegarhq.Sober
             - Vinegar for Robox Studio: org.vinegarhq.Vinegar
+            - Boflat - Moza Racing hardware Settings: io.github.lawstorant.boxflat
+            - Piper - Gaming Mouse Settings: org.freedesktop.Piper
+            - Polychromatic - Razer RGB Settings: app.polychromatic.controller
+            - SlimeVR App: dev.slimevr.SlimeVR
+            - TeamSpeak - Low latency High Quality VoIP Client: com.teamspeak.TeamSpeak
+            - TeamSpeak3 - TeamSpeak Legacy: com.teamspeak.TeamSpeak3
+            - Mumble - OpenSource Low latency encrypted VoIP client: info.mumble.Mumble
+            - Discord - The offical Discord Client: com.discordapp.Discord
+            - Vesktop - High Qualtiy 3rd Party Discord Client: dev.vencord.Vesktop
+            - Element - Modern Matrix Client : im.riot.Riot
         Multimedia:
           description: Applications for your Music, Movies & TV Shows.
           default: false
@@ -165,6 +176,7 @@ screens:
             - Obsidian - Notes App : md.obsidian.Obsidian
             - Slack : com.slack.Slack
             - Zoom: us.zoom.Zoom
+            - Jitsi Meet: org.jitsi.jitsi-meet
         AI and Mechine Learning:
           description: AI and Mechine Learning
           default: false
