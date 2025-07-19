@@ -37,10 +37,9 @@ modules:
   - type: systemd
     system:
       enabled:
-        - "cockpit.socket"
-        - "cockpit.service'
+        - "cockpit"
         - "podman.socket"
-        - "docker.socket"
+        - "docker"
     user:
       enabled:
         - "podman.socket"   
