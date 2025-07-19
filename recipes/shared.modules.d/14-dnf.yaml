@@ -1,9 +1,11 @@
 modules:
     - type: dnf
       repos:
-          files:
-            remove:
-              - "updates-archive"
+        copr:
+          - "zeno/scrcpy"
+        files:
+          remove:
+            - "updates-archive"
       remove:
         packages:
            - "fuse"
@@ -68,6 +70,8 @@ modules:
             - "skopeo"
             - "cosign"
             - "waydroid"
+            - "scrcpy"
+            - "android-tools"
             - "fuse3"
             - "dash"
             - "helix"
