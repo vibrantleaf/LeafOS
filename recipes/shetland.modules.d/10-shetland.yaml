@@ -17,7 +17,7 @@ modules:
         - "podman"
         - "podman-compose"
         - "skopeo"
-        - "cosign"
+        - "buildah"
         - "waydroid"
         - "fuse3"
         - "dash"
