@@ -21,5 +21,4 @@
         - "io.github.mrvladus.List"
         - "org.gnome.Decibels"
         - "org.gnome.World.Iotas"
-      remove:
-        - "io.missioncenter.MissionCenter"
+
