@@ -1,11 +1,4 @@
 modules:
-  - type: script
-    snippets:
-      - "mkdir -p /keys"
-  - type: files
-    files:
-     - source:  keys/*
-       destination: /keys
   - type: dnf
     repos:
       copr:
@@ -39,9 +32,4 @@ modules:
   - type: script
     scripts:
       - "shared/15-sign-tkg-kernel.sh"
-  - type: script
-    snippets:
-      - "mkdir -p /usr/share/leafos/secure_boot_keys/"
-      - "cp -v /keys/MOK.der /usr/share/leafos/secure_boot_keys/"
-      - "rm -rfv /keys"
   - type: initramfs
