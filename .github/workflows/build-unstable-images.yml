@@ -30,7 +30,7 @@ jobs:
       - name: Download kernel RPMs from whitehara COPR
         run: |
           mkdir -p rpms
-          dnf download --repofrompath=kernel-tkg,https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/fedora-42/x86_64/ --repo=kernel-tkg --destdir=rpms kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel
+          dnf download --repofrompath=kernel-tkg,https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/fedora-42-x86_64/ --repo=kernel-tkg --destdir=rpms kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel
 
       - name: Setup Secure Boot keys
         run: |
