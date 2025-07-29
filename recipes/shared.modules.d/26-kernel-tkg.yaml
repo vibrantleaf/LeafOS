@@ -22,7 +22,8 @@ modules:
         - "xone-kmod-common"
         - "framework-laptop-kmod-common"
     install:
-      - "sbsigntools"
+      packages:
+        - "sbsigntools"
   - type: script
     snippets:
       - "dnf5 -y config-manager setopt '*kernel-tkg*'.priority=0"
