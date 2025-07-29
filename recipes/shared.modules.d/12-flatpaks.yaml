@@ -1,24 +1,25 @@
-modules:
-    - type: default-flatpaks
-      notify: true
-      user: {}
-      system:
-        install:
-          - "app.zen_browser.zen"
-          - "org.libreoffice.LibreOffice"
-          - "org.localsend.localsend_app"
-          - "dev.geopjr.Collision"
-          - "org.gnome.World.Secrets"
-          - "com.belmoussaoui.Authenticator"
-          - "com.github.tchx84.Flatseal"
-          - "io.gitlab.adhami3310.Impression"
-          - "io.bassi.Amberol"
-          - "page.tesk.Refine"
-          - "com.github.marhkb.Pods"
-          - "io.github.dvlv.boxbuddyrs"
-          - "net.nokyan.Resources"
-          - "io.github.mrvladus.List"
-          - "org.gnome.Decibels"
-          - "org.gnome.World.Iotas"
-        remove:
-          - "io.missioncenter.MissionCenter"
+- type: default-flatpaks
+  configurations:
+    - notify: true
+      scope: system
+      repo:
+        title: Flathub (system)
+      install:
+        - "app.zen_browser.zen"
+        - "org.libreoffice.LibreOffice"
+        - "org.localsend.localsend_app"
+        - "dev.geopjr.Collision"
+        - "org.gnome.World.Secrets"
+        - "com.belmoussaoui.Authenticator"
+        - "com.github.tchx84.Flatseal"
+        - "io.gitlab.adhami3310.Impression"
+        - "io.bassi.Amberol"
+        - "page.tesk.Refine"
+        - "com.github.marhkb.Pods"
+        - "io.github.dvlv.boxbuddyrs"
+        - "net.nokyan.Resources"
+        - "io.github.mrvladus.List"
+        - "org.gnome.Decibels"
+        - "org.gnome.World.Iotas"
+      remove:
+        - "io.missioncenter.MissionCenter"
