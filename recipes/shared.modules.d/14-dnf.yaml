@@ -78,4 +78,3 @@ modules:
             - "corectrl"
             - "pciutils"
             - "openrgb"
-            #- "sbsigntools"

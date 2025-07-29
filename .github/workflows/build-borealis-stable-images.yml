@@ -66,6 +66,11 @@ jobs:
           - "borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
 
     steps:
+      - name: Setup Secure Boot keys
+        run: |
+          mkdir -p keys
+          echo "${{ secrets.MOK_PRIV }}" | base64 -d > files/keys/MOK.priv
+          echo "${{ secrets.MOK_DER }}" | base64 -d > files/keys/MOK.der
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:

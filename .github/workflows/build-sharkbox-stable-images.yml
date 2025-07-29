@@ -49,7 +49,6 @@ jobs:
       matrix:
         recipe:
           - "sharkbox.recipe.d/sharkbox.recipe.yaml"
-
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
