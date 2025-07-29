@@ -1,11 +1,11 @@
 modules:
-    - type: script
-      snippets:
-        - "mkdir -p /keys"
-    - type: files
-      files:
-        - source:  keys/*
-          destination: /keys
+  - type: script
+    snippets:
+      - "mkdir -p /keys"
+  - type: files
+    files:
+     - source:  keys/*
+       destination: /keys
   - type: dnf
     repos:
       copr:
