@@ -19,7 +19,19 @@ jobs:
           - sharkfin.recipe.d/sharkfin-unstable.recipe.yaml
           - borealis.recipe.d/borealis-unstable.recipe.yaml
     steps:
-      - name: Build Custom Image
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: apt-get update && apt-get install -y sbsigntool rpm2cpio cpio
+
+      - name: Set up Secure Boot keys
+        run: mkdir -p keys && echo "${{ secrets.MOK_PRIV }}" | base64 -d > keys/MOK.priv && echo "${{ secrets.MOK_DER }}" | base64 -d > keys/MOK.der
+
+      - name: Extract and sign vmlinuz from kernel RPM
+        run: mkdir -p kernel-rpm-extracted kernel-signed && rpm2cpio ./rpms/kernel-*.rpm | (cd kernel-rpm-extracted && cpio -idmv) && cp kernel-rpm-extracted/boot/vmlinuz-* kernel-signed/vmlinuz-unsigned && sbsign --key keys/MOK.priv --cert keys/MOK.der --output kernel-signed/vmlinuz kernel-signed/vmlinuz-unsigned
+
+      - name: Build Custom Image with BlueBuild
         uses: blue-build/github-action@v1.8
         with:
           recipe: ${{ matrix.recipe }}
@@ -29,3 +41,4 @@ jobs:
           maximize_build_space: true
           use_cache: true
           rechunk: true
+          overlays: kernel-signed
