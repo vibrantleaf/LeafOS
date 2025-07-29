@@ -58,6 +58,9 @@ jobs:
         recipe:
           - "shetland.recipe.d/shetland.recipe.yaml"
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Setup Secure Boot keys
         run: |
           mkdir -p keys

@@ -66,6 +66,9 @@ jobs:
           - "borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Setup Secure Boot keys
         run: |
           mkdir -p keys

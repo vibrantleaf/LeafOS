@@ -64,6 +64,9 @@ jobs:
           - "sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
           - "sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Setup Secure Boot keys
         run: |
           mkdir -p keys
