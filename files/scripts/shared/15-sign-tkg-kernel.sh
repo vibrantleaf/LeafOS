@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 mkdir -p /keys
-echo $MOK_PRIV > /keys/MOK.priv
-echo $MOK_DER > /keys/MOK.der
-KEY=/keys/MOK.priv
-CERT=/keys/MOK.der
+if [ -n "$MOK_PRIV" ]
+then
+  echo "MOK_PRIV is set and not empty"
+  echo $MOK_PRIV > /keys/MOK.priv
+else
+  echo MOK_PRIV is unset or empty
+  exit 1
+fi
+if [ -n "$MOK_DER" ]
+then
+  echo "MOK_DER is set and not empty"
+  echo $MOK_DER > /keys/MOK.der
+else
+  echo MOK_DER is unset or empty
+  exit 1
+fi
 for kernel_dir in /usr/lib/modules/*_tkg*
 do
   version=$(basename "$kernel_dir")
@@ -11,7 +23,7 @@ do
   echo "Signing kernel: $vmlinuz_path"
   if [ -f "$vmlinuz_path" ]
   then
-    sbsign --key "$KEY" --cert "$CERT" --output "$vmlinuz_path" "$vmlinuz_path"
+    sbsign --key /keys/MOK.priv --cert /keys/MOK.der --output "$vmlinuz_path" "$vmlinuz_path"
   else
     echo "Kernel image not found: $vmlinuz_path"
   fi
@@ -28,4 +40,3 @@ done
 mkdir -p /usr/share/leafos/secure_boot_keys/
 cp -v /keys/MOK.der /usr/share/leafos/secure_boot_keys/
 rm -rfv /keys
-
