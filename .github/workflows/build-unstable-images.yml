@@ -1,13 +1,18 @@
-name: Build LeafOS Unstable Images
+name: Build LeafOS Unstable Images with Signed Kernel
+
 on:
   workflow_dispatch:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
+
 jobs:
   bluebuild:
-    name: Build Custom Image
+    name: Build Custom Image with Signed Kernel
     runs-on: ubuntu-latest
+    container:
+      image: fedora:42
     permissions:
       contents: read
       packages: write
@@ -19,22 +24,33 @@ jobs:
           - sharkfin.recipe.d/sharkfin-unstable.recipe.yaml
           - borealis.recipe.d/borealis-unstable.recipe.yaml
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Install required tools
+        run: dnf install -y sbsigntool rpm2cpio cpio dnf-plugins-core
 
-      - name: Install tools
-        run: sudo apt-get update && sudo apt-get install -y sbsigntool rpm2cpio cpio
+      - name: Download kernel RPMs from whitehara COPR
+        run: |
+          mkdir -p rpms
+          dnf download --repofrompath=kernel-tkg,https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/epel-9/x86_64/ --repo=kernel-tkg --destdir=rpms kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel
 
-      - name: Set up Secure Boot keys
-        run: mkdir -p keys && echo "${{ secrets.MOK_PRIV }}" | base64 -d > keys/MOK.priv && echo "${{ secrets.MOK_DER }}" | base64 -d > keys/MOK.der
+      - name: Setup Secure Boot keys
+        run: |
+          mkdir -p keys
+          echo "${{ secrets.MOK_PRIV }}" | base64 -d > keys/MOK.priv
+          echo "${{ secrets.MOK_DER }}" | base64 -d > keys/MOK.der
+
       - name: Extract and sign kernel
         run: |
           mkdir -p kernel-extracted kernel-signed
-          rpm2cpio rpms/kernel-*.rpm | (cd kernel-extracted && cpio -idmv)
+          for rpm in rpms/*.rpm; do
+            rpm2cpio "$rpm" | (cd kernel-extracted && cpio -idmv)
+          done
           cp kernel-extracted/boot/vmlinuz-* kernel-signed/vmlinuz-unsigned
           sbsign --key keys/MOK.priv --cert keys/MOK.der --output kernel-signed/vmlinuz kernel-signed/vmlinuz-unsigned
 
-      - name: Build Custom Image with BlueBuild
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Custom Image with BlueBuild and signed kernel overlay
         uses: blue-build/github-action@v1.8
         with:
           recipe: ${{ matrix.recipe }}
