@@ -25,12 +25,12 @@ jobs:
           - borealis.recipe.d/borealis-unstable.recipe.yaml
     steps:
       - name: Install required tools
-        run: dnf install  --skip-unavailable -y sbsigntool rpm2cpio cpio dnf-plugins-core
+        run: dnf install --skip-unavailable -y sbsigntool rpm2cpio cpio dnf-plugins-core
 
       - name: Download kernel RPMs from whitehara COPR
         run: |
           mkdir -p rpms
-          dnf download --repofrompath=kernel-tkg,https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/epel-9/x86_64/ --repo=kernel-tkg --destdir=rpms kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel
+          dnf download --repofrompath=kernel-tkg,https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/fedora-42/x86_64/ --repo=kernel-tkg --destdir=rpms kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel
 
       - name: Setup Secure Boot keys
         run: |
