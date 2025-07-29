@@ -27,9 +27,12 @@ jobs:
 
       - name: Set up Secure Boot keys
         run: mkdir -p keys && echo "${{ secrets.MOK_PRIV }}" | base64 -d > keys/MOK.priv && echo "${{ secrets.MOK_DER }}" | base64 -d > keys/MOK.der
-
-      - name: Extract and sign vmlinuz from kernel RPM
-        run: mkdir -p kernel-rpm-extracted kernel-signed && rpm2cpio ./rpms/kernel-*.rpm | (cd kernel-rpm-extracted && cpio -idmv) && cp kernel-rpm-extracted/boot/vmlinuz-* kernel-signed/vmlinuz-unsigned && sbsign --key keys/MOK.priv --cert keys/MOK.der --output kernel-signed/vmlinuz kernel-signed/vmlinuz-unsigned
+      - name: Extract and sign kernel
+        run: |
+          mkdir -p kernel-extracted kernel-signed
+          rpm2cpio rpms/kernel-*.rpm | (cd kernel-extracted && cpio -idmv)
+          cp kernel-extracted/boot/vmlinuz-* kernel-signed/vmlinuz-unsigned
+          sbsign --key keys/MOK.priv --cert keys/MOK.der --output kernel-signed/vmlinuz kernel-signed/vmlinuz-unsigned
 
       - name: Build Custom Image with BlueBuild
         uses: blue-build/github-action@v1.8
