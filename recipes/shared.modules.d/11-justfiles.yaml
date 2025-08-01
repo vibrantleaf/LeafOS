@@ -6,3 +6,4 @@ modules:
         - "shared/81-waydroid-utils.just"
         - "shared/82-extract-fonts-from-windows-iso.just"
         - "shared/00-oobs.just"
+        - "shared/98-toolbox.just"
