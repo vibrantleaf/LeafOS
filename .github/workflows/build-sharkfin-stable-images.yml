@@ -62,7 +62,7 @@ jobs:
           - "sharkfin.recipe.d/sharkfin-nvidia.recipe.yaml"
           - "sharkfin.recipe.d/sharkfin-dx.recipe.yaml"
           - "sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
-          - "sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
+          #- "sharkfin.recipe.d/sharkfin-tkg.recipe.yaml"
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
