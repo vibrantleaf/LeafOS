@@ -55,6 +55,7 @@ modules:
           - "vim-minimal"
           - "vim-data"
           - "nano"
+          - "makemkv"
 
     - type: script
       scripts:
