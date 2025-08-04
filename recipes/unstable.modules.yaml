@@ -1,6 +1,6 @@
 modules:
   - from-file: shared.modules.d/26-kernel-tkg.yaml
-  - from-file: shared.modules.d/33-lossless-scaling.yaml
+  #- from-file: shared.modules.d/33-lossless-scaling.yaml
   #- from-file: shared.modules.d/24-amdvlk-driver.yaml
   #- from-file: shared.modules.d/22-ghostty.yaml
   #- from-file: shared.modules.d/23-akmods.yaml
