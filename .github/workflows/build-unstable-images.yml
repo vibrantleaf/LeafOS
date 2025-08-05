@@ -1,4 +1,4 @@
-name: Build LeafOS Unstable Images with Signed Kernel
+name: Build LeafOS Unstable Images
 
 on:
   workflow_dispatch:
