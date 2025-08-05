@@ -1,0 +1,13 @@
+---
+name: sawfish
+description: This is just my persoanl fork of centos stream 10 coreos with bootc.
+base-image: quay.io/centos-bootc/centos-bootc
+image-version: c10s
+alt-tags:
+    - main
+    - stable
+    - latest
+modules:
+    - from-file: sawfish.modules.yaml
+    # Signing.
+    - type: signing

@@ -16,3 +16,4 @@ modules:
        #- shared/46-remove-bazzite-repos.sh
        - shared/47-udev-rules.sh
        - shared/49-extras.sh
+       - shared/50-io.bluefin.bluefin-lts.suspend-then-hibernate.sh
