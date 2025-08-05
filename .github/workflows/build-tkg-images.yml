@@ -1,4 +1,4 @@
-name: Build tkg Images
+name: Build LeafOS tkg Images
 on:
   schedule:
     - cron:
