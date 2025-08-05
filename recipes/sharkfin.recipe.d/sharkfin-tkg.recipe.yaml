@@ -5,7 +5,7 @@ base-image: ghcr.io/ublue-os/bluefin
 image-version: stable
 alt-tags:
     - tkg
-    - tkg-stable
+    - tkg-unstable
     - tkg-latest
 modules:
     - from-file: sharkfin.modules.yaml

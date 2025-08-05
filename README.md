@@ -13,4 +13,6 @@ LeafOS Images are currently only intended for usage on Desktop & Laptop (& Serve
 
 Please read the [LeafOS wiki](https://github.com/vibrantleaf/LeafOS/wiki) Before use. 
 
+&nbsp; [![Build LeafOS TKG Images](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-tkg-images.yml/badge.svg)](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-tkg-images.yml)
+
 &nbsp; [![Build LeafOS Unstable Images](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-unstable-images.yml/badge.svg)](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-unstable-images.yml)

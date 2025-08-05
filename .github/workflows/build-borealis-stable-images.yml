@@ -64,7 +64,6 @@ jobs:
           - "borealis.recipe.d/borealis-nvidia.recipe.yaml"
           - "borealis.recipe.d/borealis-dx.recipe.yaml"
           - "borealis.recipe.d/borealis-dx-nvidia.recipe.yaml"
-
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
