@@ -1,4 +1,4 @@
 modules:
     - type: script
       scripts:
-       - stable/33-com.PancakeTAS.lsfg-vk.sh
+       - shared/33-com.PancakeTAS.lsfg-vk.sh
