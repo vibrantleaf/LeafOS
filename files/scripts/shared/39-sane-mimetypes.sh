@@ -47,3 +47,4 @@ IMAGE_MIMETYPES=$(extract_mimetypes "$MIME_IMAGE_DIR" "image")
 for mime in $IMAGE_MIMETYPES; do
   set_default_app "$mime" "$APP_IMAGE"
 done
+update-desktop-database
