@@ -31,5 +31,6 @@ modules:
       - "dnf5 update -y --refresh"
   - type: script
     scripts:
+      - "shared/44-bazzite-kernel-mods.sh"
       - "shared/15-sign-tkg-kernel.sh"
   - type: initramfs
