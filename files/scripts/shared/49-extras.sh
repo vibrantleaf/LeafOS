@@ -2,8 +2,8 @@
 mkdir -p /sources
 mkdir -p /usr/share/bash-completion/completions/
 mkdir -p /usr/share/fish/completions/
-bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild
-bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish
+bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
+bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
 echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
