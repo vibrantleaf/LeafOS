@@ -32,5 +32,5 @@ modules:
   - type: script
     scripts:
       - "shared/44-bazzite-kernel-mods.sh"
-      #- "shared/15-sign-tkg-kernel.sh" # FIX ME
+      - "shared/15-sign-tkg-kernel.sh" # FIX ME
   - type: initramfs
