@@ -37,6 +37,7 @@ modules:
           - "gnome-shell-extension-places-menu"
           - "gnome-shell-extension-launch-new-instance"
           - "gnome-shell-extension-coverflow-alt-tab"
+          - "gnome-shell-extension-apps-menu"
           - "rom-properties"
           - "rom-properties-utils"
           - "rom-properties-gtk3"
