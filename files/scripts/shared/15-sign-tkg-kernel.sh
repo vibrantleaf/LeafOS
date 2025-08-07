@@ -1,17 +1,31 @@
 #!/usr/bin/env bash
 mkdir -p /keys
-if [ -n "$MOK_PRIV" ]
+if [ -n "$MOK_PRIV" ] || [ -n ${{ secrets.MOK_PRIV }} ]
 then
-  echo "MOK_PRIV is set and not empty"
-  echo $MOK_PRIV > /keys/MOK.priv
+  if [ -n ${{ secrets.MOK_PRIV }} ]
+  then
+    echo "secrets.MOK_PRIV is set and not empty"
+    echo ${{ secrets.MOK_PRIV }} > /keys/MOK.priv
+  elif [ -n ${{ MOK_PRIV }} ]
+  then
+    echo "MOK_PRIV is set and not empty"
+    echo $MOK_PRIV > /keys/MOK.priv
+  fi
 else
   echo MOK_PRIV is unset or empty
   exit 1
 fi
-if [ -n "$MOK_DER" ]
+if [ -n "$MOK_DER" ]] || [ -n ${{ secrets.MOK_DER }} ]
 then
-  echo "MOK_DER is set and not empty"
-  echo $MOK_DER > /keys/MOK.der
+  if [ -n ${{ secrets.MOK_DER }} ]
+  then
+    echo "secrets.MOK_DER is set and not empty"
+    echo ${{ secrets.MOK_DER }} > /keys/MOK.der
+  elif [ -n "$MOK_DER" ]
+  then
+    echo "MOK_DER is set and not empty"
+    echo $MOK_DER > /keys/MOK.der
+  fi
 else
   echo MOK_DER is unset or empty
   exit 1
