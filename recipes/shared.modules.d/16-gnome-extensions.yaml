@@ -7,6 +7,6 @@ modules:
         - 4691 # PiP on top
         - 5940 # Quick Settings Audio Panel
         - 4269 # Alphabetical App Grid
-        - 3733 # Tiling Assistant
+        - 7065 # Tiling Shell
         - 1007 # Window Is Ready - Notification Remover
         - 7529 # Auto Adwaita Colors 
