@@ -50,7 +50,7 @@ modules:
           - "mediawriter"
           - "webapp-manager"
           - "virt-manager"
-          - "virt-viewer"
+          #- "virt-viewer"
           - "vim-enhanced"
           - "vim-minimal"
           - "vim-data"
