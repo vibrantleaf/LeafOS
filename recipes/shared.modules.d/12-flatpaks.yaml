@@ -22,6 +22,6 @@ modules:
         - "io.github.mrvladus.List"
         - "org.gnome.Decibels"
         - "org.gnome.World.Iotas"
-     remove:
-       - "org.mozilla.firefox"
+      remove:
+        - "org.mozilla.firefox"
 
