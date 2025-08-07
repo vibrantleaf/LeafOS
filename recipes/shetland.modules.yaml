@@ -1,3 +1,4 @@
 modules:
   - from-file: shetland.modules.d/10-shetland.yaml
   - from-file: shetland.modules.d/30-branding.yaml
+  - from-file: shared.modules.d/27-systemd.yaml
