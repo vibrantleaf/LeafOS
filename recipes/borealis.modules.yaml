@@ -10,6 +10,6 @@ modules:
     - from-file: borealis.modules.d/30-branding.yaml
     - from-file: shared.modules.d/20-chezmoi.yaml
     - from-file: shared.modules.d/21-yafti.yaml
-    - from-file: shared.modules.d/33-lossless-scaling.yaml
+    #- from-file: shared.modules.d/33-lossless-scaling.yaml
     - from-file: shared.modules.d/27-systemd.yaml
     - from-file: shared.modules.d/99-cleanup.yaml
