@@ -5,5 +5,6 @@ modules:
         - "shared/80-generic-hostname.just"
         - "shared/81-waydroid-utils.just"
         - "shared/82-extract-fonts-from-windows-iso.just"
+        - "shared/82-com.github.StevenBlack.hosts.just"
         - "shared/00-oobs.just"
         - "shared/98-toolbox.just"
