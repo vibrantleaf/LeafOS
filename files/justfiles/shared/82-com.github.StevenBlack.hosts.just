@@ -9,4 +9,6 @@ get-latest-stevenblacks-unified-hosts-list:
     pkexec "cp -fv ~/.cache/tmp-hosts /etc/hosts"
     echo "Restarting Network Manager"
     sudo systemctl restart NetworkManager.service
+    echo "Cleaning Up"
+    rm "~/.cache/tmp-hosts"
     echo "done"
