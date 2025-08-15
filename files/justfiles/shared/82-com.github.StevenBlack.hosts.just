@@ -7,5 +7,6 @@ get-latest-stevenblacks-unified-hosts-list:
     pkexec cp /etc/hosts /etc/hosts.bk
     echo "Installing Steven Black's Unified Hosts list"
     pkexec "cp -fv ~/.cache/tmp-hosts /etc/hosts"
-    echo "getting terminal being"
+    echo "Restarting Network Manager"
+    sudo systemctl restart NetworkManager.service
     echo "done"
