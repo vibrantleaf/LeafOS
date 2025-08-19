@@ -4,3 +4,5 @@ modules:
           install-weak-deps: false
           packages:
             - "clamav"
+            - "clamd"
+            - "clamav-update"
