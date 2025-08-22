@@ -1,6 +1,6 @@
 # Get Steven Black's Latest Unified Host List
 get-latest-stevenblacks-unified-hosts-list:
-    #!/use/bin/env bash
+    #!/usr/bin/env bash
     echo "Downloading Steven Black's Latest Unified Hosts list"
     curl -L -o ~/.cache/tmp-hosts.txt https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
     echo "Backing up your old hosts file"
