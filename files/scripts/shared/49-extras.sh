@@ -9,6 +9,11 @@ echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor
+ln -s /usr/bin/ldconfig /usr/sbin/ldconfig
+#for i in $(ls -1 /usr/bin)
+#do 
+#  ln -s /usr/bin/"$i" /usr/sbin/"$i"
+#done
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.stop-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.reset-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.toggle-automatic-system-updates.desktop
