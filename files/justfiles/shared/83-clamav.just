@@ -1,6 +1,6 @@
 # Setup ClamAV
 setup-clamav:
-    #!/use/bin/env bash
+    #!/usr/bin/env bash
     echo "Running Presetup Steps"
     sudo $(mkdir -p /var/lib/clamav && chown -R 954:954 /var/lib/clamav)
     echo "Running Freshclam"
