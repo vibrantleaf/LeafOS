@@ -5,6 +5,8 @@ mkdir -p /usr/share/fish/completions/
 bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
 bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
 echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
+echo "__GL_CONSTANT_FRAME_RATE_HINT=3" | tee -a /usr/lib/environment.d/99-environment.conf
+echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
