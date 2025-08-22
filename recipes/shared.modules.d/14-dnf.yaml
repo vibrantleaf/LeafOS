@@ -59,6 +59,7 @@ modules:
             - "libdvdcss"
             - "steam"
             - "steam-devices"
+            - "lutris"
             - "gamemode"
             - "mangohud"
             - "gamescope"
