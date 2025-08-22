@@ -23,7 +23,6 @@ modules:
           - "pulseaudio-libs-devel"
           - "libsamplerate-devel"
           - "go"
-          - "lutris"
           - "winetricks"
           - "gnome-shell-extension-hotedge"
           - "gnome-shell-extension-logo-menu"
