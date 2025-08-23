@@ -13,4 +13,5 @@ modules:
     #- from-file: shared.modules.d/33-lossless-scaling.yaml
     - from-file: shared.modules.d/27-systemd.yaml
     - from-file: shared.modules.d/28-clamav.yaml
+    - from-file: shared.modules.d/29-ntsync.yaml
     - from-file: shared.modules.d/99-cleanup.yaml
