@@ -4,17 +4,19 @@ mkdir -p /usr/share/bash-completion/completions/
 mkdir -p /usr/share/fish/completions/
 bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
 bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
-echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf
-echo "__GL_CONSTANT_FRAME_RATE_HINT=3" | tee -a /usr/lib/environment.d/99-environment.conf
-echo "__GL_THREADED_OPTIMIZATIONS=1" | tee -a /usr/lib/environment.d/99-environment.conf
-echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf
-echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf
-echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf
+echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf # use helix
+echo "__GL_CONSTANT_FRAME_RATE_HINT=3" | tee -a /usr/lib/environment.d/99-environment.conf # fixed steam not launching now and then on f42
+echo "__GL_THREADED_OPTIMIZATIONS=1" | tee -a /usr/lib/environment.d/99-environment.conf # might remove in future
+echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf # just usefull
+echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf # this shouldnt be nessary but wont hurt
+echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf # makes sure that opengl is multithreaded
+echo "ENABLE_GAMESCOPE_WSI=0" | tee -a /usr/lib/environment.d/99-environment.conf # we dont need this in are gamescope
+echo "PROTON_ENABLE_WAYLAND=0" | tee -a /usr/lib/environment.d/99-environment.conf # should help with protonge & gamescope 
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor
-ln -s /usr/bin/ldconfig /usr/sbin/ldconfig
+ln -s /usr/bin/ldconfig /usr/sbin/ldconfig # fix for some video games not sure if needed?
 #for i in $(ls -1 /usr/bin)
 #do 
 #  ln -s /usr/bin/"$i" /usr/sbin/"$i"
