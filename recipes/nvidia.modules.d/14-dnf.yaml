@@ -1,0 +1,5 @@
+modules:
+- type: script
+      snippets:
+        - "dnf config-manager setopt terra-mesa.enabled=1"
+        - "dnf update --refresh -y"
