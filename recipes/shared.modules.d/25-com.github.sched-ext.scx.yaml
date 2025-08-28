@@ -1,0 +1,12 @@
+modules:
+    - type: dnf
+      repos:
+        cleanup: true
+        copr:
+          - "bieszczaders/kernel-cachyos-addons"
+          #- "bazzite-org/bazzite"
+      install:
+          install-weak-deps: false
+          packages:
+            - "scx-scheds"
+
