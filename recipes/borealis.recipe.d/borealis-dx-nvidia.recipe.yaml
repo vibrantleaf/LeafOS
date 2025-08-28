@@ -2,7 +2,7 @@
 name: borealis
 description: This is just my Highly Expiremental personal fork of Aurora.
 base-image: ghcr.io/ublue-os/aurora
-image-version: stable
+image-version: latest
 alt-tags:
     - dx-nvidia
     - dx-nvidia-stable
