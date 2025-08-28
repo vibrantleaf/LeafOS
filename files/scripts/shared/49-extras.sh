@@ -11,16 +11,11 @@ echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf # j
 echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf # this shouldnt be nessary but wont hurt
 echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf # makes sure that opengl is multithreaded
 echo "ENABLE_GAMESCOPE_WSI=0" | tee -a /usr/lib/environment.d/99-environment.conf # we dont need this in are gamescope
-echo "PROTON_ENABLE_WAYLAND=0" | tee -a /usr/lib/environment.d/99-environment.conf # should help with protonge & gamescope 
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
 ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42
-#for i in $(ls -1 /usr/bin)
-#do 
-#  ln -s /usr/bin/"$i" /usr/sbin/"$i"
-#done
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.stop-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.reset-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.toggle-automatic-system-updates.desktop
