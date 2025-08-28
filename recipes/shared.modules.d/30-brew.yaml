@@ -1,0 +1,3 @@
+modules:
+  - type: brew
+      brew-analytics: true
