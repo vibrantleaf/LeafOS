@@ -2,7 +2,7 @@
 name: sharkfin
 description: This is just my persoanl fork of bluefin.
 base-image: ghcr.io/ublue-os/bluefin
-image-version: stable
+image-version: latest
 alt-tags:
     - unstable
 modules:
