@@ -2,7 +2,7 @@
 name: sharkfin
 description: This is just my persoanl fork of bluefin.
 base-image: ghcr.io/ublue-os/bluefin-nvidia
-image-version: latest
+image-version: stable
 alt-tags:
     - nvidia
     - nvidia-stable

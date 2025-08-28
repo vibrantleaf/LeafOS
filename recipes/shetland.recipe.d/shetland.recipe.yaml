@@ -2,7 +2,7 @@
 name: shetland
 description: This is just my persoanl fork of ucore.
 base-image: ghcr.io/ublue-os/ucore
-image-version:  latest-zfs
+image-version:  stable-zfs
 alt-tags:
     - main
     - stable
