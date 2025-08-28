@@ -8,12 +8,13 @@ modules:
     - from-file: shared.modules.d/16-gnome-extensions.yaml
     - from-file: shared.modules.d/17-gschema-overrides.yaml
     - from-file: shared.modules.d/19-common.yaml
-    - from-file: sharkfin.modules.d/30-branding.yaml
     - from-file: shared.modules.d/20-chezmoi.yaml
     - from-file: shared.modules.d/21-yafti.yaml
     #- from-file: shared.modules.d/33-lossless-scaling.yaml
+    - from-file: shared.modules.d/25-com.github.sched-ext.scx.yaml
     - from-file: shared.modules.d/27-systemd.yaml
     - from-file: shared.modules.d/28-clamav.yaml
     - from-file: shared.modules.d/29-ntsync.yaml
-    - from-file: shared.modules.d/25-com.github.sched-ext.scx.yaml
+    - from-file: sharkfin.modules.d/30-branding.yaml
+    - from-file: shared.modules.d/31-brew.yaml
     - from-file: shared.modules.d/99-cleanup.yaml
