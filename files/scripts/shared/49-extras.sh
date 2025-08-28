@@ -15,7 +15,7 @@ echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
-ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42
+ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42 will be removed  when in f43 releases
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.stop-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.reset-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.toggle-automatic-system-updates.desktop
