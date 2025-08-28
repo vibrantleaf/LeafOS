@@ -33,4 +33,15 @@ modules:
     scripts:
       - "shared/44-bazzite-kernel-mods.sh"
       - "shared/15-sign-tkg-kernel.sh" # FIX ME
+    ###
+    secrets:
+      - type: env
+        name: SIGNING_SECRET
+        mount:
+          type: file
+          destination: /tmp/certs/private_key.priv
+      #- type: secureblue-signing
+      #   source: local
+    #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
+    ####
   - type: initramfs
