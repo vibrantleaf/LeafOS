@@ -18,4 +18,4 @@ Please read the [LeafOS wiki](https://github.com/vibrantleaf/LeafOS/wiki) Before
 &nbsp; [![Build LeafOS Unstable Images](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-unstable-images.yml/badge.svg)](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-unstable-images.yml)
 
 
-See [Credits](https://github.com/vibrantleaf/LeafOS/blob/main/CREDITS.txt) for more information about LeafOS's Sources.
+See [Credits](https://github.com/vibrantleaf/LeafOS/blob/main/CREDITS.en_UK.txt) for more information about LeafOS's Sources.
