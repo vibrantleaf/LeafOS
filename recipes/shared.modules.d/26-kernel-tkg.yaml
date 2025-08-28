@@ -44,4 +44,3 @@ modules:
       #   source: local
     #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
     ####
-  - type: initramfs

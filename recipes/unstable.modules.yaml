@@ -1,8 +1,5 @@
 modules:
   - from-file: shared.modules.d/26-kernel-tkg.yaml
-  - type: script
-    snippet:
-      - "echo 'ntsync' | tee /usr/lib/modules-load.d/ntsync.conf"
   - type: initramfs
   #- from-file: shared.modules.d/33-lossless-scaling.yaml
   #- from-file: shared.modules.d/24-amdvlk-driver.yaml

@@ -15,16 +15,16 @@ echo "PROTON_ENABLE_WAYLAND=0" | tee -a /usr/lib/environment.d/99-environment.co
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
-ln -sfT /usr/bin/hx /usr/bin/editor
-ln -s /usr/bin/ldconfig /usr/sbin/ldconfig # fix for some video games not sure if needed?
+ln -sfT /usr/bin/hx /usr/bin/editor 
+ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42
 #for i in $(ls -1 /usr/bin)
 #do 
 #  ln -s /usr/bin/"$i" /usr/sbin/"$i"
 #done
-chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.stop-waydroid.desktop
-chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.reset-waydroid.desktop
-chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.toggle-automatic-system-updates.desktop
-chmod 644 /usr/share/applications/com.github.vibrantleaf.sharkfin.steam-big-picture-mode.desktop
+chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.stop-waydroid.desktop
+chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.reset-waydroid.desktop
+chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.toggle-automatic-system-updates.desktop
+chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.steam-big-picture-mode.desktop
 chmod 644 /usr/share/bash-completions/bluebuild
 chmod 644 /usr/share/fish/completions/bluebuild.fish
 chmod 644 /usr/bin/bluebuild

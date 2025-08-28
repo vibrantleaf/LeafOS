@@ -14,7 +14,7 @@ modules:
     - from-file: shared.modules.d/25-com.github.sched-ext.scx.yaml
     - from-file: shared.modules.d/27-systemd.yaml
     - from-file: shared.modules.d/28-clamav.yaml
-    - from-file: shared.modules.d/29-ntsync.yaml
     - from-file: sharkfin.modules.d/30-branding.yaml
     - from-file: shared.modules.d/31-brew.yaml
+    - type: initramfs
     - from-file: shared.modules.d/99-cleanup.yaml

@@ -7,4 +7,4 @@ modules:
     wait-after-boot: 5m
     disable-update: false
     disable-init: false
-    all-users: false
+    all-users: true

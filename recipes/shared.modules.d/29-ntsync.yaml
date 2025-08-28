@@ -1,8 +1,0 @@
-modules:
-  - type: script
-    snippets:
-      - "mkdir -p /usr/lib/modules-load.d/"
-      - "mkdir -p /usr/lib/modprobe.d/"
-      - "echo 'ntsync' | tee /usr/lib/modules-load.d/ntsync.conf"
-      - "echo 'ntsync' | tee /usr/lib/modprobe.d/ntsync.conf"
-  - type: initramfs
