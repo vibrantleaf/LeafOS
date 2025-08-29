@@ -3,3 +3,6 @@ modules:
     system:
       enabled:
         - "bootloader-update.service"
+    user:
+      enabled:
+        - "gamemoded.service"
