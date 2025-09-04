@@ -65,7 +65,7 @@ jobs:
           - "sharkfin.recipe.d/sharkfin-dx-nvidia.recipe.yaml"
     steps:
       - name: Build Custom Image
-        uses: blue-build/github-action@v1.8
+        uses: blue-build/github-action@v1.9
         env:
           MOK_PRIV: ${{ secrets.MOK_PRIV }}
           MOK_DER: ${{ secrets.MOK_DER }}
