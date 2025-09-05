@@ -79,7 +79,7 @@ jobs:
           rechunk: true
   rerun-failed-jobs:
     runs-on: ubuntu-latest
-    needs: [ job1, job2]
+    needs: [ bluebuild]
     if: failure()
     steps:
       - name: Rerun failed jobs in the current workflow
