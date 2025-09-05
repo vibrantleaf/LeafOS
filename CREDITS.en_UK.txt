@@ -1,1 +1,9 @@
 TODO
+./files/scripts/shared/50-io.bluefin.bluefin-lts.suspend-then-hibernate.sh:12:## yoinked from: https://github.com/ublue-os/bluefin-lts/blob/c0c8e2166cb5d0c4dd511ab3f677450c2cf8de0c/build_scripts/40-services.sh
+./files/system/shared/usr/lib/systemd/resolved.conf.d/99-dns-over-tls.conf:5:# yoinked from: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide#custom-dns-servers
+./files/system/shared/usr/lib/systemd/system/amd-gpu-high-power-mode.service:8:#yoinked from: https://www.reddit.com/r/linux_gaming/comments/zp5prc/fix_for_low_fps_and_stutteringjittering_on_amdgpus/
+./files/system/shared/usr/libexec/amd-gpu-high-power-mode:6:#yoinked from: https://www.reddit.com/r/linux_gaming/comments/zp5prc/fix_for_low_fps_and_stutteringjittering_on_amdgpus/
+./files/system/shared/usr/share/libratbag/data/devices/roccat-kone-pro.device:8:# yoinked from: https://github.com/vibrantleaf/libratbag/blob/fa7b4aba072fadd66c95e9a935ded977f1fd3fad/data/devices/roccat-kone-pro.device
+./files/system/shared/usr/share/polkit-1/rules.d/98-pkexec.rules:9:# yoinked from: https://www.reddit.com/r/linuxquestions/comments/w1tj9j/pkexec_to_ask_only_for_once_in_a_terminal/
+./files/system/shared/usr/share/polkit-1/rules.d/99-run0.rules:9:# yoinked from: https://www.reddit.com/r/linuxquestions/comments/w1tj9j/pkexec_to_ask_only_for_once_in_a_terminal/
+./recipes/shared.modules.d/26-kernel-tkg.yaml:45:    #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
