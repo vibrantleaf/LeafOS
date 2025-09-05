@@ -80,7 +80,7 @@ jobs:
   rerun-failed-jobs:
     runs-on: ubuntu-latest
     needs: [ bluebuild]
-    if: failure()
+    if: failure() && fromJSON(github.run_attempt) < 3
     steps:
       - name: Rerun failed jobs in the current workflow
         env:
