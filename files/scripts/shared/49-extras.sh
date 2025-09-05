@@ -10,12 +10,12 @@ echo "__GL_THREADED_OPTIMIZATIONS=1" | tee -a /usr/lib/environment.d/99-environm
 echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf # just usefull
 echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf # this shouldnt be nessary but wont hurt
 echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf # makes sure that opengl is multithreaded
-echo "ENABLE_GAMESCOPE_WSI=0" | tee -a /usr/lib/environment.d/99-environment.conf # we dont need this in are gamescope
+#echo "MANGOHUD_CONFIGFILE=~/.config/MangoHud/MangoHud.conf" | tee /usr/lib/environment.d/99-environment.conf # Make sure that MangoHud uses the correct MangoHud Config will be uncomented when f43 releases
 echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
-ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42 will be removed  when in f43 releases
+ln -s /usr/bin/ldconfig /usr/sbin/ldconfig #fix for some video games, should be not needed anymore since the bin-sbin merge in f42 will be removed when f43 releases
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.stop-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.reset-waydroid.desktop
 chmod 644 /usr/share/applications/com.github.vibrantleaf.LeafOS.toggle-automatic-system-updates.desktop
