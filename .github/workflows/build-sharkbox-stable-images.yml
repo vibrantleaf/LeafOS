@@ -32,6 +32,7 @@ on:
       - "files/system/sharkfin/*"
       - "files/system/borealis/*"
       - "files/system/shetland/*"
+      - "extras/toolboxes/*"
   pull_request:
   workflow_dispatch:
 concurrency:

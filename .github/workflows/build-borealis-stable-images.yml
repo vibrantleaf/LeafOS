@@ -44,6 +44,7 @@ on:
       - "files/scripts/shetland/*"
       - "files/scripts/sharkbox/*"
       - "files/system/sharkfin/*"
+      - "extras/toolboxes/*"
   pull_request:
   workflow_dispatch:
 concurrency:

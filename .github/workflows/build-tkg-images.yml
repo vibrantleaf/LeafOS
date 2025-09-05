@@ -42,6 +42,7 @@ on:
       - "files/scripts/sharkbox/*"
       - "files/scripts/borealis/*"
       - "files/system/borealis/*"
+      - "extras/toolboxes/*"
   pull_request:
   workflow_dispatch:
 concurrency:

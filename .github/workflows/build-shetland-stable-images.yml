@@ -40,6 +40,7 @@ on:
       - "recipes/sharkbox.modules.d/*"
       - "recipes/borealis.modules.d/*"
       - "files/*"
+      - "extras/toolboxes/*"
   pull_request:
   workflow_dispatch:
 concurrency:
