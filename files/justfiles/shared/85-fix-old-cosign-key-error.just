@@ -1,4 +1,3 @@
-# Fix Old Cosign Key Error
 fix-old-cosign-key-error:
     #!/usr/bin/env bash
     echo "Downloading New Cosing Key"
