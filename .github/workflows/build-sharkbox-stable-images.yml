@@ -60,7 +60,8 @@ jobs:
           pr_event_number: ${{ github.event.number }}
           maximize_build_space: true
           use_cache: true
-          rechunk: true
+          rechunk: false # do not enable requires kernel to be installed into the container
+                          # since this is a toolbox it does not and wont have a kernel
   rerun-failed-jobs:
     runs-on: ubuntu-latest
     needs: [ bluebuild]
