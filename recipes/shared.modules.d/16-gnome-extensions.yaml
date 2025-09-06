@@ -3,10 +3,14 @@ modules:
       install:
         - 4655 # Date Menu Formatter
         - 6784 # Wiggle
-        #- 7867 # App Grid Wizard
         - 4691 # PiP on top
         - 5940 # Quick Settings Audio Panel
         - 4269 # Alphabetical App Grid
         - 7065 # Tiling Shell
         - 1007 # Window Is Ready - Notification Remover
         - 7529 # Auto Adwaita Colors 
+        - 7048 # Rounded Window Corners Reborn
+        - 307 # Dash to dock
+        - 517 # Caffeine
+        - 615 # AppIndicator and KStatusNotifierItem Support
+        - 6139 # Tailscale QS
