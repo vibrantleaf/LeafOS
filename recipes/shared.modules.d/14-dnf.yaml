@@ -51,7 +51,6 @@ modules:
             - "pulseaudio-libs-devel"
             - "libsamplerate-devel"
             - "go"
-            - "gnome-shell-extension-dash-to-dock"
             - "gstreamer1-plugin-libav"
             - "gstreamer1-plugins-bad-free-extras"
             #- "gstreamer1-plugins-bad-freeworld"
