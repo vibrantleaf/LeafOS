@@ -13,6 +13,26 @@ modules:
       remove:
         packages:
            - "fuse"
+           - "gnome-shell-extension-hotedge"
+           - "gnome-shell-extension-logo-menu"
+           - "gnome-shell-extension-just-perfection"
+           - "gnome-shell-extension-compiz-alike-magic-lamp-effect"
+           - "gnome-shell-extension-compiz-windows-effect"
+           - "gnome-shell-extension-desktop-cube"
+           - "gnome-shell-extension-window-list"
+           - "gnome-shell-extension-restart-to"
+           - "gnome-shell-extension-burn-my-windows"
+           - "gnome-shell-extension-places-menu"
+           - "gnome-shell-extension-launch-new-instance"
+           - "gnome-shell-extension-coverflow-alt-tab"
+           - "gnome-shell-extension-apps-menu"
+           - "gnome-shell-extension-user-theme"
+           - "gnome-shell-extension-tailscale-gnome-qs"
+           - "gnome-shell-extension-search-light"
+           - "gnome-shell-extension-gsconnect"
+           - "gnome-shell-extension-dash-to-dock"
+           - "gnome-shell-extension-blur-my-shell"
+           - "gnome-shell-extension-appindicator"
       install:
           install-weak-deps: false
           packages:
@@ -83,3 +103,4 @@ modules:
             - "pciutils"
             - "openrgb"
             - "fedora-flathub-remote"
+        
