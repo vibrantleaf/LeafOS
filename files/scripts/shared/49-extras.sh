@@ -10,8 +10,9 @@ if ! [ -f /usr/share/fish/completions/bluebuild.fish ]
 then
   bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
 fi
+touch /usr/lib/environment.d/99-environment.conf
 #edit envvaars
-if ! grep "EDITOR=/usr/bin/hx"  /usr/lib/environment.d/99-environment.conf
+if ! grep "EDITOR=/usr/bin/hx" /usr/lib/environment.d/99-environment.conf
 then
   echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf # use helix
 fi
