@@ -45,7 +45,5 @@ modules:
         mount:
           type: file
           destination: /tmp/certs/mok.priv
-      #- type: secureblue-signing
-      #   source: local
     #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
     ####
