@@ -2,14 +2,14 @@
 mkdir -p /tmp/certs
 if ! [ -f /tmp/certs/mok.priv ]
 then
-    echo "MOK_PRIV is set and or empty"
+    echo "MOK_PRIV is not set and or is empty"
     exit 1
 else
   echo "MOK_PRIV is set and not empty!!"
 fi
 if ! [ -f /tmp/certs/mok.der ]
 then
-  echo "MOK_DER is set or not empty"
+  echo "MOK_DER is not set or is empty"
   exit 1
 else
   echo "MOK_DER is set and not empty!!"
