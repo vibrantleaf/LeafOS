@@ -36,10 +36,15 @@ modules:
     ###
     secrets:
       - type: env
-        name: SIGNING_SECRET
+        name: MOK_PRIV
         mount:
           type: file
-          destination: /tmp/certs/private_key.priv
+          destination: /tmp/certs/mok.priv
+      - type: env
+        name: MOK_DER
+        mount:
+          type: file
+          destination: /tmp/certs/mok.priv
       #- type: secureblue-signing
       #   source: local
     #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
