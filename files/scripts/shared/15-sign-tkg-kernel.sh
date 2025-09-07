@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-mkdir -p /keys
+mkdir -p /tmp/certs
 if ! [ -f /tmp/certs/mok.priv ]
 then
     echo "MOK_PRIV is set and or empty"
