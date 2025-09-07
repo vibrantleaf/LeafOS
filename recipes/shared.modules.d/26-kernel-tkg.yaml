@@ -29,9 +29,20 @@ modules:
       - "dnf5 -y update --refresh"
       - "rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:whitehara:kernel-tkg' kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel"
       - "dnf5 update -y --refresh"
+    - type: dnf
+      install:
+        install-weak-deps: false
+        packages:
+          - "kmod-openrazer"
+          - "kmod-v4l2loopback" 
+          - "kmod-xone"
+          - "kmod-zfs"
+          - "openrazer-kmod-common"
+          - "ublue-os-akmods-addons"
+          - "xone-kmod-common"
+          - "framework-laptop-kmod-common"
   - type: script
     scripts:
-      - "shared/44-bazzite-kernel-mods.sh"
       - "shared/15-sign-tkg-kernel.sh" # FIX ME
     ###
     secrets:
@@ -47,3 +58,8 @@ modules:
           destination: /tmp/certs/mok.der
     #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
     ####
+    - type: dnf
+      remove:
+        auto-remove: true
+        packages:
+          - "sbsigntools"
