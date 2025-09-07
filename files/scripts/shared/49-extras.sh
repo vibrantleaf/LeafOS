@@ -2,16 +2,65 @@
 mkdir -p /sources
 mkdir -p /usr/share/bash-completion/completions/
 mkdir -p /usr/share/fish/completions/
-bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
-bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
-echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf # use helix
-echo "__GL_CONSTANT_FRAME_RATE_HINT=3" | tee -a /usr/lib/environment.d/99-environment.conf # fixed steam not launching now and then on f42
-echo "__GL_THREADED_OPTIMIZATIONS=1" | tee -a /usr/lib/environment.d/99-environment.conf # might remove in future
-echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf # just usefull
-echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf # this shouldnt be nessary but wont hurt
-echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf # makes sure that opengl is multithreaded
-#echo "MANGOHUD_CONFIGFILE=~/.config/MangoHud/MangoHud.conf" | tee /usr/lib/environment.d/99-environment.conf # Make sure that MangoHud uses the correct MangoHud Config will be uncomented when f43 releases
-echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
+if ! [ -f /usr/share/bash-completion/completions/bluebuild ]
+then
+  bluebuild completions bash | tee /usr/share/bash-completion/completions/bluebuild > /dev/null
+fi
+if ! [ -f /usr/share/fish/completions/bluebuild.fish ]
+then
+  bluebuild completions fish | tee /usr/share/fish/completions/bluebuild.fish > /dev/null
+fi
+#edit envvaars
+if ! grep "EDITOR=/usr/bin/hx"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf # use helix
+fi
+if ! grep "__GL_CONSTANT_FRAME_RATE_HINT=3"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "__GL_CONSTANT_FRAME_RATE_HINT=3" | tee -a /usr/lib/environment.d/99-environment.conf # fixed steam not launching now and then on f42
+fi
+if ! grep "__GL_THREADED_OPTIMIZATIONS=1"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "__GL_THREADED_OPTIMIZATIONS=1" | tee -a /usr/lib/environment.d/99-environment.conf # might remove in future
+fi
+if ! grep "DXVK_HUD=compiler"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "DXVK_HUD=compiler" | tee -a /usr/lib/environment.d/99-environment.conf # just usefull
+fi
+if ! grep "RADV_PERFTEST=aco"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "RADV_PERFTEST=aco" | tee -a /usr/lib/environment.d/99-environment.conf # this shouldnt be nessary but wont hurt
+fi
+if ! grep "mesa_glthread=true"  /usr/lib/environment.d/99-environment.conf
+then
+  echo "mesa_glthread=true" | tee -a /usr/lib/environment.d/99-environment.conf # makes sure that opengl is multithreaded
+fi
+#if ! grep "MANGOHUD_CONFIGFILE=~/.config/MangoHud/MangoHud.conf" /usr/lib/environment.d/99-environment.conf
+#then
+#  #echo "MANGOHUD_CONFIGFILE=~/.config/MangoHud/MangoHud.conf" | tee /usr/lib/environment.d/99-environment.conf # Make sure that MangoHud uses the correct MangoHud Config will be uncomented when f43 releases
+#fi
+# edit .desktop files
+if ! grep "NoDisplay=true" /usr/share/applications/Helix.desktop
+then
+  echo "NoDisplay=true" | tee -a /usr/share/applications/Helix.desktop
+fi
+# edit bazaar blocklist
+if ! grep -Fxq "com.valvesoftware.Steam" /usr/share/ublue-os/bazaar/blocklist.txt
+then
+  echo"com.valvesoftware.Steam" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
+fi
+if ! grep -Fxq "org.dupot.easyflatpak" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
+then
+echo "org.dupot.easyflatpak" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
+fi
+if ! grep -Fxq "org.gnome.Boxes" /usr/share/ublue-os/bazaar/blocklist.txt
+then
+echo "org.gnome.Boxes" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
+fi
+if ! grep -Fxq "org.gnome.Boxes.Extension.OsinfoDb" /usr/share/ublue-os/bazaar/blocklist.txt
+then
+echo "org.gnome.Boxes.Extension.OsinfoDb" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
+fi
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
