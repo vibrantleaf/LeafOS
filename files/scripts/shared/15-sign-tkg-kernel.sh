@@ -1,35 +1,20 @@
 #!/usr/bin/env bash
 mkdir -p /keys
-if [ -n "$MOK_PRIV" ] || [ -n ${{ secrets.MOK_PRIV }} ]
+if ! [ -f /tmp/certs/mok.priv ]
 then
-  if [ -n ${{ secrets.MOK_PRIV }} ]
-  then
-    echo "secrets.MOK_PRIV is set and not empty"
-    echo ${{ secrets.MOK_PRIV }} > /keys/MOK.priv
-  elif [ -n ${{ MOK_PRIV }} ]
-  then
-    echo "MOK_PRIV is set and not empty"
-    echo $MOK_PRIV > /keys/MOK.priv
-  fi
+    echo "MOK_PRIV is set and or empty"
+    exit 1
 else
-  echo MOK_PRIV is unset or empty
-  exit 1
+  echo "MOK_PRIV is set and not empty!!"
 fi
-if [ -n "$MOK_DER" ]] || [ -n ${{ secrets.MOK_DER }} ]
+if ! [ -f /tmp/certs/mok.der ]
 then
-  if [ -n ${{ secrets.MOK_DER }} ]
-  then
-    echo "secrets.MOK_DER is set and not empty"
-    echo ${{ secrets.MOK_DER }} > /keys/MOK.der
-  elif [ -n "$MOK_DER" ]
-  then
-    echo "MOK_DER is set and not empty"
-    echo $MOK_DER > /keys/MOK.der
-  fi
-else
-  echo MOK_DER is unset or empty
+  echo "MOK_DER is set or not empty"
   exit 1
+else
+  echo "MOK_DER is set and not empty!!"
 fi
+
 for kernel_dir in /usr/lib/modules/*_tkg*
 do
   version=$(basename "$kernel_dir")
@@ -37,7 +22,7 @@ do
   echo "Signing kernel: $vmlinuz_path"
   if [ -f "$vmlinuz_path" ]
   then
-    sbsign --key /keys/MOK.priv --cert /keys/MOK.der --output "$vmlinuz_path" "$vmlinuz_path"
+    sbsign --key /tmp/certs/mok.priv --cert /tmp/certs/mok.der --output "$vmlinuz_path" "$vmlinuz_path"
   else
     echo "Kernel image not found: $vmlinuz_path"
   fi
@@ -52,5 +37,4 @@ do
   fi
 done
 mkdir -p /usr/share/leafos/secure_boot_keys/
-cp -v /keys/MOK.der /usr/share/leafos/secure_boot_keys/
-rm -rfv /keys
+cp -v /tmp/certs/MOK.der /usr/share/leafos/secure_boot_keys/
