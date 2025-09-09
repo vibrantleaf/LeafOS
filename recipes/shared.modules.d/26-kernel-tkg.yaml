@@ -29,16 +29,16 @@ modules:
       - "dnf5 -y update --refresh"
       - "rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:whitehara:kernel-tkg' kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel"
       - "dnf5 update -y --refresh"
-  - type: akmods
-    base: main
-    install:
-      # common
-      - openrazer
-      - v412loopback
-      - framework-laptop
-      - kvmfr
-      - wl
-      - xone
+  #- type: akmods
+  #  base: main
+  #  install:
+  #    # common
+   #  - openrazer
+   #   - v412loopback
+     # - framework-laptop
+   #   - kvmfr
+   #   - wl
+#      - xone
       # extras
       #- "system76"
       #- "system76-io"
