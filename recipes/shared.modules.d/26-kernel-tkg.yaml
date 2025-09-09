@@ -58,8 +58,8 @@ modules:
           destination: /tmp/certs/mok.der
     #  yoinked from: https://github.com/secureblue/secureblue/blob/live/recipes/common/common-modules.yml
     ####
-    - type: dnf
-      remove:
-        auto-remove: true
-        packages:
-          - "sbsigntools"
+  - type: dnf
+    remove:
+      auto-remove: true
+      packages:
+        - "sbsigntools"
