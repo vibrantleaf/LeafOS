@@ -53,6 +53,7 @@ modules:
       #- "gpd-fan"
       # zfs
       #- "zfs"
+  - type: initramfs
   - type: script
     scripts:
       - "shared/15-sign-tkg-kernel.sh" # FIX ME
