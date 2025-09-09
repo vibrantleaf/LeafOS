@@ -103,4 +103,4 @@ modules:
             - "pciutils"
             - "openrgb"
             - "fedora-flathub-remote"
-        
+            - "nu"
