@@ -7,3 +7,6 @@ cursor-blink-mode='system'
 audible-bell=false
 scrollbar-policy='system'
 toast-on-copy-clipboard=true
+
+[org.gnome.Ptyxis.Profile:/]
+custom-command='/usr/bin/nu'
