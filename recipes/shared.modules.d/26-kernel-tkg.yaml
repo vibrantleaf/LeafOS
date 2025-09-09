@@ -29,18 +29,26 @@ modules:
       - "dnf5 -y update --refresh"
       - "rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:whitehara:kernel-tkg' kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched kernel-devel"
       - "dnf5 update -y --refresh"
-  - type: dnf
+  - type: akmods
+    base: main
     install:
-      install-weak-deps: false
-      packages:
-        - "kmod-openrazer"
-        - "kmod-v4l2loopback" 
-        - "kmod-xone"
-        - "kmod-zfs"
-        - "openrazer-kmod-common"
-        - "ublue-os-akmods-addons"
-        - "xone-kmod-common"
-        - "framework-laptop-kmod-common"
+      - "openrazer"
+      - "v412loopback"
+      - "framework-laptop"
+      - "kvmfr"
+      - "wl"
+      - "xone"
+      - "system76"
+      - "system76-io"
+      - "zenergy"
+      - "gcadapter_oc"
+      - "ryzen-smu"
+      - "nct6687d"
+      - "evdi"
+      - "bmi260"
+      - "ayaneo-platform"
+      - "ayn-platform"
+      - "gpd-fan"
   - type: script
     scripts:
       - "shared/15-sign-tkg-kernel.sh" # FIX ME
