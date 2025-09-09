@@ -33,12 +33,12 @@ modules:
     base: main
     install:
       # common
-      - "openrazer"
-      - "v412loopback"
-      - "framework-laptop"
-      - "kvmfr"
-      - "wl"
-      - "xone"
+      - openrazer
+      - v412loopback
+      - framework-laptop
+      - kvmfr
+      - wl
+      - xone
       # extras
       #- "system76"
       #- "system76-io"
