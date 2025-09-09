@@ -62,6 +62,30 @@ if ! grep -Fxq "org.gnome.Boxes.Extension.OsinfoDb" /usr/share/ublue-os/bazaar/b
 then
 echo "org.gnome.Boxes.Extension.OsinfoDb" | tee -a /usr/share/ublue-os/bazaar/blocklist.txt
 fi
+if ! grep -Fxq "rip2" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "rip2"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
+if ! grep -Fx "zellij" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "zellij"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
+if ! grep -Fxq "nnn" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "nnn"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
+if ! grep -Fxq "dua-cli" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "dua-cli"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
+if ! grep -Fxq "difftastic" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "difftastic"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
+if ! grep -Fxq "carapace" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+then
+  echo 'brew "carapace"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
+fi
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
