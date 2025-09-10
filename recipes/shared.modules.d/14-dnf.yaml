@@ -106,3 +106,4 @@ modules:
             - "nu"
             - "zoxide"
             - "ydotool"
+            - "ghostty"
