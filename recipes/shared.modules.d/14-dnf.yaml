@@ -104,5 +104,5 @@ modules:
             - "openrgb"
             - "fedora-flathub-remote"
             - "nu"
+            - "zoxide"
             - "ydotool"
-            
