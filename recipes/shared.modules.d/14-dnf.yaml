@@ -6,8 +6,9 @@ modules:
     - type: dnf
       repos:
         copr:
-          - "zeno/scrcpy"
-          - "scottames/ghostty"
+          #- "zeno/scrcpy"
+          #- "scottames/ghostty"
+          - "varlad/zellij"
         files:
           remove:
             - "updates-archive"
@@ -95,7 +96,7 @@ modules:
             - "skopeo"
             - "cosign"
             - "waydroid"
-            - "scrcpy"
+            #- "scrcpy"
             - "android-tools"
             - "fuse3"
             - "dash"
@@ -107,4 +108,5 @@ modules:
             - "nu"
             - "zoxide"
             - "ydotool"
-            - "ghostty"
+            #- "ghostty"
+            - "zellij"
