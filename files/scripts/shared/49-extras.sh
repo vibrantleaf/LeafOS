@@ -86,6 +86,14 @@ if ! grep -Fxq "carapace" /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
 then
   echo 'brew "carapace"' | tea -a /usr/share/ublue-os/homebrew/bluefin-cli.Brewfile
 fi
+if ! grep -Fxq "/bin/nu" /usr/etc/shells
+then
+  echo '/bin/nu' | tea -a /usr/etc/shells
+fi
+if ! grep -Fxq "/usr/bin/nu" /usr/etc/shells
+then
+  echo '/usr/bin/nu' | tea -a /usr/etc/shells
+fi
 ln -sfT /usr/bin/dash /usr/bin/sh
 ln -sfT /usr/bin/hx /usr/bin/helix
 ln -sfT /usr/bin/hx /usr/bin/editor 
