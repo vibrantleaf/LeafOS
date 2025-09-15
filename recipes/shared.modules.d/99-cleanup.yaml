@@ -45,6 +45,7 @@ modules:
           - "makemkv"
           - "lutris"
           - "tmux"
+          - "htop"
 
     - type: script
       scripts:
