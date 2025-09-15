@@ -44,6 +44,7 @@ modules:
           - "nano"
           - "makemkv"
           - "lutris"
+          - "tmux"
 
     - type: script
       scripts:
