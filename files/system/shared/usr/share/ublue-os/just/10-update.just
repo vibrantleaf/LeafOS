@@ -31,7 +31,8 @@ update:
     fi
     if command -v chezmoi
     then
-        chezmoi update
+        chezmoi re-add
+        chezmoi update --progress=true
         chezmoi apply
     fi
 
