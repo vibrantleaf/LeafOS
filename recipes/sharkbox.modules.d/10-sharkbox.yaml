@@ -1,10 +1,16 @@
 modules:
   - type: dnf
+    repos:
+      copr:
+        - "varlad/zellij"
     remove:
       packages:
-         - vim-miminal
-         - vim-data
-         - nano
+         - "vim-miminal"
+         - "vim-data"
+         - "nano"
+         - "tmux"
     install:
       packages:
-        - helix
+        - "helix"
+        - "zellij"
+        - "nu"
