@@ -1,12 +1,4 @@
 modules:
     - type: gschema-overrides
       include:
-        - "org.gnome.desktop.gschema.override"
-        - "org.gnome.mutter.gschema.override"
-        - "org.gnome.nautilus.gschema.override"
-        - "org.gnome.Ptyxis.gschema.override"
-        - "org.gnome.shell.gschema.override"
-        - "org.gnome.shell.extensions.blur-my-shell.gschema.override"
-        - "org.gnome.shell.extensions.dash-to-dock.gschema.override"
-        #- "org.gnome.shell.extensions.tiling-assistant.gschema.override"
-        - "org.gnome.shell.extensions.wiggle.gschema.override"
+        - "com.github.vibrantleaf.LeafOS.gschema.override"
