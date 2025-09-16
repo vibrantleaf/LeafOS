@@ -9,5 +9,6 @@ scrollbar-policy='system'
 toast-on-copy-clipboard=true
 default-columns-90
 default-rows=32
+
 [org.gnome.Ptyxis.Profile:/]
 custom-command='/usr/bin/zellij'
