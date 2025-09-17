@@ -1,7 +1,7 @@
 # LeafOS 🍂 
 
 
-LeafOS is the New Home for My Custom [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) Images Built Using [Universal Blue](https://universal-blue.org/) & [Blue Build](https://blue-build.org/).
+LeafOS is the New Home for My Custom [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) Images Built Using [Universal Blue](https://universal-blue.org/) and [Blue Build](https://blue-build.org/).
 
 - 🦈 Sharkfin: My Fork of [Bluefin](https://projectbluefin.io/). &nbsp; [![Build Sharkfin Stable Images](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-sharkfin-stable-images.yml/badge.svg)](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-sharkfin-stable-images.yml)
 - 🌌 Borealis: My Fork of [Aurora](https://getaurora.dev/). &nbsp; [![Build Borealis Stable Images](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-borealis-stable-images.yml/badge.svg)](https://github.com/vibrantleaf/LeafOS/actions/workflows/build-borealis-stable-images.yml)
