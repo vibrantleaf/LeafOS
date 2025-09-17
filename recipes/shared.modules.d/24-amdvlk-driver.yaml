@@ -1,4 +1,0 @@
-modules:
-  - type: script
-    scripts:
-      - "shared/27-amdvlk-driver.sh"
