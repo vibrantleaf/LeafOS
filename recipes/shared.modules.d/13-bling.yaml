@@ -1,5 +1,0 @@
-modules:
-    - type: bling
-      install:
-        - "rpmfusion"
-        #- "dconf-update-service"
