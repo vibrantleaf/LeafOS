@@ -19,6 +19,7 @@ modules:
           remove:
             - "updates-archive"
       remove:
+        auto-remove: true
         packages:
            - "fuse"
            - "gnome-shell-extension-hotedge"
