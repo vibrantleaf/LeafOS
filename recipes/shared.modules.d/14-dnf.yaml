@@ -1,4 +1,7 @@
 modules:
+    - type: bling
+      install:
+        - "rpmfusion"
     - type: script
       snippets:
         - "dnf config-manager setopt tailscale-stable.enabled=1"
