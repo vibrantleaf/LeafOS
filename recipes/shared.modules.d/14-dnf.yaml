@@ -146,8 +146,7 @@ modules:
           - "libadwaita"
           - "yafti"
     - type: dnf
-      packages:
-        remove:
+      remove:
         auto-remove: true
         packages:
            - "fuse"
