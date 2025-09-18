@@ -12,8 +12,11 @@ modules:
         - "dnf update --refresh -y"
     - type: dnf
       repos:
+        cleanup: true
         copr:
           - "varlad/zellij"
+          - "bieszczaders/kernel-cachyos-addons"
+          - "renner/staging"
         files:
           remove:
             - "updates-archive"
@@ -89,6 +92,13 @@ modules:
             - "ydotool"
             - "zellij"
             - "btop"
+            - "scx-scheds"
+            - "clamav"
+            - "clamd"
+            - "clamav-update"
+            - "python3-pip"
+            - "libadwaita"
+            - "yafti"
     - type: script
       snippets:
         - "dnf config-manager setopt tailscale-stable.enabled=0"

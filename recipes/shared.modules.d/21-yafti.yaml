@@ -1,5 +1,0 @@
-modules:
-  - type: script
-    snippets:
-      - "dnf copr enable -y renner/staging"
-      - "dnf install -y python3-pip libadwaita yafti"
