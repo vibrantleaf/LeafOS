@@ -1,6 +1,5 @@
 modules:
   - type: kargs
-    #arch: x86_64, aarch64
     arch: x86_64
     kargs:
       - vm.max_map_count=1677721
@@ -8,5 +7,3 @@ modules:
       - vm.watermark_boost_factor=0
       - vm.watermark_scale_factor=125
       - vm.page-cluster=0
-      #- vm.hugetlb_shm_group=7779
-      
