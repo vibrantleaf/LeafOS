@@ -96,7 +96,7 @@ modules:
         - "dnf config-manager setopt terra-extras.enabled=0"
         - "dnf config-manager setopt terra-mesa.enabled=0"
         - "dnf copr disable ublue-os/packages"
-        - "dnf copr disable ublue-os/akmods"
+        #- "dnf copr disable ublue-os/akmods"
         - "dnf copr disable che/nerd-fonts"
         - "dnf copr disable bieszczaders/kernel-cachyos-addons"
         - "dnf copr disable varlad/zellij"
