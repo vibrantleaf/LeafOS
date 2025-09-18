@@ -128,4 +128,5 @@ modules:
         - "dnf copr disable phracek/pycharm"
         - "dnf copr disable che/nerd-fonts"
         - "dnf copr disable ublue-os/akmods"
+        - "dnf copr disable varlad/zellij"
         - "dnf copr disable bieszczaders/kernel-cachyos-addons"
