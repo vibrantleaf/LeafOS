@@ -10,5 +10,6 @@ modules:
         - "shared/84-mangohud.just"
         - "shared/85-fix-old-cosign-key-error.just"
         - "shared/86-check-dns-is-correct.just"
+        - "shared/87-soft-reboot.just"
         - "shared/00-oobs.just"
         - "shared/98-toolbox.just"
