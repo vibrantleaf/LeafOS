@@ -2,7 +2,6 @@ modules:
     - from-file: shared.modules.d/10-files.yaml
     - from-file: shared.modules.d/11-justfiles.yaml
     - from-file: shared.modules.d/12-flatpaks.yaml
-    - from-file: shared.modules.d/13-bling.yaml
     - from-file: shared.modules.d/14-dnf.yaml
     - from-file: shared.modules.d/15-bluebuild-cli.yaml
     - from-file: shared.modules.d/16-gnome-extensions.yaml
