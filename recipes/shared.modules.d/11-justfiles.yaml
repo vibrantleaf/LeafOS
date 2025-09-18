@@ -2,14 +2,4 @@ modules:
     - type: justfiles
       validate: true
       include:
-        - "shared/80-generic-hostname.just"
-        - "shared/81-waydroid-utils.just"
-        - "shared/82-extract-fonts-from-windows-iso.just"
-        - "shared/82-com.github.StevenBlack.hosts.just"
-        - "shared/83-clamav.just"
-        - "shared/84-mangohud.just"
-        - "shared/85-fix-old-cosign-key-error.just"
-        - "shared/86-check-dns-is-correct.just"
-        - "shared/87-soft-reboot.just"
-        - "shared/00-oobs.just"
-        - "shared/98-toolbox.just"
+        - "com.github.vibrantleaf.LeafOS.just"
