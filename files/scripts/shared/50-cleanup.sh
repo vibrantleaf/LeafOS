@@ -27,11 +27,11 @@ for terra in /etc/yum.repos.d/terra*
     sed -i 's/enabled=1/enabled=0/g' $terra
   fi
 done
-for terra in /etc/yum.repos.d/rpmfusion*
+for fusion in /etc/yum.repos.d/rpmfusion*
   do
   if ! grep "enabled=0" $terra
   then
-    sed -i 's/enabled=1/enabled=0/g' $terra
+    sed -i 's/enabled=1/enabled=0/g' $fusion
   fi
 done
 dnf check-update --assumeno --refresh
