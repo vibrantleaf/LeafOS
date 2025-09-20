@@ -12,7 +12,7 @@ modules:
         - "dnf copr enable ublue-os/akmods"
         - "dnf copr enable che/nerd-fonts"
         - "dnf copr enable bieszczaders/kernel-cachyos-addons"
-        - "dnf update --refresh -y"
+        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
     - type: dnf
       repos:
         cleanup: true
