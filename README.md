@@ -19,3 +19,19 @@ Please read the [LeafOS wiki](https://github.com/vibrantleaf/LeafOS/wiki) Before
 
 
 See [Credits](https://github.com/vibrantleaf/LeafOS/blob/main/CREDITS.en_UK.txt) for more information about LeafOS's Sources.
+
+
+### Git Mirrors
+- ![Github Icon](https://github.com/favicon.ico) [Github.com](https://github.com/vibrantleaf/LeafOS.git)
+
+- ![GitLab Icon](https://gitlab.com/favicon.ico) [GitLab.com](https://gitlab.com/vibrantleaf/LeafOS.git)
+
+- ![Codeberg Icon](https://codeberg.org/favicon.ico) [Codeberg.org](https://codeberg.org/vibrantleaf/LeafOS.git)
+
+### Image Mirrors
+- 🦈 Sharkfin:
+  - ![Github Icon](https://github.com/favicon.ico) [ghcr.io](https://github.com/vibrantleaf/LeafOS/pkgs/container/sharkfin/tag=latest)
+- 🌌 Borealis:
+  - ![Github Icon](https://github.com/favicon.ico) [ghcr.io](https://github.com/vibrantleaf/LeafOS/pkgs/container/borealis/tag=latest)
+- 🏝️ Shetland:
+  - ![Github Icon](https://github.com/favicon.ico) [ghcr.io](https://github.com/vibrantleaf/LeafOS/pkgs/container/Shetland/tag=latest)
