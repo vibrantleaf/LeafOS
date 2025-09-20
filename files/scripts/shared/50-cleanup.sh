@@ -15,7 +15,7 @@ then
 fi
 for copr in /etc/yum.repos.d/_copr*
   do
-  fi ! grep "enabled=0" $copr
+  if ! grep "enabled=0" $copr
   then
     sed -i 's/enabled=1/enabled=0/g' $copr
   fi
