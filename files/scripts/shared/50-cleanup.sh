@@ -5,10 +5,6 @@ set -u
 set -o pipefail
 mkdir -p /sources
 rm -rf /sources
-if ! grep "EDITOR=/usr/bin/hx" /usr/lib/environment.d/99-environment.conf
-then
-  echo "EDITOR=/usr/bin/hx" | tee -a /usr/lib/environment.d/99-environment.conf # use helix
-
 if ! grep "enabled=0"  /etc/yum.repos.d/tailscale.repo
 then
   sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/tailscale.repo
