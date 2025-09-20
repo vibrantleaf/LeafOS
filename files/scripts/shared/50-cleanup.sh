@@ -29,7 +29,7 @@ for terra in /etc/yum.repos.d/terra*
 done
 for fusion in /etc/yum.repos.d/rpmfusion*
   do
-  if ! grep "enabled=0" $terra
+  if ! grep "enabled=0" $fusion
   then
     sed -i 's/enabled=1/enabled=0/g' $fusion
   fi
