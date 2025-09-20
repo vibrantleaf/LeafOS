@@ -39,6 +39,7 @@ for terra in /etc/yum.repos.d/rpmfusion*
   fi
 done
 dnf check-update --assumeno --refresh
+dnf clean all
 #rm -rf /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com
 rm -rf /usr/share/sounds/steam
 rm -f /usr/etc/.gitkeep
