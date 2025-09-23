@@ -15,7 +15,6 @@ default:
         --username "$CI_REGISTRY_USER" \
         --password-stdin
         
-
 build-amd64:
   stage: build
   tags:
