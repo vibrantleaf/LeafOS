@@ -12,9 +12,9 @@ default:
     - |
       echo "$CI_REGISTRY_PASSWORD" | \
         bluebuild login \
-        --registry $CI_REGISTRY \
-        --username "$CI_REGISTRY_USER" \
-        --password-stdin
+          --registry $CI_REGISTRY \
+          --username "$CI_REGISTRY_USER" \
+          --password-stdin
         
 build-amd64:
   stage: build
