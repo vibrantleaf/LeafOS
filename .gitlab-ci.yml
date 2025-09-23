@@ -46,5 +46,4 @@ build-amd64:
           --cache-layers \
           --push
       done
-      #bluebuild build --platform=linux/amd64 -t $CI_REGISTRY_IMAGE:amd64 
     #- buildah push $CI_REGISTRY_IMAGE:amd64
