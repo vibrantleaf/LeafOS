@@ -22,27 +22,26 @@ build-amd64:
   script:
     - |
       find . -type f \( \
-       -name "borealis-dx-nvidia.recipe.yaml" -o \
-       -name "borealis-dx.recipe.yaml" -o \
-       -name "borealis-nvidia.recipe.yaml" -o \
-       -name "borealis.recipe.yaml" -o \
-       -name "borealis-unstable.recipe.yaml" -o \
-       -name "sharkfin-dx-nvidia.recipe.yaml" -o \
-       -name "sharkfin-dx.recipe.yaml" -o \
-       -name "sharkfin-nvidia.recipe.yaml" -o \
-       -name "sharkfin.recipe.yaml" ) | \
-       while IFS= read -r file
-       do
-        echo "Processing file: $file"
-        bluebuild build \
-          --signing-driver cosign \
-          --build-driver buildah \
-          --run-driver podman \
-          --inspect-driver skopeo \
-          --platform linux/amd64 \
-          --compression-format zstd \
-          --rechunk \
-          --cache-layers \
-          --push
+        -name "borealis-dx-nvidia.recipe.yaml" -o \
+        -name "borealis-dx.recipe.yaml" -o \
+        -name "borealis-nvidia.recipe.yaml" -o \
+        -name "borealis.recipe.yaml" -o \
+        -name "borealis-unstable.recipe.yaml" -o \
+        -name "sharkfin-dx-nvidia.recipe.yaml" -o \
+        -name "sharkfin-dx.recipe.yaml" -o \
+        -name "sharkfin-nvidia.recipe.yaml" -o \
+        -name "sharkfin.recipe.yaml" ) | \
+        while IFS= read -r file
+        do
+          echo "Processing file: $file"
+          bluebuild build \
+            --signing-driver cosign \
+            --build-driver buildah \
+            --run-driver podman \
+            --inspect-driver skopeo \
+            --platform linux/amd64 \
+            --compression-format zstd \
+            --rechunk \
+            --cache-layers \
+            --push
         done
-    #- buildah push $CI_REGISTRY_IMAGE:amd64
