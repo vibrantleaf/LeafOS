@@ -44,5 +44,6 @@ build-amd64:
             --compression-format zstd \
             --rechunk \
             --cache-layers \
-            --push
+            --push \
+            $file
         done
