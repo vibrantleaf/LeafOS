@@ -1,0 +1,50 @@
+stages:
+  - build
+
+variables:
+  STORAGE_DRIVER: vfs
+  BUILDAH_FORMAT: docker
+  FQ_IMAGE_NAME: "$CI_REGISTRY_IMAGE:latest"
+
+default:
+  image: ghcr.io/blue-build/cli:latest
+  before_script:
+    - |
+      echo "$CI_REGISTRY_PASSWORD" | bluebuild login \
+        --registry $CI_REGISTRY \
+        --username "$CI_REGISTRY_USER" \
+        --password-stdin
+        
+
+build-amd64:
+  stage: build
+  tags:
+    - saas-linux-small-amd64
+  script:
+    - |
+      find . -type f \( \
+       -name "borealis-dx-nvidia.recipe.yaml" -o \
+       -name "borealis-dx.recipe.yaml" -o \
+       -name "borealis-nvidia.recipe.yaml" -o \
+       -name "borealis.recipe.yaml" -o \
+       -name "borealis-unstable.recipe.yaml" -o \
+       -name "sharkfin-dx-nvidia.recipe.yaml" -o \
+       -name "sharkfin-dx.recipe.yaml" -o \
+       -name "sharkfin-nvidia.recipe.yaml" -o \
+       -name "sharkfin.recipe.yaml" \
+       \) | while IFS= read -r file
+       do
+        echo "Processing file: $file"
+        bluebuild build \
+          --signing-driver cosign \
+          --build-driver buildah \
+          --run-driver podman \
+          --inspect-driver skopeo \
+          --platform linux/amd64 \
+          --compression-format zstd \
+          --rechunk \
+          --cache-layers \
+          --push
+      done
+      #bluebuild build --platform=linux/amd64 -t $CI_REGISTRY_IMAGE:amd64 
+    #- buildah push $CI_REGISTRY_IMAGE:amd64
