@@ -44,5 +44,5 @@ build-amd64:
           --rechunk \
           --cache-layers \
           --push
-      done
+        done
     #- buildah push $CI_REGISTRY_IMAGE:amd64
