@@ -34,7 +34,7 @@ build-amd64:
         -name "sharkfin.recipe.yaml" ) | \
         while IFS= read -r file
         do
-          echo "Processing file: $file"
+          echo "Building $file"
           bluebuild build \
             --signing-driver cosign \
             --build-driver buildah \
