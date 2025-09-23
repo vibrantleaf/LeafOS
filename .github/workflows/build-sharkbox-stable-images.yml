@@ -16,6 +16,7 @@ on:
       - ".github/dependabot.yml"
       - ".gitignore"
       - "**.gitkeep"
+      - "**.gitlab-ci.yml"
       - ".justfile"
       - "Justfile"
       - ".woodpecker/*"
