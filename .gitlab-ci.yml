@@ -30,8 +30,8 @@ build-amd64:
        -name "sharkfin-dx-nvidia.recipe.yaml" -o \
        -name "sharkfin-dx.recipe.yaml" -o \
        -name "sharkfin-nvidia.recipe.yaml" -o \
-       -name "sharkfin.recipe.yaml" \
-       \) | while IFS= read -r file
+       -name "sharkfin.recipe.yaml" ) | \
+       while IFS= read -r file
        do
         echo "Processing file: $file"
         bluebuild build \
