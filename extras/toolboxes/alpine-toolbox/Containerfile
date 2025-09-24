@@ -1,1 +1,6 @@
-TODO
+FROM ghcr.io/containeroo/alpine-toolbox:latest 
+RUN apk update
+RUN apk upgrade
+RUN apk del nano vim vim-common
+RUN apk add helix nushell zellij zoxide
+RUN rm -rfv /var/cache/apk/*
