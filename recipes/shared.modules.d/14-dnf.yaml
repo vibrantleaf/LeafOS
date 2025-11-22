@@ -1,9 +1,9 @@
 modules:
     - type: script
       snippets:
+        - "dnf config-manager --save --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
         - "dnf repolist"
-        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
-        # rpmfusion repos
+        - "dnf update --refresh -y"
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
         - "dnf config-manager setopt fedora-cisco-openh264.enabled=1"
@@ -47,7 +47,7 @@ modules:
         - "dnf config-manager setopt terra-extras.priority=17"
         - "dnf config-manager setopt terra-multimedia.priority=40"
 
-        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
+        - "dnf update --refresh -y"
     - type: dnf
       repos:
         cleanup: true
