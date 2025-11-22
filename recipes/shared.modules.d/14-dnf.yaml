@@ -7,6 +7,7 @@ modules:
         - " curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
         - "dnf install --refresh -y terra-release-extras"
+        - "dnf check-update --refresh"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
