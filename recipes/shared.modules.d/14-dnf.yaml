@@ -19,7 +19,7 @@ modules:
         - "dnf config-manager setopt terra-mesa.enabled=1"
         - "dnf config-manager setopt terra-multimedia.enabled=1"
         #  tailscale repos
-        - "dnf config-manager --add-repo -y https://pkgs.tailscale.com/stable/fedora/tailscale.repo"
+        - "curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         # copr repos
         - "dnf copr enable ublue-os/packages"
