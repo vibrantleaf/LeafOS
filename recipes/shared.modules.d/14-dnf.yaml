@@ -9,7 +9,6 @@ modules:
         - "dnf config-manager setopt fedora-cisco-openh264.enabled=1"
         - "dnf install --refresh -y rpmfusion-free-release-tainted"
         - "dnf install --refresh -y rpmfusion-nonfree-release-tainted"
-        - "dnf config-manager setopt fedora-multimedia.enabled=0"
         # terra repos
         - "curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
@@ -30,9 +29,25 @@ modules:
         - "dnf copr enable varlad/zellij"
         - "dnf copr enable bieszczaders/kernel-cachyos-addons"
         - "dnf copr enable renner/staging"
-        # Upgrade packages
-        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
         - "dnf repolist"
+        - "dnf config-manager setopt fedora.priority=59"
+        - "dnf config-manager setopt updates.priority=55"
+        - "dnf config-manager setopt updates-archive.priority=58"
+        - "dnf config-manager setopt fedora-cisco-openh264.priority=57"
+        - "dnf config-manager setopt rpmfusion-free.priority=39"
+        - "dnf config-manager setopt rpmfusion-free-tainted.priority=37"
+        - "dnf config-manager setopt rpmfusion-free-updates.priority=35"
+        - "dnf config-manager setopt rpmfusion-nonfree.priority=38"
+        - "dnf config-manager setopt rpmfusion-nonfree-updates.priority=36"
+        - "dnf config-manager setopt rpmfusion-nonfree-tainted.priority=34"
+        - "dnf config-manager setopt fedora-multimedia.priority=30"
+        - "dnf config-manager setopt tailscale-stable.priority=45"
+        - "dnf config-manager setopt terra.priority=19"
+        - "dnf config-manager setopt terra-mesa.priority=18"
+        - "dnf config-manager setopt terra-extras.priority=17"
+        - "dnf config-manager setopt terra-multimedia.priority=40"
+
+        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
     - type: dnf
       repos:
         cleanup: true
