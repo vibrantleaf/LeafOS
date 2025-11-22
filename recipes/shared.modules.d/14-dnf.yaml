@@ -12,9 +12,12 @@ modules:
         - "curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
         - "dnf install --refresh -y terra-release-extras"
+        - "dnf install --refresh -y terra-release-mesa"
+        - "dnf install --refresh -y terra-release-multimedia"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
         - "dnf config-manager setopt terra-mesa.enabled=1"
+        - "dnf config-manager setopt terra-multimedia.enabled=1"
         #  tailscale repos
         - "dnf config-manager --add-repo -y https://pkgs.tailscale.com/stable/fedora/tailscale.repo"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
