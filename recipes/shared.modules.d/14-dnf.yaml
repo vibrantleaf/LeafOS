@@ -5,9 +5,7 @@ modules:
     - type: script
       snippets:
         - "dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release"
-        - "dnf install --refresh -y --nogpgcheck --repofrompath 'terra-extras,https://repos.fyralabs.com/terra43-extras' terra-extras"
-        - "dnf install --refresh -y --nogpgcheck --repofrompath 'terra-mesa,https://repos.fyralabs.com/terra43-mesa' terra-mesa"
-        - "dnf install --refresh -y --nogpgcheck --repofrompath 'terra-multimedia,https://repos.fyralabs.com/terra43-multimedia' terra-multimedia"
+        - "dnf install --refresh -y --nogpgcheck --repofrompath terra-release-extras"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
