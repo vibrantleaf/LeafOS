@@ -6,9 +6,9 @@ modules:
       snippets:
         - " curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
-        - "dnf check-update -y"
+        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
         - "dnf install --refresh -y terra-release-extras"
-        - "dnf check-update -y"
+        - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
