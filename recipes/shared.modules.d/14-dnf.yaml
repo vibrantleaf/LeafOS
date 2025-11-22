@@ -4,7 +4,7 @@ modules:
         - "rpmfusion"
     - type: script
       snippets:
-        - "dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release"
+        - "dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
