@@ -1,6 +1,7 @@
 modules:
     - type: script
       snippets:
+        - "dnf repolist"
         - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
         # rpmfusion repos
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
@@ -31,6 +32,7 @@ modules:
         - "dnf copr enable renner/staging"
         # Upgrade packages
         - "dnf update --refresh -y --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
+        - "dnf repolist"
     - type: dnf
       repos:
         cleanup: true
