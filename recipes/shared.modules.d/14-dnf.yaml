@@ -8,7 +8,7 @@ modules:
         - "dnf install --refresh -y terra-release"
         - "dnf check-update -y"
         - "dnf install --refresh -y terra-release-extras"
-        - "dnf check-update"
+        - "dnf check-update -y"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
         - "dnf config-manager setopt terra.enabled=1"
         - "dnf config-manager setopt terra-extras.enabled=1"
