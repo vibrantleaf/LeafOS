@@ -9,7 +9,7 @@ modules:
         - "dnf config-manager setopt fedora-cisco-openh264.enabled=1"
         - "dnf install --refresh -y rpmfusion-free-release-tainted"
         - "dnf install --refresh -y rpmfusion-nonfree-release-tainted"
-        - "dnf config-manager setopt negativo17-fedora-multimedia.enabled=0"
+        - "dnf config-manager setopt fedora-multimedia.enabled=0"
         # terra repos
         - "curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
