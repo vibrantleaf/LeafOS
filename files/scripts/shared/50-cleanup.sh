@@ -26,6 +26,7 @@ dnf config-manager --setopt=terra-multimedia.enabled=0
 rm -fv /etc/dnf/dnf.conf
 mv -v /etc/dnf/dnf.conf.backup /etc/dnf/dnf.conf
 # clean dnf
+dnf remove -y dnf-plugins-core
 dnf check-update --assumeno --refresh
 dnf clean all
 # clean extras
