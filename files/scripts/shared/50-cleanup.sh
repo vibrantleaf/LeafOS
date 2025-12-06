@@ -5,40 +5,32 @@ set -u
 set -o pipefail
 mkdir -p /sources
 rm -rf /sources
-if ! grep "enabled=0"  /etc/yum.repos.d/tailscale.repo
-then
-  sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/tailscale.repo
-fi
-if ! grep "enabled=0"  /etc/yum.repos.d/google-chrome.repo
-then
-  sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/google-chrome.repo
-fi
-for copr in /etc/yum.repos.d/_copr*
-  do
-  if ! grep "enabled=0" $copr
-  then
-    sed -i 's/enabled=1/enabled=0/g' $copr
-  fi
-done
-for terra in /etc/yum.repos.d/terra*
-  do
-  if ! grep "enabled=0" $terra
-  then
-    sed -i 's/enabled=1/enabled=0/g' $terra
-  fi
-done
-for fusion in /etc/yum.repos.d/rpmfusion*
-  do
-  if ! grep "enabled=0" $fusion
-  then
-    sed -i 's/enabled=1/enabled=0/g' $fusion
-  fi
-done
+# disable any non default repos
+dnf config-manager --setopt=fedora.enabled=1
+dnf config-manager --setopt=updates.enabled=1
+dnf config-manager --setopt=updates-archive.enabled=0
+dnf config-manager --setopt=fedora-cisco-openh264.enabled=0
+dnf config-manager --setopt=rpmfusion-free.enabled=0
+dnf config-manager --setopt=rpmfusion-free-tainted.enabled=0
+dnf config-manager --setopt=rpmfusion-free-updates.enabled=0
+dnf config-manager --setopt=rpmfusion-nonfree.enabled=0
+dnf config-manager --setopt=rpmfusion-nonfree-updates.enabled=0
+dnf config-manager --setopt=rpmfusion-nonfree-tainted.enabled=0
+dnf config-manager --setopt=fedora-multimedia.enabled=0
+dnf config-manager --setopt=tailscale-stable.enabled=0
+dnf config-manager --setopt=terra.enabled=0
+dnf config-manager --setopt=terra-mesa.enabled=0
+dnf config-manager --setopt=terra-extras.enabled=0
+dnf config-manager --setopt=terra-multimedia.enabled=0
+# reset dnf config
+rm -fv /etc/dnf/dnf.conf
+mv -v /etc/dnf/dnf.conf.backup /etc/dnf/dnf.conf
+# clean dnf
 dnf check-update --assumeno --refresh
 dnf clean all
-#rm -rf /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com
-rm -rf /usr/share/sounds/steam
-rm -f /usr/etc/.gitkeep
-rm -f /usr/sbin/protontricks
-rm -f /usr/bin/protontricks
-dnf5 clean all
+# clean extras
+#rm -rfv /usr/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com
+rm -rfv /usr/share/sounds/steam
+rm -fv /usr/etc/.gitkeep
+rm -fv /usr/sbin/protontricks
+rm -fv /usr/bin/protontricks
