@@ -3,7 +3,7 @@ modules:
       snippets:
         # optimise dnf config
         - "cat /etc/dnf/dnf.conf"
-        - "cp -v/etc/dnf/dnf.conf /etc/dnf/dnf.conf.backup"
+        - "cp -v /etc/dnf/dnf.conf /etc/dnf/dnf.conf.backup"
         - "echo 'install_weak_deps=false' | tee -a /etc/dnf/dnf.conf"
         - "echo 'clean_requirements_on_remove=True' | tee -a /etc/dnf/dnf.conf"
         - "echo 'timeout=10' | tee -a /etc/dnf/dnf.conf"
