@@ -65,7 +65,7 @@ dnf install --refresh -y rpmfusion-nonfree-release-tainted
 # add terra repos
 dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf install --refresh -y terra-release-extras
-dnf install --refresh -y terra-release-mesa
+#dnf install --refresh -y terra-release-mesa
 dnf install --refresh -y terra-release-multimedia
 # add tailscale repos
 curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo
