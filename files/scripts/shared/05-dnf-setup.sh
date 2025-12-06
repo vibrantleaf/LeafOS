@@ -71,7 +71,7 @@ dnf install --refresh -y terra-release-multimedia
 curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo
 if ! grep "enabled=1"  /etc/yum.repos.d/tailscale.repo
 then
-'0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/tailscale.repo
+  sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/tailscale.repo
 fi
 # add copr repos
 dnf copr enable ublue-os/packages
@@ -81,23 +81,33 @@ dnf copr enable varlad/zellij
 dnf copr enable bieszczaders/kernel-cachyos-addons
 dnf copr enable renner/staging
 # optimise dnf priority list
-dnf repolist
-ls -lA /etc/yum.repos.d/*.repo
-cat /etc/yum.repos.d/*.repo
-dnf config-manager --setopt=fedora.priority=59
-dnf config-manager --setopt=updates.priority=55
-dnf config-manager --setopt=updates-archive.priority=58
-dnf config-manager --setopt=fedora-cisco-openh264.priority=57
-dnf config-manager --setopt=rpmfusion-free.priority=39
-dnf config-manager --setopt=rpmfusion-free-tainted.priority=37
-dnf config-manager --setopt=rpmfusion-free-updates.priority=35
-dnf config-manager --setopt=rpmfusion-nonfree.priority=38
-dnf config-manager --setopt=rpmfusion-nonfree-updates.priority=36
-dnf config-manager --setopt=rpmfusion-nonfree-tainted.priority=34
-dnf config-manager --setopt=fedora-multimedia.priority=30
-dnf config-manager --setopt=tailscale-stable.priority=45
-dnf config-manager --setopt=terra.priority=19
-dnf config-manager --setopt=terra-mesa.priority=18
-dnf config-manager --setopt=terra-extras.priority=17
-dnf config-manager --setopt=terra-multimedia.priority=40
+sed -i 's/^priority=.*/priority=59/' /etc/yum.repos.d/fedora.repo
+sed -i 's/^priority=.*/priority=55/' /etc/repos.d/fedora-updates.repo
+sed -i 's/^priority=.*/priority=58/' /etc/repos.d/fedora-updates-archive.repo
+sed -i 's/^priority=.*/priority=57/' /etc/repos.d/fedora-cisco-openh264.repo
+sed -i 's/^priority=.*/priority=39/' /etc/repos.d/rpmfusion-free.repo
+sed -i 's/^priority=.*/priority=37/' /etc/repos.d/rpmfusion-free-tainted.repo
+sed -i 's/^priority=.*/priority=38/' /etc/repos.d/rpmfusion-free-updates.repo
+sed -i 's/^priority=.*/priority=38/' /etc/repos.d/rpmfusion-nonfree.repo
+sed -i 's/^priority=.*/priority=37/' /etc/repos.d/rpmfusion-nonfree-tainted.repo
+sed -i 's/^priority=.*/priority=36/' /etc/repos.d/rpmfusion-nonfree-updates.repo
+sed -i 's/^priority=.*/priority=35/' /etc/repos.d/rpmfusion-nonfree-steam.repo
+sed -i 's/^priority=.*/priority=30/' /etc/repos.d/negativo17-fedora-multimedia.repo
+sed -i 's/^priority=.*/priority=70/' /etc/repos.d/google-chrome.repo
+sed -i 's/^priority=.*/priority=71/' /etc/repos.d/tailscale.repo
+sed -i 's/^priority=.*/priority=94/' /etc/repos.d/_copr:copr.fedorainfracloud.org:che:nerd-fonts.repo
+sed -i 's/^priority=.*/priority=93/' /etc/repos.d/_copr:copr.fedorainfracloud.org:phracek:PyCharm.repo
+sed -i 's/^priority=.*/priority=91/' /etc/repos.d/_copr:copr.fedorainfracloud.org:ublue-os:packages.repo
+sed -i 's/^priority=.*/priority=92' /etc/repos.d/_copr:copr.fedorainfracloud.org:ublue-os:staging.repo
+sed -i 's/^priority=.*/priority=90/' /etc/repos.d/_copr_ublue-os-akmods.repo
+sed -i 's/^priority=.*/priority=11/' /etc/yum.repos.d/terra.repo
+sed -i 's/^priority=.*/priority=13/' /etc/yum.repos.d/terra-extras.repo
+sed -i 's/^priority=.*/priority=12/' /etc/yum.repos.d/terra-mesa.repo
+sed -i 's/^priority=.*/priority=40/' /etc/yum.repos.d/terra-multimedia.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/rpmfusion-free-updates-testing.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/rpmfusion-nonfree-nvidia-driver.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/rpmfusion-nonfree-updates-testing.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/rpmfusion-nonfree-nvidia-driver.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/rpmfusion-nonfree-updates-testing.repo
+sed -i '0,/enabled=1/s//enabled=0/' /etc/repos.d/fedora-updates-testing.repo
 dnf update --refresh -y
