@@ -1,7 +1,15 @@
 modules:
     - type: script
       snippets:
-        - "dnf config-manager --save --setopt=install_weak_deps=false --setopt=clean_requirements_on_remove=True --setopt=timeout=10 --setopt=minrate=50000 --setopt=fastestmirror=true --setopt=installonly_limit=10 --setopt=deltarpm=true"
+        # optimise dnf config
+        - "dnf config-manager --dump"
+        - "dnf config-manager --setopt=install_weak_deps=false --save"
+        - "dnf config-manager --setopt=clean_requirements_on_remove=True --save"
+        - "dnf config-manager --setopt=timeout=10 --save"
+        - "dnf config-manager --setopt=minrate=50000 --save"
+        - "dnf config-manager --setopt=fastestmirror=true --save"
+        - "dnf config-manager --setopt=installonly_limit=10 --save"
+        - "dnf config-manager --setopt=deltarpm=true -save"
         - "dnf repolist"
         - "dnf update --refresh -y"
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
@@ -9,7 +17,7 @@ modules:
         - "dnf config-manager setopt fedora-cisco-openh264.enabled=1"
         - "dnf install --refresh -y rpmfusion-free-release-tainted"
         - "dnf install --refresh -y rpmfusion-nonfree-release-tainted"
-        # terra repos
+        # add terra repos
         - "curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
         - "dnf install --refresh -y terra-release"
         - "dnf install --refresh -y terra-release-extras"
@@ -19,16 +27,17 @@ modules:
         - "dnf config-manager setopt terra-extras.enabled=1"
         - "dnf config-manager setopt terra-mesa.enabled=1"
         - "dnf config-manager setopt terra-multimedia.enabled=0"
-        #  tailscale repos
+        #  add tailscale repos
         - "curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo"
         - "dnf config-manager setopt tailscale-stable.enabled=1"
-        # copr repos
+        # add copr repos
         - "dnf copr enable ublue-os/packages"
         - "dnf copr enable ublue-os/akmods"
         - "dnf copr enable che/nerd-fonts"
         - "dnf copr enable varlad/zellij"
         - "dnf copr enable bieszczaders/kernel-cachyos-addons"
         - "dnf copr enable renner/staging"
+        # optimise dnf priority list
         - "dnf repolist"
         - "dnf config-manager setopt fedora.priority=59"
         - "dnf config-manager setopt updates.priority=55"
@@ -46,7 +55,6 @@ modules:
         - "dnf config-manager setopt terra-mesa.priority=18"
         - "dnf config-manager setopt terra-extras.priority=17"
         - "dnf config-manager setopt terra-multimedia.priority=40"
-
         - "dnf update --refresh -y"
     - type: dnf
       repos:
