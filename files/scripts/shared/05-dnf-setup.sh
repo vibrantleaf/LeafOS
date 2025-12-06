@@ -35,18 +35,21 @@ if ! grep "timeout" /etc/dnf/dnf.conf
 then
   echo 'timeout' | tee -a /etc/dnf/dnf.conf
 elif grep "timeout" /etc/dnf/dnf.conf
+then
   sed -i 's/^timeout=.*/timeout=10/' /etc/dnf/dnf.conf
 fi
 if ! grep "minrate" /etc/dnf/dnf.conf
 then
   echo 'minrate=50000' | tee -a /etc/dnf/dnf.conf
 elif grep "minrate" /etc/dnf/dnf.conf
+then
   sed -i 's/^minrate=.*/minrate=10/' /etc/dnf/dnf.conf
 fi
 if ! grep "installonly_limit" /etc/dnf/dnf.conf
 then
   echo 'installonly_limit=10' | tee -a /etc/dnf/dnf.conf
 elif grep "installonly_limit" /etc/dnf/dnf.conf
+then
   sed -i 's/^installonly_limit=.*/installonly_limit=10/' /etc/dnf/dnf.conf
 fi
 dnf repolist
@@ -87,6 +90,10 @@ dnf copr enable renner/staging
 # optimise dnf priority list
 dnf repolist
 ls -la /etc/yum.repos.d/
+for repofile in /etc/yum.repos.d
+do
+  cat $repofile
+done
 dnf config-manager --setopt=fedora.priority=59
 dnf config-manager --setopt=updates.priority=55
 dnf config-manager --setopt=updates-archive.priority=58
