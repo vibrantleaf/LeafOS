@@ -91,10 +91,7 @@ dnf copr enable renner/staging
 # optimise dnf priority list
 dnf repolist
 ls -lA /etc/yum.repos.d/
-for repofile in /etc/yum.repos.d/*
-do
-  cat $repofile
-done
+cat '/etc/yum.repos.d/*'
 dnf config-manager --setopt=fedora.priority=59
 dnf config-manager --setopt=updates.priority=55
 dnf config-manager --setopt=updates-archive.priority=58
