@@ -2,7 +2,7 @@ modules:
     - type: script
       snippets:
         # optimise dnf config
-        - "dnf config-manager --dump"
+        - "dnf config-manager --help"
         - "dnf config-manager --setopt=install_weak_deps=false --save"
         - "dnf config-manager --setopt=clean_requirements_on_remove=True --save"
         - "dnf config-manager --setopt=timeout=10 --save"
