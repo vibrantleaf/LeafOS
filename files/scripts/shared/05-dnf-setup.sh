@@ -12,10 +12,10 @@ then
 fi
 if ! grep "clean_requirements_on_remove" /etc/dnf/dnf.conf
 then
-  echo 'clean_requirements_on_remove=True' | tee -a /etc/dnf/dnf.conf
-elif grep "clean_requirements_on_remove=True" /etc/dnf/dnf.conf
+  echo 'clean_requirements_on_remove=true' | tee -a /etc/dnf/dnf.conf
+elif grep "clean_requirements_on_remove=true" /etc/dnf/dnf.conf
 then
-  sed -i 's/clean_requirements_on_remove=False/clean_requirements_on_remove=True/g' /etc/dnf/dnf.conf
+  sed -i 's/clean_requirements_on_remove=False/clean_requirements_on_remove=true/g' /etc/dnf/dnf.conf
 fi
 if ! grep "fastestmirror" /etc/dnf/dnf.conf
 then
@@ -52,6 +52,7 @@ elif grep "installonly_limit" /etc/dnf/dnf.conf
 then
   sed -i 's/^installonly_limit=.*/installonly_limit=10/' /etc/dnf/dnf.conf
 fi
+cat /etc/dnf/dnf.conf
 dnf repolist
 dnf update --refresh -y
 dnf install --refresh -y dnf-plugins-core
@@ -89,8 +90,8 @@ dnf copr enable bieszczaders/kernel-cachyos-addons
 dnf copr enable renner/staging
 # optimise dnf priority list
 dnf repolist
-ls -la /etc/yum.repos.d/
-for repofile in /etc/yum.repos.d
+ls -lA /etc/yum.repos.d/
+for repofile in /etc/yum.repos.d/*
 do
   cat $repofile
 done
