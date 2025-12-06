@@ -19,7 +19,7 @@ then
 fi
 if ! grep "fastestmirror" /etc/dnf/dnf.conf
 then
-  echo 'fastestmirror' | tee -a /etc/dnf/dnf.conf
+  echo 'fastestmirror=true' | tee -a /etc/dnf/dnf.conf
 elif grep "fastestmirror=false" /etc/dnf/dnf.conf
 then
   sed -i 's/fastestmirror=false/fastestmirror=true/g' /etc/dnf/dnf.conf
