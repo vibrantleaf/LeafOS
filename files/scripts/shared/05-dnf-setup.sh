@@ -63,8 +63,7 @@ ls -la /etc/yum.repos.d/
 dnf install --refresh -y rpmfusion-free-release-tainted
 dnf install --refresh -y rpmfusion-nonfree-release-tainted
 # add terra repos
-curl -fsSL 'https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo' | tee /etc/yum.repos.d/terra.repo"
-dnf install --refresh -y terra-release"
+dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf install --refresh -y terra-release-extras
 dnf install --refresh -y terra-release-mesa
 dnf install --refresh -y terra-release-multimedia
