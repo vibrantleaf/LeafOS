@@ -3,6 +3,7 @@ modules:
       snippets:
         # optimise dnf config
         - "dnf config-manager --help"
+        - "ls -la /usr/lib/dnf/" 
         - "dnf config-manager --setopt=install_weak_deps=false --save"
         - "dnf config-manager --setopt=clean_requirements_on_remove=True --save"
         - "dnf config-manager --setopt=timeout=10 --save"
