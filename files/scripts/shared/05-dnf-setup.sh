@@ -67,13 +67,6 @@ dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyrala
 dnf install --refresh -y terra-release-extras
 dnf install --refresh -y terra-release-mesa
 dnf install --refresh -y terra-release-multimedia
-for terra in /etc/yum.repos.d/terra*
-do
-  if ! grep "enabled=1" $terra
-  then
-    '0,/enabled=0/s//enabled=1/' $terra
-  fi
-done
 # add tailscale repos
 curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo
 if ! grep "enabled=1"  /etc/yum.repos.d/tailscale.repo
@@ -89,8 +82,8 @@ dnf copr enable bieszczaders/kernel-cachyos-addons
 dnf copr enable renner/staging
 # optimise dnf priority list
 dnf repolist
-ls -lA /etc/yum.repos.d/
-cat '/etc/yum.repos.d/*'
+ls -lA /etc/yum.repos.d/*.repo
+cat /etc/yum.repos.d/*.repo
 dnf config-manager --setopt=fedora.priority=59
 dnf config-manager --setopt=updates.priority=55
 dnf config-manager --setopt=updates-archive.priority=58
