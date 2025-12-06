@@ -33,7 +33,7 @@ then
 fi
 if ! grep "timeout" /etc/dnf/dnf.conf
 then
-  echo 'timeout' | tee -a /etc/dnf/dnf.conf
+  echo 'timeout=10' | tee -a /etc/dnf/dnf.conf
 elif grep "timeout" /etc/dnf/dnf.conf
 then
   sed -i 's/^timeout=.*/timeout=10/' /etc/dnf/dnf.conf
