@@ -13,6 +13,7 @@ modules:
         - "echo 'deltarpm=true' | tee -a /etc/dnf/dnf.conf"
         - "dnf repolist"
         - "dnf update --refresh -y"
+        - "dnf install --refresh -y dnf-plugins-core"
         # add rpmfusion repos
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
         - "dnf install --refresh -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
