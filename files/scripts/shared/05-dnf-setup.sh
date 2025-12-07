@@ -60,7 +60,9 @@ then
   sed -i 's/^installonly_limit=.*/installonly_limit=10/' /etc/dnf/dnf.conf
 fi
 
-dnf update --refresh -y
+# remove rpmfusion repos
+dnf remove -y rpmfusion-free-release rpmfusion-nonfree-release
+
 
 # add terra repos
 dnf install --refresh -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
@@ -69,11 +71,11 @@ dnf install --refresh -y terra-release-extras
 dnf install --refresh -y terra-release-multimedia
 
 # add rpmfusion repos
-dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf install --refresh -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-ls -la /etc/yum.repos.d/
-dnf install --refresh -y rpmfusion-free-release-tainted
-dnf install --refresh -y rpmfusion-nonfree-release-tainted
+#dnf install --refresh -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+#dnf install --refresh -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+#ls -la /etc/yum.repos.d/
+#dnf install --refresh -y rpmfusion-free-release-tainted
+#dnf install --refresh -y rpmfusion-nonfree-release-tainted
 
 # add tailscale repos
 curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | tee /etc/yum.repos.d/tailscale.repo
